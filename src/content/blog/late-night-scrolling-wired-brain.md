@@ -34,6 +34,17 @@ You might notice this as lying in bed feeling physically tired but mentally raci
 
 [INSERT_PROTOCOL_CALLOUT]
 
+---
+
+**📚 Further Reading**
+
+If this sparked your curiosity, these books go deeper into the neuroscience:
+
+- [**Why We Sleep** by Matthew Walker](https://amzn.to/3sleep) — The definitive guide to sleep science (affiliate link)
+- [**Atomic Habits** by James Clear](https://amzn.to/3habits) — How tiny changes rewire your brain (affiliate link)
+
+---
+
 ## FAQ
 
 ### Does blue light really cause this?

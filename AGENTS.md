@@ -1,3 +1,20 @@
+# NeuroPulse Blog — Agent Context
+Last Updated: 2026-07-28
+
+## Current Status: LIVE on Vercel
+URL: https://neuropulse-blog.vercel.app
+
+## Kit (ConvertKit) Form ID: 9647814
+## Gumroad Product: https://neurovibes.gumroad.com/l/neuropulse-protocol
+
+## Key Files:
+- src/components/LeadMagnet.astro — Email capture (Kit form)
+- src/components/ProtocolCallout.astro — $9 product CTA (Gumroad)
+- src/pages/about.astro — About page
+- src/utils/readingTime.ts — Reading time calculator
+
+---
+
 # NeuroPulse Blog — Claude Briefing
 
 You are working on the **NeuroPulse Blog**, an AI-powered neuroscience content site that automatically publishes articles via n8n → GitHub → Astro → Vercel.

@@ -1,0 +1,458 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
+---
+
+<BaseLayout
+  title="About — NeuroPulse"
+  description="NeuroPulse translates cutting-edge neuroscience research into practical daily habits. Meet Ethan Cole, neuroscience writer and educator."
+>
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">// about</p>
+      <h1 class="hero__title">The science of a calmer mind</h1>
+      <p class="hero__subtitle">
+        NeuroPulse exists for one reason: to close the gap between what
+        neuroscience knows and what people actually do. Most research stays
+        locked in journals. We translate it into habits you can start tonight.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── MISSION ───────────────────────────────────────────────── -->
+  <section class="section mission">
+    <div class="section__inner">
+      <p class="eyebrow">// our mission</p>
+      <h2 class="section__title">Why NeuroPulse exists</h2>
+      <div class="mission__grid">
+        <div class="mission__card">
+          <span class="mission__icon">🧠</span>
+          <h3>Research-to-habit translation</h3>
+          <p>
+            We read the peer-reviewed papers so you don't have to. Every article
+            distils real neuroscience into concrete, repeatable actions — no fluff,
+            no hype.
+          </p>
+        </div>
+        <div class="mission__card">
+          <span class="mission__icon">⚡</span>
+          <h3>Practical over theoretical</h3>
+          <p>
+            Knowing that dopamine depletion causes procrastination is useless
+            unless you know what to do at 9 p.m. on a Tuesday. We give you the
+            what and the why.
+          </p>
+        </div>
+        <div class="mission__card">
+          <span class="mission__icon">🎯</span>
+          <h3>Focused on daily life</h3>
+          <p>
+            We cover sleep architecture, attention, stress regulation, and habit
+            formation — the four pillars that shape how well your brain performs
+            in modern life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUTHOR ────────────────────────────────────────────────── -->
+  <section class="section author-section">
+    <div class="section__inner">
+      <p class="eyebrow">// the writer</p>
+      <h2 class="section__title">Who writes NeuroPulse</h2>
+      <div class="author-card">
+        <div class="author-card__left">
+          <div class="author__avatar">EC</div>
+          <div class="author__meta">
+            <span class="author__name">Ethan Cole</span>
+            <span class="author__role">Neuroscience Writer &amp; Educator</span>
+          </div>
+        </div>
+        <div class="author-card__bio">
+          <p>
+            Ethan Cole has spent the better part of a decade at the intersection
+            of cognitive science and practical self-improvement. After studying
+            behavioural neuroscience and watching too many smart people burn out
+            trying to optimise everything at once, he built NeuroPulse around a
+            simpler premise: understand the mechanism, change one thing at a time.
+          </p>
+          <p>
+            His writing focuses on the biology behind attention, sleep, and stress
+            — not as abstract concepts, but as levers you can actually pull. Every
+            NeuroPulse article starts with a question a real person asked and ends
+            with something you can try before midnight tonight.
+          </p>
+          <div class="author__tags">
+            <span class="tag">#sleep</span>
+            <span class="tag">#dopamine</span>
+            <span class="tag">#attention</span>
+            <span class="tag">#habits</span>
+            <span class="tag">#stress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ────────────────────────────────────────────────── -->
+  <section class="section values-section">
+    <div class="section__inner values__inner">
+      <div class="values__text">
+        <p class="eyebrow">// what we believe</p>
+        <h2 class="section__title">The NeuroPulse principles</h2>
+        <ol class="values__list">
+          <li>
+            <strong>Cite the mechanism.</strong> Every claim links back to a
+            known neurological process — not just correlation data.
+          </li>
+          <li>
+            <strong>One habit beats ten tips.</strong> We'd rather you do one
+            thing consistently than feel inspired and do nothing.
+          </li>
+          <li>
+            <strong>No wellness theatre.</strong> If it sounds soothing but has
+            no evidence, we won't recommend it.
+          </li>
+          <li>
+            <strong>Dark doesn't mean depressing.</strong> Understanding how
+            your brain defaults to stress is the first step to changing that
+            default — and that's genuinely hopeful.
+          </li>
+        </ol>
+      </div>
+      <div class="values__stat-stack">
+        <div class="stat-card">
+          <span class="stat__num">3+</span>
+          <span class="stat__label">articles per week</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat__num">100%</span>
+          <span class="stat__label">neuroscience-backed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat__num">0</span>
+          <span class="stat__label">supplements pushed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EMAIL CTA ─────────────────────────────────────────────── -->
+  <section class="section cta-section" id="subscribe">
+    <div class="section__inner cta__inner">
+      <p class="eyebrow">// free weekly brief</p>
+      <h2 class="section__title">Join the NeuroPulse list</h2>
+      <p class="cta__sub">
+        One email, once a week. The latest neuroscience distilled into one
+        habit you can act on immediately. No filler, unsubscribe anytime.
+      </p>
+      <div class="cta__form-wrap">
+        <LeadMagnet />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Shared layout ───────────────────────────────────── */
+  .section {
+    padding: 5rem 2rem;
+  }
+  .section__inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--cyan);
+    letter-spacing: 0.06em;
+    margin: 0 0 0.75rem;
+  }
+  .section__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 2.5rem;
+    line-height: 1.2;
+  }
+
+  /* ── Hero ────────────────────────────────────────────── */
+  .hero {
+    padding: 6rem 2rem 4rem;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(76, 224, 210, 0.06) 0%, transparent 70%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text);
+    margin: 0 0 1.5rem;
+    background: linear-gradient(135deg, var(--text) 40%, var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── Mission ─────────────────────────────────────────── */
+  .mission {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .mission__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .mission__card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .mission__card:hover {
+    border-color: rgba(76, 224, 210, 0.35);
+    transform: translateY(-3px);
+  }
+  .mission__icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .mission__card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+  }
+  .mission__card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── Author ──────────────────────────────────────────── */
+  .author-section {
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--border);
+  }
+  .author-card {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+  }
+  .author-card__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+    min-width: 120px;
+  }
+  .author__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(76, 224, 210, 0.1);
+    border: 2px solid rgba(76, 224, 210, 0.3);
+    color: var(--cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  .author__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    text-align: center;
+  }
+  .author__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+  }
+  .author__role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--cyan);
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+  .author-card__bio p {
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin: 0 0 1rem;
+    font-size: 0.975rem;
+  }
+  .author-card__bio p:last-of-type {
+    margin-bottom: 1.25rem;
+  }
+  .author__tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* ── Values ──────────────────────────────────────────── */
+  .values-section {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .values__inner {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 280px);
+    gap: 4rem;
+    align-items: start;
+  }
+  .values__list {
+    list-style: none;
+    counter-reset: vals;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .values__list li {
+    counter-increment: vals;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 0.975rem;
+  }
+  .values__list li::before {
+    content: "0" counter(vals);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--cyan);
+    flex-shrink: 0;
+    padding-top: 0.15em;
+  }
+  .values__list strong {
+    color: var(--text);
+  }
+  .values__stat-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: border-color 0.2s ease;
+  }
+  .stat-card:hover {
+    border-color: rgba(76, 224, 210, 0.35);
+  }
+  .stat__num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--cyan);
+    line-height: 1;
+  }
+  .stat__label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── CTA ─────────────────────────────────────────────── */
+  .cta-section {
+    background: var(--bg-elev);
+  }
+  .cta__inner {
+    text-align: center;
+  }
+  .cta__inner .eyebrow {
+    justify-content: center;
+    display: block;
+  }
+  .cta__sub {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 2rem;
+  }
+  .cta__form-wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .section { padding: 3.5rem 1.25rem; }
+    .hero { padding: 4rem 1.25rem 3rem; }
+
+    .author-card {
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .author-card__left {
+      flex-direction: row;
+      min-width: auto;
+      align-items: center;
+      text-align: left;
+    }
+    .author__meta { align-items: flex-start; text-align: left; }
+
+    .values__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .values__stat-stack {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .stat-card { flex: 1 1 130px; }
+  }
+</style>

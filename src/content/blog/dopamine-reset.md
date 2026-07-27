@@ -35,6 +35,17 @@ Replace the void with low-dopamine, high-effort activities.
 * **Write:** Journaling forces your brain to process thoughts rather than passively consuming them.
 * **Exercise:** Zone 2 cardio (like jogging or brisk walking) naturally elevates dopamine and serotonin without subsequent crashes.
 
+---
+
+**📚 Further Reading**
+
+If this sparked your curiosity, these books go deeper into the neuroscience:
+
+- [**Why We Sleep** by Matthew Walker](https://amzn.to/3sleep) — The definitive guide to sleep science (affiliate link)
+- [**Atomic Habits** by James Clear](https://amzn.to/3habits) — How tiny changes rewire your brain (affiliate link)
+
+---
+
 ## The Long-Term Neuro-Shift
 
 After 48 hours, mundane tasks will feel surprisingly engaging. The goal isn't to abstain from technology forever, but to regain conscious control over your attention allocation.

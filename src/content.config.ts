@@ -10,12 +10,12 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string().max(80),              // relaxed from 60 to handle long AI titles
-    description: z.string().min(50).max(300), // relaxed: n8n sometimes writes 50-300 chars
+    description: z.string().min(10).default(''), // allow short or missing descriptions
     pubDate: z.coerce.date(),
     author: z.string().default("Ethan Cole — Neuroscience Writer & Educator"),
     authorId: z.string().default("ethan-cole"),
-    tags: z.array(z.string()).min(1).max(10), // relaxed: n8n may send 0-10 tags
-    niche: z.string().optional(),
+    tags: z.array(z.string()).default([]), // fully optional — empty array if missing
+    niche: z.string().default('Neuroscience'), // default niche if missing
     videoUrl: z.string().url().optional().or(z.literal("")).optional(),
     draft: z.boolean().default(false),
   }),

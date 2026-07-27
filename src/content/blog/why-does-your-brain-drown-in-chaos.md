@@ -88,6 +88,17 @@ For those looking to support this process with something tangible, this is where
 
 ---
 
+---
+
+**📚 Further Reading**
+
+If this sparked your curiosity, these books go deeper into the neuroscience:
+
+- [**Why We Sleep** by Matthew Walker](https://amzn.to/3sleep) — The definitive guide to sleep science (affiliate link)
+- [**Atomic Habits** by James Clear](https://amzn.to/3habits) — How tiny changes rewire your brain (affiliate link)
+
+---
+
 ## Take Back Control of Your Mind
 
 Your brain isn't working against you—it's just running old programming in a modern world it wasn't quite built for. Once you understand the roles your prefrontal cortex, amygdala, dopamine, and thalamus play in nighttime chaos, the spiral loses its grip. Applying the principles behind Why does your brain drown in chaos? isn't about achieving perfect calm overnight; it's about giving your brain new signals to follow, one evening at a time. Tonight, pick just one small shift—dim the lights earlier, write down a looping thought, or simply notice the pattern without judgment. That single act is often enough to start rewriting the story your mind tells itself after dark.
