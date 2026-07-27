@@ -1,9 +1,9 @@
----
+﻿---
 title: "Why Late-Night Scrolling Leaves You Wired"
 description: "Late-night scrolling hyperactivates your brain's alarm system while weakening the region that calms it. Here's the neuroscience and how to work with it."
 slug: "late-night-scrolling-wired-brain"
 pubDate: "2026-07-17T09:00:00.000Z"
-author: "Ethan Cole — Neuroscience Writer & Educator"
+author: "Ethan Cole â€” Neuroscience Writer & Educator"
 authorId: "ethan-cole"
 tags: ["sleep", "screen-time", "focus", "stress", "habits"]
 niche: "neuroscience"
@@ -36,12 +36,12 @@ You might notice this as lying in bed feeling physically tired but mentally raci
 
 ---
 
-**📚 Further Reading**
+**ðŸ“š Further Reading**
 
 If this sparked your curiosity, these books go deeper into the neuroscience:
 
-- [**Why We Sleep** by Matthew Walker](https://amzn.to/3sleep) — The definitive guide to sleep science (affiliate link)
-- [**Atomic Habits** by James Clear](https://amzn.to/3habits) — How tiny changes rewire your brain (affiliate link)
+- [**Why We Sleep** by Matthew Walker](https://amazon.com/dp/0684832178?tag=neuropulse0e-20) â€” The definitive guide to sleep science (affiliate link)
+- [**Atomic Habits** by James Clear](https://amazon.com/dp/0735211299?tag=neuropulse0e-20) â€” How tiny changes rewire your brain (affiliate link)
 
 ---
 
@@ -57,3 +57,4 @@ About 60 minutes is a reasonable target for most people. The goal is to give you
 Supporting a smoother wind-down at night is associated with more restful sleep, which can support better focus and mental clarity the next day.
 
 This article is for educational purposes only and is not a substitute for professional guidance.
+

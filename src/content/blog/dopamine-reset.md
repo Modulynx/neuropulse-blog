@@ -1,4 +1,4 @@
----
+﻿---
 title: "The Neuro-Protocol for a 48-Hour Dopamine Reset"
 description: "Feeling constantly overwhelmed and unmotivated? Discover the science-backed 48-hour protocol to reset your dopamine baseline and regain focus."
 pubDate: 2026-07-18
@@ -37,12 +37,12 @@ Replace the void with low-dopamine, high-effort activities.
 
 ---
 
-**📚 Further Reading**
+**ðŸ“š Further Reading**
 
 If this sparked your curiosity, these books go deeper into the neuroscience:
 
-- [**Why We Sleep** by Matthew Walker](https://amzn.to/3sleep) — The definitive guide to sleep science (affiliate link)
-- [**Atomic Habits** by James Clear](https://amzn.to/3habits) — How tiny changes rewire your brain (affiliate link)
+- [**Why We Sleep** by Matthew Walker](https://amazon.com/dp/0684832178?tag=neuropulse0e-20) â€” The definitive guide to sleep science (affiliate link)
+- [**Atomic Habits** by James Clear](https://amazon.com/dp/0735211299?tag=neuropulse0e-20) â€” How tiny changes rewire your brain (affiliate link)
 
 ---
 
@@ -51,3 +51,4 @@ If this sparked your curiosity, these books go deeper into the neuroscience:
 After 48 hours, mundane tasks will feel surprisingly engaging. The goal isn't to abstain from technology forever, but to regain conscious control over your attention allocation.
 
 You are the CEO of your neurochemistry. Manage it deliberately.
+
