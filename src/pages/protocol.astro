@@ -1,0 +1,372 @@
+---
+// protocol.astro — dedicated sales page for The NeuroPulse Protocol ($9).
+// Standalone conversion page: hero → what's inside → who it's for →
+// guarantee → FAQ → closing CTA. Every button on this page points at
+// the same Gumroad checkout link; the copy exists to get someone from
+// "curious" to "click" once, not to be read start to finish.
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const PRODUCT_URL = "https://neurovibes.gumroad.com/l/neuropulse-protocol";
+
+const faqs = [
+  {
+    q: "Is this a subscription?",
+    a: "No. It's a single $9 payment, one time. You keep the guide forever — no recurring charges, no upsell funnel after checkout.",
+  },
+  {
+    q: "What do I actually get?",
+    a: "An instant digital download delivered by Gumroad the moment you pay — the full protocol plus the one-page cheat sheet, both as PDFs. Nothing shipped, nothing to wait for.",
+  },
+  {
+    q: "What if it doesn't work for me?",
+    a: "You have 30 days to actually use it. If it hasn't helped, email us and we'll refund you in full — no questions, no hoops.",
+  },
+];
+---
+
+<BaseLayout
+  title="The NeuroPulse Protocol — $9"
+  description="A practical, no-fluff protocol that turns neuroscience into a daily routine for focus and calm. $9, instant download, 30-day guarantee."
+>
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="eyebrow">// the protocol</p>
+      <h1 class="hero__title">Your brain didn't come with an instruction manual. This is one.</h1>
+      <p class="hero__subtitle">
+        You've read the neuroscience. You know why you're wired at midnight,
+        why your focus disappears by 2 p.m., why your mind won't stop
+        replaying the same three thoughts. Knowing the mechanism isn't the
+        same as fixing it. The NeuroPulse Protocol turns everything you've
+        learned into a simple routine you actually follow — so you spend
+        less time reading about your brain and more time running it well.
+      </p>
+      <a class="cta-btn" href={PRODUCT_URL} target="_blank" rel="noopener noreferrer">
+        Get It Now — $9
+      </a>
+      <p class="hero__reassure">Instant download · 30-day money-back guarantee</p>
+    </div>
+  </section>
+
+  <!-- ── WHAT'S INSIDE ─────────────────────────────────────────── -->
+  <section class="section inside">
+    <div class="section__inner">
+      <p class="eyebrow">// what's inside</p>
+      <h2 class="section__title">Three things, not thirty</h2>
+      <div class="inside__grid">
+        <div class="inside__card">
+          <div class="inside__mark" aria-hidden="true">▹</div>
+          <h3>The 48-Hour Dopamine Reset</h3>
+          <p>
+            A step-by-step protocol that breaks the scroll-check-repeat loop
+            and resets your baseline focus in two days — not two months.
+          </p>
+        </div>
+        <div class="inside__card">
+          <div class="inside__mark" aria-hidden="true">▹</div>
+          <h3>The Nightly Wind-Down Sequence</h3>
+          <p>
+            The exact evening routine that quiets an overactive amygdala and
+            finally lets a tired prefrontal cortex switch off for the night.
+          </p>
+        </div>
+        <div class="inside__card">
+          <div class="inside__mark" aria-hidden="true">▹</div>
+          <h3>The One-Page Daily Cheat Sheet</h3>
+          <p>
+            A printable reference so you never have to re-remember the
+            science — just follow the steps, every day, without thinking.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHO IT'S FOR ──────────────────────────────────────────── -->
+  <section class="section who">
+    <div class="section__inner who__inner">
+      <div class="who__col">
+        <p class="eyebrow">// good fit</p>
+        <h2 class="section__title">This is for you if</h2>
+        <ul class="who__list who__list--yes">
+          <li>You've read a NeuroPulse article and thought "okay, but what do I <em>do</em>?"</li>
+          <li>You're stuck in a loop of late-night scrolling, racing thoughts, or a low-grade dread you can't quite name.</li>
+          <li>You want one clear routine to follow, not another list of forty tips to remember.</li>
+        </ul>
+      </div>
+      <div class="who__col">
+        <p class="eyebrow">// not a fit</p>
+        <h2 class="section__title">This isn't for you if</h2>
+        <ul class="who__list who__list--no">
+          <li>You're looking for a supplement stack or a quick-fix pill.</li>
+          <li>You want a 40-page textbook instead of a routine you can start tonight.</li>
+          <li>You're dealing with a clinical condition — this is education, not a substitute for professional care.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUARANTEE ─────────────────────────────────────────────── -->
+  <section class="section guarantee">
+    <div class="section__inner guarantee__inner">
+      <div class="guarantee__badge" aria-hidden="true">30</div>
+      <div class="guarantee__copy">
+        <p class="eyebrow">// zero risk</p>
+        <h2 class="section__title">30-day money-back guarantee</h2>
+        <p>
+          Try the protocol for a full month. If it hasn't changed how your
+          evenings or your focus feel, email us and we'll refund every cent
+          — no questions, no forms, no guilt trip. You've got nothing to
+          lose except a bad night's sleep.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────── -->
+  <section class="section faq">
+    <div class="section__inner">
+      <p class="eyebrow">// questions</p>
+      <h2 class="section__title">Before you buy</h2>
+      <div class="faq__list">
+        {faqs.map((item) => (
+          <div class="faq__item">
+            <h3 class="faq__q">{item.q}</h3>
+            <p class="faq__a">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CLOSING CTA ───────────────────────────────────────────── -->
+  <section class="section closing">
+    <div class="section__inner closing__inner">
+      <h2 class="closing__title">Stop researching your brain. Start running it.</h2>
+      <a class="cta-btn" href={PRODUCT_URL} target="_blank" rel="noopener noreferrer">
+        Get It Now — $9
+      </a>
+      <p class="hero__reassure">Instant download · 30-day money-back guarantee</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Shared layout ───────────────────────────────────── */
+  .section { padding: 5rem 2rem; }
+  .section__inner { max-width: 960px; margin: 0 auto; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--cyan);
+    letter-spacing: 0.06em;
+    margin: 0 0 0.75rem;
+  }
+  .section__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 2rem;
+    line-height: 1.2;
+  }
+
+  /* ── CTA button (magenta — the only CTA color on the page) ── */
+  .cta-btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background: var(--magenta);
+    padding: 1rem 2.25rem;
+    border-radius: var(--radius);
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+  .cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+  .hero__reassure {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--text-dim);
+    margin: 1rem 0 0;
+  }
+
+  /* ── Hero ────────────────────────────────────────────── */
+  .hero {
+    padding: 6rem 2rem 4rem;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+  .hero__inner { max-width: 720px; margin: 0 auto; }
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text);
+    margin: 0 0 1.5rem;
+  }
+  .hero__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 2.25rem;
+  }
+
+  /* ── What's inside ─────────────────────────────────────── */
+  .inside { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .inside__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .inside__card {
+    position: relative;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .inside__card::before {
+    content: "";
+    position: absolute; inset: 0 auto 0 0; width: 3px;
+    background: var(--violet);
+  }
+  .inside__card:hover { border-color: rgba(139, 92, 246, 0.4); transform: translateY(-3px); }
+  .inside__mark {
+    font-family: var(--font-mono);
+    color: var(--violet);
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .inside__card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+  }
+  .inside__card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── Who it's for ──────────────────────────────────────── */
+  .who { background: var(--bg-elev); border-bottom: 1px solid var(--border); }
+  .who__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .who__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .who__list li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    font-size: 0.975rem;
+  }
+  .who__list--yes li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0;
+    color: var(--cyan);
+    font-weight: 700;
+  }
+  .who__list--no li::before {
+    content: "✕";
+    position: absolute; left: 0; top: 0;
+    color: var(--text-dim);
+    font-weight: 700;
+  }
+  .who__list em { color: var(--text); font-style: normal; font-weight: 600; }
+
+  /* ── Guarantee ─────────────────────────────────────────── */
+  .guarantee { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .guarantee__inner {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: linear-gradient(180deg, var(--bg-elev-2), var(--bg-elev));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    max-width: 900px;
+  }
+  .guarantee__badge {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.1);
+    border: 2px solid rgba(139, 92, 246, 0.35);
+    color: var(--violet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 900;
+  }
+  .guarantee__copy .section__title { margin-bottom: 0.75rem; }
+  .guarantee__copy p { color: var(--text-dim); line-height: 1.7; margin: 0; }
+
+  /* ── FAQ ───────────────────────────────────────────────── */
+  .faq { background: var(--bg-elev); }
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .faq__item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+  }
+  .faq__q {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.6rem;
+  }
+  .faq__a { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+  /* ── Closing CTA ───────────────────────────────────────── */
+  .closing {
+    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(240, 61, 138, 0.08) 0%, transparent 70%);
+    text-align: center;
+  }
+  .closing__inner { max-width: 640px; }
+  .closing__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 1.75rem;
+    line-height: 1.3;
+  }
+
+  /* ── Responsive ────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .section { padding: 3.5rem 1.25rem; }
+    .hero { padding: 4rem 1.25rem 3rem; }
+    .who__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .guarantee__inner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>

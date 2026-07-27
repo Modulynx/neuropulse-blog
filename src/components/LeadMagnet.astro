@@ -35,6 +35,16 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
       <button class="lm__btn" type="submit">Send it to me</button>
     </div>
   </form>
+  <!--
+    Post-submit redirect to /thank-you/: this form posts directly to Kit
+    (app.kit.com), so there's no client-side hook to redirect from after
+    submission — the browser just follows Kit's response.
+    Configure the redirect in Kit itself instead:
+      Kit dashboard → this Form → Settings → Success message →
+      "Redirect to a URL" → https://neuropulse-blog.vercel.app/thank-you/
+    Until that's set in Kit, subscribers will see Kit's default success
+    message rather than our /thank-you/ page.
+  -->
 </aside>
 
 <style>
