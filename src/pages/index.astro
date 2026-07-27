@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
+
+const allPosts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort by pubDate descending
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="NeuroPulse - Neuroscience & Cognitive Optimization">
+  
+  <section class="hero">
+    <div class="hero-content">
+      <div class="pill">Welcome to NeuroPulse</div>
+      <h1>Optimize Your <span class="highlight">Neurochemistry</span></h1>
+      <p>
+        Data-driven protocols to elevate your focus, manage dopamine, and reverse the effects of modern digital exhaustion.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="grid">
+      {sortedPosts.map(post => (
+        <ArticleCard 
+          slug={post.id}
+          title={post.data.title}
+          description={post.data.description}
+          niche={post.data.niche}
+          pubDate={post.data.pubDate}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+
+    <div class="lead-magnet-wrapper">
+      <LeadMagnet />
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(0, 243, 255, 0.05), transparent 50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .pill {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .highlight {
+    color: var(--cyan);
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .lead-magnet-wrapper {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+// ProtocolCallout.astro — contextual product callout.
+// Replaces [INSERT_PROTOCOL_CALLOUT]. Placed after the practical
+// takeaways section: the reader has just received value and is warmest.
+//
+// Design intent: distinct from the lead magnet (violet, not cyan/magenta)
+// so the two CTAs never compete or blur together. This is your own $9
+// product — no compliance risk, best margin — so it earns a confident
+// but not shouty treatment. One clear link, honest framing.
+const PRODUCT_URL = "https://neurovibes.gumroad.com/l/neuropulse-protocol";
+---
+
+<aside class="pc" aria-label="The NeuroPulse Protocol">
+  <div class="pc__mark" aria-hidden="true">▹</div>
+  <div class="pc__body">
+    <p class="pc__eyebrow">// go deeper</p>
+    <h3 class="pc__title">The NeuroPulse Protocol</h3>
+    <p class="pc__copy">
+      A practical, no-fluff guide that turns the science in articles like
+      this into a simple daily routine for focus and calm. $9, yours to keep.
+    </p>
+    <a class="pc__link" href={PRODUCT_URL} rel="noopener">
+      See what's inside →
+    </a>
+  </div>
+</aside>
+
+<style>
+  .pc {
+    display: flex;
+    gap: 1rem;
+    margin: 2.4rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, var(--bg-elev-2), var(--bg-elev));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+  .pc::before {
+    content: "";
+    position: absolute; inset: 0 auto 0 0; width: 3px;
+    background: var(--violet);
+  }
+  .pc__mark {
+    font-family: var(--font-mono);
+    color: var(--violet);
+    font-size: 1.4rem;
+    line-height: 1;
+    padding-top: 0.2rem;
+  }
+  .pc__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--violet);
+    letter-spacing: 0.06em;
+    margin: 0 0 0.4rem;
+  }
+  .pc__title { font-size: var(--step-1); margin: 0 0 0.4rem; }
+  .pc__copy { color: var(--text-dim); font-size: var(--step--1); margin: 0 0 0.9rem; }
+  .pc__link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--violet);
+    text-decoration: none;
+  }
+  .pc__link:hover { text-decoration: underline; }
+</style>

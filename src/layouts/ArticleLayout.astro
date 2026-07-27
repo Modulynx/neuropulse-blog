@@ -1,0 +1,94 @@
+---
+// ArticleLayout.astro — page shell: head, meta, schema, fonts.
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  author: string;
+  pubDate: Date;
+  tags: string[];
+  videoUrl?: string;
+  faq?: { q: string; a: string }[];
+}
+const { title, description, slug, author, pubDate, tags, videoUrl, faq = [] } = Astro.props;
+
+const SITE = "https://neuropulse.example"; // ← set to your real domain
+const canonical = `${SITE}/blog/${slug}/`;
+const isoDate = pubDate.toISOString();
+
+// JSON-LD: Article + optional VideoObject + optional FAQPage
+const graph: any[] = [
+  {
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: { "@type": "Person", name: "Ethan Cole" },
+    publisher: { "@type": "Organization", name: "NeuroPulse" },
+    mainEntityOfPage: canonical,
+    keywords: tags.join(", "),
+  },
+];
+if (videoUrl) {
+  graph.push({
+    "@type": "VideoObject",
+    name: title,
+    description,
+    uploadDate: isoDate,
+    contentUrl: videoUrl,
+    thumbnailUrl: `${SITE}/og/${slug}.jpg`,
+  });
+}
+if (faq.length) {
+  graph.push({
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  });
+}
+const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · NeuroPulse</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="article:author" content={author} />
+
+    <!-- Fonts: preconnect + display=swap so text renders instantly (no CLS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <script type="application/ld+json" set:html={jsonLd} />
+
+    <!-- Plausible Analytics (self-hosted, cookie-free) -->
+    <script defer data-domain="neuropulse.blog" src="http://localhost:8000/js/pa-5o2PJZo8HftKwctPlgeFO.js"></script>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,222 @@
+---
+// Navbar.astro — sticky navigation header
+// Design: Blueprint dark theme, cyan accent, magenta CTA button
+// Behavior: adds glass effect on scroll via IntersectionObserver trick
+
+const navLinks = [
+  { label: "Blog", href: "/blog/" },
+  { label: "About", href: "/about/" },
+];
+---
+
+<header class="nav" id="site-nav">
+  <div class="nav__inner">
+    <!-- Logo -->
+    <a class="nav__logo" href="/" aria-label="NeuroPulse Home">
+      <span class="nav__logo-text">NeuroPulse</span><span class="nav__logo-dot" aria-hidden="true">●</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav__links" aria-label="Main navigation">
+      {navLinks.map(link => (
+        <a class="nav__link" href={link.href}>{link.label}</a>
+      ))}
+      <a class="nav__cta" href="/blog/" id="nav-cta">Get the Guide</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button class="nav__burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
+    {navLinks.map(link => (
+      <a class="nav__mobile-link" href={link.href}>{link.label}</a>
+    ))}
+    <a class="nav__mobile-cta" href="/blog/">Get the Guide →</a>
+  </div>
+</header>
+
+<script>
+  // Scroll: add glass effect
+  const nav = document.getElementById('site-nav');
+  const observer = new IntersectionObserver(
+    ([e]) => nav?.classList.toggle('nav--scrolled', e.intersectionRatio < 1),
+    { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
+  );
+  if (nav) observer.observe(nav);
+
+  // Mobile toggle
+  const burger = document.getElementById('nav-burger');
+  const mobileMenu = document.getElementById('nav-mobile');
+  burger?.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(isOpen));
+    mobileMenu?.classList.toggle('nav__mobile--open', !isOpen);
+    burger.classList.toggle('nav__burger--open', !isOpen);
+  });
+</script>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 8, 16, 0.85);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, backdrop-filter 0.3s ease, background 0.3s ease;
+  }
+
+  .nav--scrolled {
+    background: rgba(5, 8, 16, 0.92);
+    border-bottom-color: var(--border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  /* Logo */
+  .nav__logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav__logo-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
+  }
+  .nav__logo:hover .nav__logo-text { color: var(--cyan); }
+  .nav__logo-dot {
+    font-size: 0.5rem;
+    color: var(--cyan);
+    line-height: 1;
+    margin-left: 1px;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Desktop links */
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .nav__link {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .nav__link:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* CTA button */
+  .nav__cta {
+    font-family: var(--font-display);
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    background: var(--magenta);
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    transition: filter 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav__cta:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  /* Hamburger */
+  .nav__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .nav__burger:hover { background: rgba(255,255,255,0.05); }
+  .nav__burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav__burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav__burger--open span:nth-child(2) { opacity: 0; }
+  .nav__burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .nav__mobile {
+    display: none;
+    flex-direction: column;
+    padding: 0.75rem 1.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+    background: rgba(5, 8, 16, 0.97);
+    gap: 0.25rem;
+  }
+  .nav__mobile--open { display: flex; }
+  .nav__mobile-link {
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    font-weight: 500;
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s ease;
+  }
+  .nav__mobile-link:hover { color: var(--cyan); }
+  .nav__mobile-cta {
+    font-family: var(--font-display);
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--magenta);
+    text-decoration: none;
+    padding: 0.75rem 0.5rem;
+    margin-top: 0.25rem;
+    transition: opacity 0.2s ease;
+  }
+  .nav__mobile-cta:hover { opacity: 0.8; }
+
+  @media (max-width: 640px) {
+    .nav__links { display: none; }
+    .nav__burger { display: flex; }
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+// LeadMagnet.astro — inline email opt-in.
+// Replaces [INSERT_LEAD_MAGNET]. Placed after the mechanism section,
+// the article's peak-engagement point.
+//
+// Design intent: reads as a "field note" pulled from the article, not a
+// banner ad. Cyan hairline + mono eyebrow ties it to the neuroscience
+// subject; the single magenta button is the only high-chroma element,
+// so the eye goes straight to the one action.
+//
+// The <form> posts to your existing ESP endpoint — no client JS, so it
+// costs nothing on Core Web Vitals. Swap ACTION for your real endpoint.
+const ACTION = "https://YOUR-ESP-ENDPOINT/subscribe";
+---
+
+<aside class="lm" aria-label="Free guide sign-up">
+  <p class="lm__eyebrow">// free guide</p>
+  <h3 class="lm__title">Get the 7 Brain Hacks cheat sheet</h3>
+  <p class="lm__copy">
+    One short email, the science-backed habits behind sharper focus and
+    calmer evenings. No spam, unsubscribe anytime.
+  </p>
+  <form class="lm__form" action={ACTION} method="POST">
+    <label class="lm__label" for="lm-email">Email address</label>
+    <div class="lm__row">
+      <input
+        class="lm__input"
+        id="lm-email"
+        type="email"
+        name="email"
+        placeholder="you@email.com"
+        required
+        autocomplete="email"
+      />
+      <button class="lm__btn" type="submit">Send it to me</button>
+    </div>
+  </form>
+</aside>
+
+<style>
+  .lm {
+    margin: 2.4rem 0;
+    padding: 1.6rem 1.5rem;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: var(--radius);
+  }
+  .lm__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    color: var(--cyan);
+    letter-spacing: 0.06em;
+    margin: 0 0 0.5rem;
+  }
+  .lm__title { font-size: var(--step-1); margin: 0 0 0.4rem; }
+  .lm__copy { color: var(--text-dim); font-size: var(--step--1); margin: 0 0 1.1rem; }
+  .lm__label {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0 0 0 0);  /* visually hidden, screen-reader OK */
+  }
+  .lm__row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .lm__input {
+    flex: 1 1 220px;
+    min-width: 0;
+    padding: 0.8rem 0.9rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font: inherit;
+  }
+  .lm__input::placeholder { color: var(--text-dim); }
+  .lm__btn {
+    flex: 0 0 auto;
+    padding: 0.8rem 1.4rem;
+    background: var(--magenta);
+    color: #fff;
+    font: 600 var(--step-0)/1 var(--font-display);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+  }
+  .lm__btn:hover { filter: brightness(1.08); }
+  @media (max-width: 480px) {
+    .lm__btn { flex: 1 1 100%; }
+  }
+</style>
