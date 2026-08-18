@@ -19,18 +19,18 @@ interface Props {
   niche?: string;
   pubDate: Date;
   tags: string[];
-  thumb?: string; // optional extracted video frame
+  heroImage?: string; // optional hero image path
   readingTime?: number; // optional, estimated minutes — omitted if not provided
 }
-const { title, slug, description, niche = "neuroscience", pubDate, tags, thumb, readingTime } = Astro.props;
+const { title, slug, description, niche = "neuroscience", pubDate, tags, heroImage, readingTime } = Astro.props;
 const href = `/blog/${slug}/`;
 const dateLabel = pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 ---
 
 <article class="card">
   <div class="card__media" aria-hidden="true">
-    {thumb ? (
-      <img class="card__img" src={thumb} alt="" loading="lazy" decoding="async" width="640" height="360" />
+    {heroImage ? (
+      <img class="card__img" src={heroImage} alt="" loading="lazy" decoding="async" width="640" height="360" />
     ) : (
       <div class="card__placeholder">
         <span class="card__glyph">▟</span>

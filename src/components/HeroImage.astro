@@ -1,0 +1,90 @@
+﻿---
+// HeroImage.astro — Smart hero image with beautiful CSS fallback
+// When heroImage is provided: shows real image
+// When not provided: generates branded gradient based on niche (FREE, no API needed)
+
+interface Props {
+  heroImage?: string;
+  title: string;
+  niche?: string;
+}
+
+const { heroImage, title, niche = 'neuroscience' } = Astro.props;
+
+// Gradient map per niche/topic keyword
+const gradients: Record<string, string> = {
+  'neuroscience': 'radial-gradient(ellipse at 20% 50%, #0d2137 0%, #050810 50%), radial-gradient(ellipse at 80% 20%, rgba(76,224,210,0.15) 0%, transparent 60%)',
+  'dopamine': 'radial-gradient(ellipse at 30% 60%, #1a0d37 0%, #050810 50%), radial-gradient(ellipse at 70% 30%, rgba(139,92,246,0.2) 0%, transparent 60%)',
+  'sleep': 'radial-gradient(ellipse at 50% 80%, #0d1537 0%, #050810 50%), radial-gradient(ellipse at 50% 10%, rgba(76,224,210,0.1) 0%, transparent 60%)',
+  'focus': 'radial-gradient(ellipse at 10% 40%, #0d2d37 0%, #050810 50%), radial-gradient(ellipse at 90% 60%, rgba(76,224,210,0.2) 0%, transparent 60%)',
+  'stress': 'radial-gradient(ellipse at 60% 30%, #2d0d0d 0%, #050810 50%), radial-gradient(ellipse at 30% 70%, rgba(240,20,125,0.15) 0%, transparent 60%)',
+  'default': 'radial-gradient(ellipse at 30% 40%, #0a1628 0%, #050810 60%), radial-gradient(ellipse at 70% 60%, rgba(76,224,210,0.08) 0%, transparent 50%)',
+};
+
+const nicheKey = Object.keys(gradients).find(k => niche?.toLowerCase().includes(k)) ?? 'default';
+const bg = gradients[nicheKey];
+---
+
+{heroImage ? (
+  <img
+    class="hero-img"
+    src={heroImage}
+    alt={title}
+    loading="eager"
+    decoding="async"
+    width="1200"
+    height="675"
+  />
+) : (
+  <div class="hero-gradient" style={`background: ${bg};`} aria-hidden="true">
+    <div class="hero-gradient__inner">
+      <span class="hero-gradient__glyph">◈</span>
+      <div class="hero-gradient__lines">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-gradient {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-gradient__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.4;
+  }
+  .hero-gradient__glyph {
+    font-size: 3rem;
+    color: #4ce0d2;
+    font-family: ui-monospace, monospace;
+  }
+  .hero-gradient__lines {
+    display: flex;
+    gap: 6px;
+  }
+  .hero-gradient__lines span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: #4ce0d2;
+    opacity: 0.5;
+  }
+  .hero-gradient__lines span:nth-child(1) { width: 40px; }
+  .hero-gradient__lines span:nth-child(2) { width: 24px; }
+  .hero-gradient__lines span:nth-child(3) { width: 16px; }
+</style>

@@ -4,6 +4,7 @@ description: "Discover the neuroscience of ultradian rhythms and learn how 90-mi
 pubDate: 2026-08-03
 niche: brain-health
 tags: ["neuroscience", "focus", "brain health", "productivity"]
+heroImage: '/images/blog/hero-focus-block.jpg'
 readTime: 8
 affiliate:
   book:

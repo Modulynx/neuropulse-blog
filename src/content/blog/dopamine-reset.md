@@ -1,10 +1,11 @@
-﻿---
+---
 title: "The Neuro-Protocol for a 48-Hour Dopamine Reset"
 description: "Feeling constantly overwhelmed and unmotivated? Discover the science-backed 48-hour protocol to reset your dopamine baseline and regain focus."
 pubDate: 2026-07-18
 tags: ["dopamine", "neuroscience", "focus", "productivity", "mental health"]
 niche: "Neuroscience"
 draft: false
+heroImage: '/images/blog/hero-dopamine-reset.jpg'
 ---
 
 ## The Modern Attention Crisis

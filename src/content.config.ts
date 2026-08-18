@@ -18,6 +18,7 @@ const blog = defineCollection({
     niche: z.string().default('Neuroscience'), // default niche if missing
     videoUrl: z.string().url().optional().or(z.literal("")).optional(),
     draft: z.boolean().default(false),
+    heroImage: z.string().optional(),
   }),
 });
 

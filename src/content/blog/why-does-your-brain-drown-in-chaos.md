@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Why does your brain drown in chaos?"
 description: "Struggling with a racing mind? Discover why your brain manufactures chaos at night and the science-backed way to finally quiet the mental noise."
 pubDate: "2026-07-26T23:39:42.592Z"
@@ -8,6 +8,7 @@ tags: ["neuroscience", "sleep", "anxiety", "focus"]
 niche: "Neuroscience"
 videoUrl: ""
 draft: false
+heroImage: '/images/blog/hero-brain-chaos.jpg'
 ---
 # Why does your brain drown in chaos?
 

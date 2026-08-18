@@ -4,6 +4,7 @@ description: "Explore the hard neuroscience behind deliberate cold exposure. Dis
 pubDate: 2026-08-03
 niche: brain-health
 tags: ["neuroscience", "cold exposure", "brain health", "resilience"]
+heroImage: '/images/blog/hero-cold-showers.jpg'
 readTime: 8
 affiliate:
   book:

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Why Late-Night Scrolling Leaves You Wired"
 description: "Late-night scrolling hyperactivates your brain's alarm system while weakening the region that calms it. Here's the neuroscience and how to work with it."
 slug: "late-night-scrolling-wired-brain"
@@ -9,6 +9,7 @@ tags: ["sleep", "screen-time", "focus", "stress", "habits"]
 niche: "neuroscience"
 videoUrl: ""
 draft: false
+heroImage: '/images/blog/hero-night-scrolling.jpg'
 ---
 
 Late-night scrolling leaves you wired because it hyperactivates your brain's alarm system right when it should be powering down. If you've ever felt exhausted but unable to switch off after putting your phone down, this is why, and it's more about your brain's circuitry than your willpower.

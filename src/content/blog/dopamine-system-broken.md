@@ -4,6 +4,7 @@ description: "Learn the neuroscience behind dopamine depletion, identify the sig
 pubDate: 2026-08-03
 niche: brain-health
 tags: ["neuroscience", "dopamine", "brain health", "focus"]
+heroImage: '/images/blog/hero-dopamine-broken.jpg'
 readTime: 8
 affiliate:
   book:
