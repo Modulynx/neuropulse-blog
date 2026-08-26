@@ -147,4 +147,52 @@ const social = [
 
   .bottom-cta { padding: 5rem 0 6rem; background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(76,224,210,0.06) 0%, transparent 70%); }
   .bottom-cta__inner { max-width: 640px; margin-inline: auto; }
+
+  /* ── Form highlight animation when CTA is clicked ── */
+  @keyframes form-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(76,224,210,0); border-color: var(--border); }
+    30%  { box-shadow: 0 0 0 8px rgba(76,224,210,0.25); border-color: var(--cyan); }
+    60%  { box-shadow: 0 0 0 16px rgba(76,224,210,0.08); border-color: var(--cyan); }
+    100% { box-shadow: 0 0 0 0 rgba(76,224,210,0); border-color: var(--cyan); }
+  }
+  .capture-form--highlight input[type="email"] {
+    animation: form-pulse 0.9s ease forwards;
+  }
 </style>
+
+<script>
+  // When the page loads with #capture hash OR user clicks the navbar CTA
+  // while already on the guide page → highlight the form + focus input
+  function activateForm() {
+    const form = document.querySelector('.capture-form');
+    const input = document.querySelector('.capture-form input[type="email"]');
+    if (!form || !input) return;
+
+    // Add highlight class to trigger animation
+    form.classList.add('capture-form--highlight');
+
+    // Remove after animation ends so it can re-trigger
+    form.addEventListener('animationend', () => {
+      form.classList.remove('capture-form--highlight');
+    }, { once: true });
+
+    // Focus the input so user can start typing immediately
+    input.focus();
+  }
+
+  // Trigger on page load if #capture is in URL
+  if (window.location.hash === '#capture') {
+    // Small delay to ensure scroll has settled
+    setTimeout(activateForm, 350);
+  }
+
+  // Also intercept navbar CTA clicks while on /guide/
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href="/guide/#capture"]');
+    if (link && window.location.pathname === '/guide/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(activateForm, 400);
+    }
+  });
+</script>
