@@ -12,7 +12,7 @@ const blog = defineCollection({
     title: z.string().max(80),              // relaxed from 60 to handle long AI titles
     description: z.string().min(10).default(''), // allow short or missing descriptions
     pubDate: z.coerce.date(),
-    author: z.string().default("Ethan Cole — Neuroscience Writer & Educator"),
+    author: z.string().default("The NeuroPulse Team"),
     authorId: z.string().default("ethan-cole"),
     tags: z.array(z.string()).default([]), // fully optional — empty array if missing
     niche: z.string().default('Neuroscience'), // default niche if missing
