@@ -9,7 +9,7 @@ tags: ["focus", "habits", "energy", "sleep", "neuroscience"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
-heroImage: ""
+heroImage: '/images/blog/hero-coffee-timing.jpg'
 ---
 
 You wake up, reach for the coffee maker before you've even fully opened your eyes, and by 8am you've had your first cup. It feels like the smart move — fuel up early, get ahead of the day.
