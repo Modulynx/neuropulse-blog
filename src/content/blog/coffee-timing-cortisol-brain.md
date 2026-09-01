@@ -1,5 +1,5 @@
 ---
-title: "The Coffee Timing Mistake That's Draining Your Energy (And Most Americans Make It)"
+title: "The Coffee Timing Mistake Most Americans Don't Know About"
 description: "Drinking coffee first thing in the morning actually makes your afternoon crash worse. Here's the neuroscience behind cortisol, adenosine, and the 90-minute rule that changes everything."
 slug: "coffee-timing-cortisol-brain"
 pubDate: "2026-09-01T20:00:00.000Z"
