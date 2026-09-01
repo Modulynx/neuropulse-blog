@@ -1,16 +1,6 @@
 ---
-// ArticleCard.astro — single article card for the /blog grid.
-//
-// Design intent: each card reads like a "specimen slide" from the
-// neuroscience world — a thin cyan scan-line sweeps on hover, the mono
-// eyebrow tags the niche like a lab label, and the whole card is one
-// large tap target (the title link stretches to fill it). The arrow is
-// the only moving part on hover, so the click cue is unmistakable
-// without the card feeling busy.
-//
-// The snippet is derived from the description (meta) — already written as
-// a curiosity gap by the generation prompt, so it does double duty as
-// SEO meta AND card copy. No separate excerpt field needed.
+// ArticleCard.astro — editorial magazine card
+// Clean, human, warm dark — no AI scan-lines or code-style labels.
 
 interface Props {
   title: string;
@@ -19,48 +9,41 @@ interface Props {
   niche?: string;
   pubDate: Date;
   tags: string[];
-  heroImage?: string; // optional hero image path
-  readingTime?: number; // optional, estimated minutes — omitted if not provided
+  heroImage?: string;
+  readingTime?: number;
 }
-const { title, slug, description, niche = "neuroscience", pubDate, tags, heroImage, readingTime } = Astro.props;
+const { title, slug, description, niche = "Neuroscience", pubDate, tags, heroImage, readingTime } = Astro.props;
 const href = `/blog/${slug}/`;
 const dateLabel = pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 ---
 
 <article class="card">
-  <div class="card__media" aria-hidden="true">
-    {heroImage ? (
-      <img class="card__img" src={heroImage} alt="" loading="lazy" decoding="async" width="640" height="360" />
-    ) : (
-      <div class="card__placeholder">
-        <span class="card__glyph">▟</span>
-      </div>
-    )}
-    <span class="card__scan"></span>
-  </div>
+  <a class="card__media-link" href={href} tabindex="-1" aria-hidden="true">
+    <div class="card__media">
+      {heroImage ? (
+        <img class="card__img" src={heroImage} alt="" loading="lazy" decoding="async" width="640" height="360" />
+      ) : (
+        <div class="card__placeholder">
+          <span class="card__icon">🧠</span>
+        </div>
+      )}
+    </div>
+  </a>
 
   <div class="card__body">
-    <p class="card__eyebrow">// {niche}</p>
+    <span class="card__tag">{niche}</span>
     <h2 class="card__title">
       <a class="card__link" href={href}>{title}</a>
     </h2>
     <p class="card__snippet">{description}</p>
 
     <div class="card__foot">
-      <span class="card__meta">
-        <time class="card__date" datetime={pubDate.toISOString()}>{dateLabel}</time>
-        {typeof readingTime === "number" && (
-          <>
-            <span class="card__meta-dot" aria-hidden="true">·</span>
-            <span class="card__reading-time">// {readingTime} min read</span>
-          </>
-        )}
-      </span>
+      <time class="card__date" datetime={pubDate.toISOString()}>{dateLabel}</time>
+      {typeof readingTime === "number" && (
+        <span class="card__read-time">{readingTime} min read</span>
+      )}
       <span class="card__more">
-        Read
-        <svg class="card__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        Read →
       </span>
     </div>
   </div>
@@ -75,64 +58,109 @@ const dateLabel = pubDate.toLocaleDateString("en-US", { month: "short", day: "nu
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
   }
-  .card:hover { border-color: var(--cyan); transform: translateY(-3px); }
-  .card:focus-within { border-color: var(--cyan); }
+  .card:hover {
+    border-color: #444;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
 
   /* Media */
-  .card__media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg); }
-  .card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card__media-link { display: block; }
+  .card__media {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg-elev-2);
+  }
+  .card__img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.4s ease;
+  }
+  .card:hover .card__img { transform: scale(1.03); }
   .card__placeholder {
     width: 100%; height: 100%;
     display: grid; place-items: center;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(76,224,210,0.10), transparent 60%),
-      radial-gradient(circle at 80% 80%, rgba(139,92,246,0.10), transparent 55%),
-      var(--bg-elev-2);
+    background: var(--bg-elev-2);
   }
-  .card__glyph { font-family: var(--font-mono); font-size: 2.4rem; color: var(--cyan); opacity: 0.35; }
-
-  /* Cyan scan-line sweep on hover */
-  .card__scan {
-    position: absolute; left: 0; right: 0; top: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    transform: translateY(-2px);
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-  }
-  .card:hover .card__scan { transform: translateY(calc(100% * 5)); opacity: 1; }
+  .card__icon { font-size: 2.5rem; }
 
   /* Body */
-  .card__body { display: flex; flex-direction: column; gap: 0.55rem; padding: 1.15rem 1.2rem 1.25rem; flex: 1; }
-  .card__eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--cyan);
-    letter-spacing: 0.06em;
+  .card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.1rem 1.15rem 1.2rem;
+    flex: 1;
+  }
+
+  /* Category tag — warm amber, not cyan (cyan = AI/tech) */
+  .card__tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .card__title {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    font-weight: 700;
+    line-height: 1.3;
     margin: 0;
   }
-  .card__title { font-size: var(--step-1); line-height: 1.25; margin: 0; }
-  /* Stretched link = whole card is clickable, but text stays selectable */
-  .card__link { color: var(--text); text-decoration: none; }
+  .card__link {
+    color: var(--text);
+    text-decoration: none;
+  }
   .card__link::after { content: ""; position: absolute; inset: 0; }
-  .card:hover .card__link { color: var(--cyan); }
-  .card__snippet { color: var(--text-dim); font-size: var(--step--1); margin: 0; flex: 1; }
+  .card:hover .card__link { color: #fff; }
+
+  .card__snippet {
+    color: var(--text-dim);
+    font-size: var(--step--1);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+    /* Clamp to 3 lines on mobile for cleanliness */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   .card__foot {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-top: 0.6rem; padding-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border);
+    flex-wrap: wrap;
   }
-  .card__meta { display: inline-flex; align-items: center; gap: 0.4rem; min-width: 0; }
-  .card__date { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); white-space: nowrap; }
-  .card__meta-dot { color: var(--text-dim); opacity: 0.6; }
-  .card__reading-time { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); white-space: nowrap; }
+  .card__date {
+    font-family: var(--font-body);
+    font-size: var(--step--1);
+    color: var(--text-dim);
+  }
+  .card__read-time {
+    font-size: var(--step--1);
+    color: var(--text-dim);
+  }
   .card__more {
-    display: inline-flex; align-items: center; gap: 0.35rem;
-    font-family: var(--font-display); font-weight: 600; font-size: var(--step--1);
+    margin-left: auto;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--step--1);
     color: var(--cyan);
+    white-space: nowrap;
   }
-  .card__arrow { transition: transform 0.2s ease; }
-  .card:hover .card__arrow { transform: translateX(4px); }
 </style>

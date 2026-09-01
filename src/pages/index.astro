@@ -18,10 +18,10 @@ const sortedPosts = allPosts.sort(
   
   <section class="hero">
     <div class="hero-content">
-      <div class="pill">Welcome to NeuroPulse</div>
-      <h1>Optimize Your <span class="highlight">Neurochemistry</span></h1>
-      <p>
-        Data-driven protocols to elevate your focus, manage dopamine, and reverse the effects of modern digital exhaustion.
+      <span class="label">NeuroPulse Field Notes</span>
+      <h1>Neuroscience, in Plain English</h1>
+      <p class="tagline">
+        Short, science-backed reads on how everyday moments shape your brain — focus, sleep, stress, and attention, explained simply.
       </p>
     </div>
   </section>
@@ -49,78 +49,66 @@ const sortedPosts = allPosts.sort(
 
 <style>
   .hero {
-    padding: 6rem 2rem;
+    padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(2.5rem, 6vw, 4rem);
     text-align: center;
-    background: radial-gradient(circle at top, rgba(0, 243, 255, 0.05), transparent 50%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
   }
-  
+
   .hero-content {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
-  .pill {
-    background: rgba(0, 243, 255, 0.1);
-    color: var(--cyan);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-size: 0.875rem;
+  /* Simple editorial label — no glowing pill */
+  .label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    border: 1px solid rgba(0, 243, 255, 0.2);
+    color: var(--amber);
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
-    line-height: 1.1;
-    color: var(--text-primary);
+    line-height: 1.15;
+    color: var(--text);
     margin: 0;
+    letter-spacing: -0.01em;
   }
 
-  .highlight {
-    color: var(--cyan);
-    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-  }
-
-  p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    line-height: 1.6;
+  .tagline {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: var(--text-dim);
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0;
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 5vw, 4rem) 1.5rem;
   }
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .lead-magnet-wrapper {
-    margin-top: 4rem;
-    padding-top: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-    .grid {
-      grid-template-columns: 1fr;
-    }
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
   }
 </style>
+

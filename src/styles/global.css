@@ -1,35 +1,36 @@
 /* ────────────────────────────────────────────────────────────
-   NeuroPulse "Blueprint" design tokens
-   Ported directly from the existing brand identity so the blog
-   is visually continuous with the videos and landing page.
+   NeuroPulse — Editorial Design Tokens
+   Warm dark editorial aesthetic — magazine, not AI/cyberpunk.
+   Brand accent colors reserved for CTAs only.
    ──────────────────────────────────────────────────────────── */
 :root {
-  /* Palette */
-  --bg: #050810;            /* deep navy-black (canonical Blueprint value) */
-  --bg-elev: #111726;       /* elevated surface (cards, callouts) */
-  --bg-elev-2: #161D30;     /* hover / nested surface */
-  --border: #1F2A44;        /* hairline structural lines */
-  --text: #E8ECF5;          /* primary body text (high contrast on bg) */
-  --text-dim: #A2ADC6;      /* secondary / captions */
-  --cyan: #4CE0D2;          /* primary accent — signal, focus */
-  --magenta: #FF3D8A;       /* conversion accent — used ONLY on CTAs */
-  --violet: #8B5CF6;        /* tertiary accent — product callout */
+  /* Palette — warm editorial dark */
+  --bg: #0E0E0E;            /* warm near-black (no blue tint) */
+  --bg-elev: #181818;       /* card surfaces */
+  --bg-elev-2: #222222;     /* hover / nested surface */
+  --border: #2E2E2E;        /* warm gray hairlines */
+  --text: #F0EDE8;          /* warm white body text */
+  --text-dim: #9A9590;      /* warm gray secondary */
+  --cyan: #4CE0D2;          /* brand accent — CTAs only */
+  --magenta: #FF3D8A;       /* conversion accent — CTAs only */
+  --violet: #8B5CF6;        /* product callout */
+  --amber: #F59E0B;         /* category tags */
 
-  /* Type */
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Type — editorial magazine feel */
+  --font-display: "Playfair Display", Georgia, serif;   /* editorial headlines */
+  --font-body: "Inter", system-ui, sans-serif;          /* clean body */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace; /* code only */
 
   /* Scale (fluid, clamps to mobile) */
-  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
-  --step-0:  clamp(1.05rem, 1rem + 0.25vw, 1.15rem);   /* body */
-  --step-1:  clamp(1.3rem, 1.2rem + 0.5vw, 1.5rem);
-  --step-2:  clamp(1.7rem, 1.5rem + 1vw, 2.1rem);      /* H2 */
-  --step-3:  clamp(2.2rem, 1.9rem + 1.6vw, 3rem);      /* H1 */
+  --step--1: clamp(0.8rem, 0.78rem + 0.12vw, 0.88rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.22vw, 1.1rem);    /* body */
+  --step-1:  clamp(1.25rem, 1.15rem + 0.48vw, 1.45rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 0.95vw, 2rem);     /* H2 */
+  --step-3:  clamp(2rem, 1.7rem + 1.5vw, 2.8rem);      /* H1 */
 
   /* Rhythm */
-  --measure: 68ch;          /* reading line length */
-  --radius: 14px;
+  --measure: 66ch;          /* reading line length */
+  --radius: 10px;
   --space: 1.5rem;
 }
 
