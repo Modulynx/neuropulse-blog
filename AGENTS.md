@@ -31,7 +31,7 @@ Fonts: Playfair Display (display), Inter (body) — NO monospace in UI
 Colors: --bg #0E0E0E, --amber #D4A853, --cyan #4CE0D2
 NO emoji as icons → inline SVG only
 NO // prefix eyebrows → plain uppercase text labels
-Author: "The NeuroPulse Team" | Character: Dr. Pulse (AI character, not real doctor)
+Author: "The NeuroPulse Team" | Character: Dr. Neuro (AI character, not real doctor)
 
 ## Schema Rules (content.config.ts) — CRITICAL
 title: max 80 chars — BREAKS BUILD if exceeded
@@ -55,7 +55,7 @@ src/components/ArticleCard.astro = Cards (SVG placeholder)
 
 ## Infrastructure
 Domain: neuropulsemind.com (Porkbun) | Email: hello@neuropulsemind.com (Zoho)
-Instagram: @nrplse (Bio -> /guide/) | YouTube: @NeuroPulseMind
+Instagram: @neuropulsemind (Bio -> /guide/) | YouTube: @NeuroPulseMind
 
 ## PowerShell Note
 Use ; not && to chain commands: git add -A; git commit -m "msg"; git push origin main
@@ -113,7 +113,7 @@ n8n Dev: localhost:5678 (ThinkPad)
 n8n Prod: n8n.reelflow.online (Dell - EXPIRES 31 Aug 2026 URGENT)
 
 ## Social
-Instagram: @nrplse (Business, Facebook linked)
+Instagram: @neuropulsemind (Business, Facebook linked)
 YouTube: @NeuroPulseMind
 
 ## PowerShell Note
