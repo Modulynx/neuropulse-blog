@@ -1,0 +1,20 @@
+---
+// QuizCallout.astro — replaces the old "7 Brain Hacks" opt-in (that guide never existed):
+// the free lead magnet is now the 60-second quiz, which leads to the per-switch email guide.
+---
+
+<aside class="qc" aria-label="Free brain-switch quiz">
+  <p class="qc__eyebrow">// free · 60 seconds</p>
+  <h3 class="qc__title">Which brain switch is off?</h3>
+  <p class="qc__copy">Foggy, forgetful or wired-but-tired? Ten quick questions show where to start — and one thing to do today.</p>
+  <a class="qc__btn" href="/quiz/?utm_source=article">Take the quiz</a>
+</aside>
+
+<style>
+  .qc { margin: 2.4rem 0; padding: 1.6rem 1.5rem; background: var(--bg-elev); border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: var(--radius); }
+  .qc__eyebrow { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); letter-spacing: 0.06em; margin: 0 0 0.5rem; }
+  .qc__title { font-size: var(--step-1); margin: 0 0 0.4rem; }
+  .qc__copy { color: var(--text-dim); font-size: var(--step--1); margin: 0 0 1.1rem; }
+  .qc__btn { display: inline-block; padding: 0.8rem 1.4rem; background: var(--magenta); color: #fff; font: 600 var(--step-0)/1 var(--font-display); border-radius: 10px; text-decoration: none; }
+  .qc__btn:hover { filter: brightness(1.08); }
+</style>

@@ -1,0 +1,58 @@
+---
+// /start — the link-in-bio hub: quiz first (the lead magnet), then the latest pages, tools, product.
+// Built from the blog collection, so every new article appears here with no extra step.
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { PRODUCT_LIVE, productLink } from "../data/site";
+const posts = (await getCollection("blog", ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 10);
+---
+
+<BaseLayout title="Start here · NeuroPulse" description="Foggy, forgetful or wired-but-tired? Take the 60-second quiz, then read the page for the video you just watched.">
+  <section class="start">
+    <p class="eyebrow">// start here</p>
+    <h1>NeuroPulse</h1>
+    <p class="lead">What happens in your brain — and one thing to do about it today.</p>
+
+    <a class="hero-link" href="/quiz/?utm_source=bio">
+      <span class="eyebrow">// free · 60 seconds</span>
+      <strong>Which brain switch is off?</strong>
+      <span class="sub">Take the quiz: FOG, MEMORY or ENERGY →</span>
+    </a>
+
+    {PRODUCT_LIVE && (
+      <a class="link link--product" href={productLink()} rel="noopener">
+        <strong>The NeuroPulse Protocol — $9</strong>
+        <span class="sub">The full 30-day plan for all three switches</span>
+      </a>
+    )}
+    <a class="link" href="/tools/">
+      <strong>Tools for each switch</strong>
+      <span class="sub">Simple things that make the habits easier</span>
+    </a>
+
+    {posts.length > 0 && <p class="eyebrow list-title">// latest</p>}
+    {posts.map((p) => (
+      <a class="link" href={`/blog/${p.id}/`}>
+        <strong>{p.data.title}</strong>
+        <span class="sub">{p.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</span>
+      </a>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .start { max-width: 560px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  .eyebrow { display: block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); letter-spacing: 0.06em; margin: 0 0 0.4rem; }
+  h1 { font-size: var(--step-3); margin: 0; }
+  .lead { color: var(--text-dim); margin: 0.3rem 0 1.8rem; }
+  .hero-link, .link { display: block; text-decoration: none; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: 1rem 1.2rem; margin: 0 0 0.8rem; transition: transform 0.15s ease, border-color 0.15s ease; }
+  .hero-link:hover, .link:hover { transform: translateY(-3px); border-color: var(--cyan); }
+  .hero-link { border-left: 3px solid var(--magenta); padding: 1.3rem 1.2rem; }
+  .hero-link strong { font-family: var(--font-display); font-size: var(--step-1); display: block; }
+  .link strong { font-family: var(--font-display); display: block; }
+  .sub { display: block; color: var(--text-dim); font-size: var(--step--1); margin-top: 0.2rem; }
+  .link--product { border-left: 3px solid var(--violet); }
+  .list-title { margin-top: 1.8rem; }
+</style>

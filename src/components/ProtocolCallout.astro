@@ -7,7 +7,8 @@
 // so the two CTAs never compete or blur together. This is your own $9
 // product — no compliance risk, best margin — so it earns a confident
 // but not shouty treatment. One clear link, honest framing.
-const PRODUCT_URL = "https://neurovibes.gumroad.com/l/neuropulse-protocol";
+import { productLink } from "../data/site";
+const PRODUCT_URL = productLink();   // one source: src/data/site.ts
 ---
 
 <aside class="pc" aria-label="The NeuroPulse Protocol">

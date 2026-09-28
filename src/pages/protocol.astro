@@ -6,7 +6,8 @@
 // "curious" to "click" once, not to be read start to finish.
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const PRODUCT_URL = "https://neurovibes.gumroad.com/l/neuropulse-protocol";
+import { productLink } from "../data/site";
+const PRODUCT_URL = productLink();   // one source: src/data/site.ts
 
 const faqs = [
   {
@@ -19,14 +20,14 @@ const faqs = [
   },
   {
     q: "What if it doesn't work for me?",
-    a: "You have 30 days to actually use it. If it hasn't helped, email us and we'll refund you in full — no questions, no hoops.",
+    a: "You have 7 days to try it. If it hasn't helped, email us and we'll refund you in full — no questions, no hoops.",
   },
 ];
 ---
 
 <BaseLayout
   title="The NeuroPulse Protocol — $9"
-  description="A practical, no-fluff protocol that turns neuroscience into a daily routine for focus and calm. $9, instant download, 30-day guarantee."
+  description="A practical, no-fluff protocol that turns neuroscience into a daily routine for focus and calm. $9, instant download, 7-day money-back guarantee."
 >
   <!-- ── HERO ─────────────────────────────────────────────────── -->
   <section class="hero">
@@ -44,7 +45,7 @@ const faqs = [
       <a class="cta-btn" href={PRODUCT_URL} target="_blank" rel="noopener noreferrer">
         Get It Now — $9
       </a>
-      <p class="hero__reassure">Instant download · 30-day money-back guarantee</p>
+      <p class="hero__reassure">Instant download · 7-day money-back guarantee</p>
     </div>
   </section>
 
@@ -109,15 +110,14 @@ const faqs = [
   <!-- ── GUARANTEE ─────────────────────────────────────────────── -->
   <section class="section guarantee">
     <div class="section__inner guarantee__inner">
-      <div class="guarantee__badge" aria-hidden="true">30</div>
+      <div class="guarantee__badge" aria-hidden="true">7</div>
       <div class="guarantee__copy">
         <p class="eyebrow">// zero risk</p>
-        <h2 class="section__title">30-day money-back guarantee</h2>
+        <h2 class="section__title">7-day money-back guarantee</h2>
         <p>
-          Try the protocol for a full month. If it hasn't changed how your
-          evenings or your focus feel, email us and we'll refund every cent
-          — no questions, no forms, no guilt trip. You've got nothing to
-          lose except a bad night's sleep.
+          Try the protocol for a week. If it's not for you, email us within
+          7 days of your purchase and we'll refund every cent — no questions,
+          no forms, no guilt trip.
         </p>
       </div>
     </div>
@@ -146,7 +146,7 @@ const faqs = [
       <a class="cta-btn" href={PRODUCT_URL} target="_blank" rel="noopener noreferrer">
         Get It Now — $9
       </a>
-      <p class="hero__reassure">Instant download · 30-day money-back guarantee</p>
+      <p class="hero__reassure">Instant download · 7-day money-back guarantee</p>
     </div>
   </section>
 </BaseLayout>
