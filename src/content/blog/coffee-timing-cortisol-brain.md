@@ -63,7 +63,7 @@ Studies suggest the ratio of 100mg L-theanine to every 100mg caffeine produces t
 
 L-theanine works by increasing alpha brain wave activity — the same pattern associated with relaxed alertness, the state you're in during calm focus or light meditation. It doesn't make you sleepy; it takes the jagged edge off caffeine's stimulation.
 
-If you want to try this protocol, look for L-theanine supplements with clear dosing — [Suntheanine is a patented form](https://www.amazon.com/s?k=l-theanine+suntheanine+100mg&tag=neuropulsemind-20) that appears most often in published research. Start with 100mg and adjust from there.
+If you want to try this protocol, look for L-theanine supplements with clear dosing — [Suntheanine is a patented form](https://www.amazon.com/s?k=l-theanine+suntheanine+100mg&tag=neuropulse0e-20) that appears most often in published research. Start with 100mg and adjust from there.
 
 ## Why Your Brain Gets Addicted to the Wrong Timing
 

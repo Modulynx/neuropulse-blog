@@ -4,6 +4,10 @@
 // here after a successful subscription (see the comment in LeadMagnet.astro).
 // One upsell only: the $9 Protocol. No second offer, no exit-intent popup —
 // a reader who just subscribed is warm, not to be worked twice on one page.
+//
+// Personalization: quiz.astro stores np_quiz_type in localStorage.
+// Kit redirects to a fixed /thank-you/ URL so ?t= never arrives.
+// The script below reads localStorage and adapts the upsell title.
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
@@ -14,7 +18,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="confirm">
     <div class="confirm__inner">
       <div class="confirm__mark" aria-hidden="true">✓</div>
-      <p class="eyebrow">// subscription confirmed</p>
+      <p class="eyebrow">You're on the list</p>
       <h1 class="confirm__title">Here is your Manual</h1>
       <p class="confirm__copy">
         You're officially on the list. Click below to download your copy of The Brain Owner's Manual and start rewiring your daily habits.
@@ -28,8 +32,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="upsell__mark" aria-hidden="true">▹</div>
         <div class="upsell__body">
           <p class="upsell__eyebrow">// ready to go deeper?</p>
-          <h2 class="upsell__title">The NeuroPulse Protocol</h2>
-          <p class="upsell__copy">
+          <h2 class="upsell__title" id="upsell-title">The NeuroPulse Protocol</h2>
+          <p class="upsell__copy" id="upsell-copy">
             The free guide gives you the science. The NeuroPulse Protocol
             turns it into a daily routine you actually follow — $9,
             instant download, 7-day money-back guarantee.
@@ -40,6 +44,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Personalize upsell based on quiz type (FOG / MEMORY / ENERGY).
+  // Source: localStorage "np_quiz_type" set by quiz.astro's show(key).
+  const TYPES = {
+    fog: {
+      title: "Your FOG protocol is inside the NeuroPulse Protocol",
+      copy: "A step-by-step daily routine to cut through brain fog and reclaim sharp, clear thinking — $9, instant download, 7-day money-back guarantee."
+    },
+    memory: {
+      title: "Your MEMORY protocol is inside the NeuroPulse Protocol",
+      copy: "A step-by-step daily routine to strengthen recall and protect long-term memory — $9, instant download, 7-day money-back guarantee."
+    },
+    energy: {
+      title: "Your ENERGY protocol is inside the NeuroPulse Protocol",
+      copy: "A step-by-step daily routine to stabilize mental energy and end the afternoon crash — $9, instant download, 7-day money-back guarantee."
+    }
+  };
+
+  const raw = (localStorage.getItem("np_quiz_type") || "").toLowerCase().trim();
+  const type = TYPES[raw];
+
+  if (type) {
+    const titleEl = document.getElementById("upsell-title");
+    const copyEl  = document.getElementById("upsell-copy");
+    if (titleEl) titleEl.textContent = type.title;
+    if (copyEl)  copyEl.textContent  = type.copy;
+  }
+</script>
 
 <style>
   .confirm {
