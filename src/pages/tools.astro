@@ -1,0 +1,62 @@
+---
+// /tools — simple tools for each switch (no supplements), with the required Amazon disclosure.
+// Links are Amazon searches tagged with AMAZON_TAG (site.ts). Empty tag → list only, no buy links.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { TOOLS } from "../data/tools";
+import { AMAZON_TAG, AMAZON_DISCLOSURE, PRODUCT_LIVE, productLink, type SwitchKey } from "../data/site";
+import { DISCLAIMER } from "../data/quiz";
+const KEYS: SwitchKey[] = ["FOG", "MEMORY", "ENERGY"];
+const amazon = (q: string) => `https://www.amazon.com/s?k=${encodeURIComponent(q)}&tag=${encodeURIComponent(AMAZON_TAG)}`;
+if (!AMAZON_TAG) console.warn("[tools] AMAZON_TAG is empty — /tools is built without buy links");
+---
+
+<BaseLayout title="Tools for each brain switch · NeuroPulse" description="Simple, non-supplement tools that make the FOG, MEMORY and ENERGY habits easier to keep.">
+  <section class="tools">
+    <p class="disclosure">{AMAZON_DISCLOSURE}</p>
+    <p class="eyebrow">// tools</p>
+    <h1>Tools for each switch</h1>
+    <p class="lead">Nothing here is a supplement or a cure — just simple things that make the daily habit easier. Not sure which switch is yours? <a href="/quiz/?utm_source=tools">Take the 60-second quiz</a>.</p>
+
+    {KEYS.map((k) => (
+      <section class="group" id={k.toLowerCase()}>
+        <h2><span class="tag">{k}</span> {TOOLS[k].intro}</h2>
+        <ul>
+          {TOOLS[k].items.map((t) => (
+            <li class="item">
+              <div>
+                <strong>{t.name}</strong>
+                <p>{t.why}</p>
+              </div>
+              {AMAZON_TAG && <a class="buy" href={amazon(t.query)} rel="sponsored noopener" target="_blank">See on Amazon →</a>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    {PRODUCT_LIVE && (
+      <a class="protocol" href={productLink()} rel="noopener">The habits behind these tools: The NeuroPulse Protocol — $9 →</a>
+    )}
+    <p class="small">{DISCLAIMER}</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .tools { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  .disclosure { font-size: var(--step--1); color: var(--text-dim); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem 0.9rem; margin: 0 0 1.5rem; }
+  .eyebrow { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); letter-spacing: 0.06em; margin: 0 0 0.4rem; }
+  h1 { font-size: var(--step-3); margin: 0 0 0.5rem; }
+  .lead { color: var(--text-dim); }
+  .lead a { color: var(--cyan); }
+  .group { margin-top: 2rem; }
+  .group h2 { font-size: var(--step-1); }
+  .tag { font-family: var(--font-mono); color: var(--cyan); margin-right: 0.4rem; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  .item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: 1rem 1.2rem; margin: 0 0 0.7rem; }
+  .item p { margin: 0.2rem 0 0; color: var(--text-dim); font-size: var(--step--1); }
+  .buy { flex: 0 0 auto; color: var(--cyan); font-family: var(--font-display); font-weight: 600; text-decoration: none; }
+  .buy:hover { text-decoration: underline; }
+  .protocol { display: block; margin: 2rem 0 1rem; padding: 1.1rem 1.3rem; border: 1px solid var(--border); border-left: 3px solid var(--violet); border-radius: var(--radius); color: var(--violet); font-family: var(--font-display); font-weight: 600; text-decoration: none; }
+  .small { font-size: var(--step--1); color: var(--text-dim); margin-top: 2rem; }
+  @media (max-width: 520px) { .item { flex-direction: column; align-items: flex-start; } }
+</style>

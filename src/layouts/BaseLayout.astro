@@ -17,6 +17,13 @@ const { title, description = "Neuroscience & Cognitive Optimization" } = Astro.p
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <!-- Link previews (Facebook / Instagram / X / WhatsApp) read these, not only the description -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NeuroPulse" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site ?? Astro.url).href} />
+    <meta name="twitter:card" content="summary" />
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />

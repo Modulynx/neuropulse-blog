@@ -7,31 +7,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const KIT_ACTION = "https://app.kit.com/forms/9647814/subscriptions";
 
+// The 3 switches of the NeuroPulse Diagnostic (same as /quiz and the $9 Protocol). No "reverse" or
+// "peer-reviewed" claims here: this page makes no promise the guide does not keep (manager 2026-09-28).
 const benefits = [
-  { icon: "⚡", title: "The 90-Minute Rule", copy: "Why your brain only truly focuses in ultradian cycles — and how to work with them, not against them." },
-  { icon: "🧪", title: "The Dopamine Reset Protocol", copy: "A simple 3-day reset that recalibrates your reward system after digital overload." },
-  { icon: "🌙", title: "The Night Cortisol Fix", copy: "Why scrolling before bed rewires your amygdala — and the 7-minute wind-down that reverses it." },
-  { icon: "🧠", title: "The Cold Shower Effect", copy: "Norepinephrine on demand: the science behind the discomfort that sharpens your mind." },
-  { icon: "🔄", title: "Breaking the Chaos Loop", copy: "How your prefrontal cortex gets hijacked by daily stress — and the micro-habit that takes it back." },
-];
-
-const social = [
-  { quote: "I used the dopamine reset. Day 3 I felt like a different person.", handle: "@m.karim_" },
-  { quote: "The 90-minute block thing is real. My output doubled in one week.", handle: "@productivejane" },
-  { quote: "Honestly expected fluff. This is the most practical neuroscience I've read.", handle: "@brainhacker99" },
+  { icon: "🌫️", title: "FOG — the sleep-timing switch", copy: "Thinking through static by mid-afternoon? Often the lever is sleep timing and depth, not willpower." },
+  { icon: "🧩", title: "MEMORY — the encoding + stress switch", copy: "Things just don't stick? It feels like focus, but the root is usually stress plus how you take things in." },
+  { icon: "🔋", title: "ENERGY — the body-load switch", copy: "Wired but tired? Here steadier basics — sleep, food, easy movement — beat more intensity." },
 ];
 ---
 
 <BaseLayout
-  title="Free Brain Guide — NeuroPulse"
-  description="5 neuroscience-backed switches for focus, calm, and better sleep. Free PDF guide, no spam."
+  title="Free Brain Guide: FOG, MEMORY or ENERGY? — NeuroPulse"
+  description="Foggy, forgetful or wired-but-tired? Find which of your 3 brain switches is off — FOG, MEMORY or ENERGY — with a 60-second quiz, then get the free Brain Owner’s Manual."
 >
   <section class="hero" id="capture">
     <div class="hero__grid wrap">
       <div class="hero__copy">
         <p class="eyebrow">// free guide — no credit card</p>
         <h1>Your brain didn't come with an <span class="accent">instruction manual</span>. This is one.</h1>
-        <p class="lede">5 neuroscience-backed switches that reverse digital exhaustion, sharpen focus, and calm your nervous system — explained in plain English, backed by peer-reviewed research.</p>
+        <p class="lede">Three brain switches — FOG, MEMORY and ENERGY — explained in plain English. Start with the 60-second quiz to see which one is yours, then get the free guide.</p>
+        <a class="btn-quiz" href="/quiz/?utm_source=guide">Find my switch — 60-second quiz →</a>
+        <p class="micro">Or just send me the free guide:</p>
         <form class="capture-form" action={KIT_ACTION} method="POST">
           <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" aria-label="Email address" />
           <button type="submit" class="btn-cta">Send me the free guide →</button>
@@ -55,7 +51,7 @@ const social = [
   <section class="inside">
     <div class="wrap">
       <p class="eyebrow center">// inside the guide</p>
-      <h2 class="section-title center">5 switches. Immediate results.</h2>
+      <h2 class="section-title center">3 switches. One place to start.</h2>
       <div class="benefits-grid">
         {benefits.map((b) => (
           <div class="benefit-card">
@@ -68,19 +64,6 @@ const social = [
     </div>
   </section>
 
-  <section class="proof">
-    <div class="wrap">
-      <p class="eyebrow center">// early readers</p>
-      <div class="proof-grid">
-        {social.map((s) => (
-          <blockquote class="proof-card">
-            <p class="proof-quote">"{s.quote}"</p>
-            <cite class="proof-handle">{s.handle}</cite>
-          </blockquote>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <section class="bottom-cta">
     <div class="wrap bottom-cta__inner">
@@ -101,6 +84,8 @@ const social = [
   .eyebrow { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); letter-spacing: 0.08em; margin: 0 0 0.75rem; display: block; }
   .section-title { font-family: var(--font-display); font-size: var(--step-2); font-weight: 700; color: var(--text); margin: 0 0 2.5rem; }
   .accent { color: var(--cyan); }
+  .btn-quiz { display: inline-block; margin: 0 0 1.4rem; padding: 0.95rem 1.6rem; background: var(--magenta); color: #fff; font-family: var(--font-display); font-weight: 600; font-size: var(--step-0); border-radius: 10px; text-decoration: none; }
+  .btn-quiz:hover { filter: brightness(1.1); }
 
   .hero { padding: 5rem 0 4rem; background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(76,224,210,0.06) 0%, transparent 70%), linear-gradient(rgba(76,224,210,0.04) 1px, transparent 1px) 0 0 / 44px 44px, linear-gradient(90deg, rgba(76,224,210,0.04) 1px, transparent 1px) 0 0 / 44px 44px; }
   .hero__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
@@ -139,11 +124,6 @@ const social = [
   .benefit-title { font-family: var(--font-display); font-size: var(--step-0); font-weight: 600; color: var(--text); margin: 0 0 0.5rem; }
   .benefit-copy { color: var(--text-dim); font-size: var(--step--1); line-height: 1.65; margin: 0; }
 
-  .proof { padding: 4rem 0; }
-  .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-  .proof-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin: 0; border-left: 3px solid var(--violet); }
-  .proof-quote { color: var(--text); font-size: var(--step-0); line-height: 1.6; margin: 0 0 1rem; font-style: italic; }
-  .proof-handle { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); font-style: normal; }
 
   .bottom-cta { padding: 5rem 0 6rem; background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(76,224,210,0.06) 0%, transparent 70%); }
   .bottom-cta__inner { max-width: 640px; margin-inline: auto; }

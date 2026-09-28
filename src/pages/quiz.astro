@@ -1,0 +1,172 @@
+---
+// /quiz — "Which brain switch is off?" 60-second diagnostic (Product/diagnostic.md).
+// Scoring runs in the browser (no server). Result → one free action now → email for the full
+// guide of that switch (Kit, one form or hidden field per switch) → the $9 Protocol when it is live.
+// ?k=fog|memory|energy comes from the comment keyword DM (ManyChat) and is kept as np_source.
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { QUESTIONS, RESULTS, DISCLAIMER } from "../data/quiz";
+import { kitAction, productLink, PRODUCT_LIVE, type SwitchKey } from "../data/site";
+const KEYS: SwitchKey[] = ["FOG", "MEMORY", "ENERGY"];
+const actions = Object.fromEntries(KEYS.map((k) => [k, kitAction(k)]));
+const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
+---
+
+<BaseLayout title="Which brain switch is off? — 60-second quiz · NeuroPulse"
+  description="Foggy, forgetful or wired-but-tired? Ten quick questions show which of your three brain switches to start with — and one thing to do today.">
+  <section class="quiz container">
+    <p class="eyebrow">// 60-second diagnostic</p>
+    <h1>Which brain switch is off?</h1>
+    <p class="lead" id="quiz-intro">Ten questions. Answer instinctively — your first reaction, not the most flattering answer.</p>
+
+    <form id="quiz-form" class="qform" novalidate>
+      {QUESTIONS.map((item, i) => (
+        <fieldset class="q" data-q={i}>
+          <legend><span class="q__n">{String(i + 1).padStart(2, "0")}</span> {item.q}</legend>
+          {(["a", "b", "c"] as const).map((l) => (
+            <label class="opt">
+              <input type="radio" name={`q${i}`} value={l.toUpperCase()} required />
+              <span>{item[l]}</span>
+            </label>
+          ))}
+        </fieldset>
+      ))}
+      <p class="qform__status" id="quiz-status" aria-live="polite">0 / {QUESTIONS.length} answered</p>
+      <button class="btn" type="submit">See my result</button>
+    </form>
+
+    <div id="quiz-result" class="result" hidden>
+      <p class="eyebrow">// your result</p>
+      <p class="result__split" id="result-split" hidden></p>
+      {KEYS.map((k) => (
+        <article class="card" data-result={k} hidden>
+          <h2>{RESULTS[k].title}</h2>
+          <p class="card__lever">{RESULTS[k].lever}</p>
+          <p>{RESULTS[k].why}</p>
+          <div class="card__action">
+            <p class="eyebrow">// do this today</p>
+            <p>{RESULTS[k].action}</p>
+          </div>
+        </article>
+      ))}
+      <div class="tie" id="result-tie" hidden>
+        {KEYS.map((k) => <button type="button" class="tie__btn" data-pick={k}>{k}</button>)}
+      </div>
+
+      <aside class="optin">
+        <p class="eyebrow">// free guide</p>
+        <h3>Get the free Brain Owner's Manual</h3>
+        <p class="optin__copy">The plain-English PDF guide, plus follow-up emails for your <span id="optin-key">FOG</span> switch. Free, no spam, unsubscribe anytime.</p>
+        <form id="optin-form" method="POST" action={actions.FOG}>
+          <input type="hidden" name="fields[np_type]" id="optin-type" value="FOG" />
+          <input type="hidden" name="fields[np_source]" id="optin-source" value="quiz" />
+          <label class="sr" for="optin-email">Email address</label>
+          <div class="optin__row">
+            <input id="optin-email" type="email" name="email_address" placeholder="you@email.com" required autocomplete="email" />
+            <button class="btn" type="submit">Send me the guide</button>
+          </div>
+        </form>
+      </aside>
+
+      {PRODUCT_LIVE && (
+        <a class="protocol" id="protocol-link" href={products.FOG} rel="noopener">
+          Want the whole 30-day plan? The NeuroPulse Protocol — $9 →
+        </a>
+      )}
+      <p class="retake"><a href="/quiz/">Retake the quiz</a> · <a href="/tools/">Tools for each switch</a></p>
+    </div>
+
+    <p class="disclaimer">{DISCLAIMER}</p>
+  </section>
+
+  <script define:vars={{ actions, products, total: QUESTIONS.length }}>
+    const MAP = { A: "FOG", B: "MEMORY", C: "ENERGY" };
+    const form = document.getElementById("quiz-form");
+    const status = document.getElementById("quiz-status");
+    const params = new URLSearchParams(location.search);
+    const k = (params.get("k") || "").toUpperCase();
+    const src = ["quiz", k && "k:" + k.toLowerCase(), params.get("utm_source")].filter(Boolean).join("|");
+    document.getElementById("optin-source").value = src.slice(0, 100);
+    if (["FOG", "MEMORY", "ENERGY"].includes(k)) {
+      document.getElementById("quiz-intro").textContent =
+        "You came from the " + k + " video. Ten questions show whether " + k + " is really your main switch — answer instinctively.";
+    }
+    const answered = () => form.querySelectorAll("input:checked").length;
+    form.addEventListener("change", () => { status.textContent = answered() + " / " + total + " answered"; });
+
+    function show(key) {
+      document.querySelectorAll("[data-result]").forEach((el) => { el.hidden = el.dataset.result !== key; });
+      document.getElementById("optin-key").textContent = key;
+      document.getElementById("optin-type").value = key;
+      document.getElementById("optin-form").action = actions[key];
+      const p = document.getElementById("protocol-link");
+      if (p) p.href = products[key];
+      document.querySelectorAll("[data-pick]").forEach((b) => b.classList.toggle("is-on", b.dataset.pick === key));
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (answered() < total) {
+        const first = [...form.querySelectorAll("fieldset")].find((f) => !f.querySelector("input:checked"));
+        status.textContent = "Please answer every question (" + answered() + " / " + total + ").";
+        first && first.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+      const count = { FOG: 0, MEMORY: 0, ENERGY: 0 };
+      form.querySelectorAll("input:checked").forEach((i) => { count[MAP[i.value]]++; });
+      const max = Math.max(...Object.values(count));
+      const top = Object.keys(count).filter((key) => count[key] === max);
+      const split = document.getElementById("result-split");
+      const tie = document.getElementById("result-tie");
+      if (top.length > 1) {
+        split.hidden = false; tie.hidden = false;
+        split.textContent = "Even split between " + top.join(" and ") +
+          ". Start with whichever bothers you most day-to-day — you can add the second later.";
+        tie.querySelectorAll("[data-pick]").forEach((b) => { b.hidden = !top.includes(b.dataset.pick); });
+      } else { split.hidden = true; tie.hidden = true; }
+      show(top[0]);
+      form.hidden = true;
+      const res = document.getElementById("quiz-result");
+      res.hidden = false;
+      res.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    document.querySelectorAll("[data-pick]").forEach((b) => b.addEventListener("click", () => show(b.dataset.pick)));
+  </script>
+</BaseLayout>
+
+<style>
+  .container { max-width: 760px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  .eyebrow { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); letter-spacing: 0.06em; margin: 0 0 0.5rem; }
+  h1 { font-size: var(--step-3); margin: 0 0 0.6rem; }
+  .lead { color: var(--text-dim); margin: 0 0 2rem; }
+  .q { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: 1.1rem 1.1rem 0.6rem; margin: 0 0 1rem; }
+  .q legend { font-family: var(--font-display); font-weight: 600; padding: 0 0.4rem; }
+  .q__n { font-family: var(--font-mono); color: var(--cyan); margin-right: 0.3rem; }
+  .opt { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.6rem 0.7rem; border-radius: 10px; cursor: pointer; }
+  .opt:hover { background: var(--bg-elev-2); }
+  .opt input { margin-top: 0.3rem; accent-color: var(--cyan); }
+  .opt:has(input:checked) { background: var(--bg-elev-2); outline: 1px solid var(--cyan); }
+  .qform__status { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); }
+  .btn { padding: 0.85rem 1.5rem; background: var(--magenta); color: #fff; font: 600 var(--step-0)/1 var(--font-display); border: none; border-radius: 10px; cursor: pointer; }
+  .btn:hover { filter: brightness(1.08); }
+  .card { border: 1px solid var(--border); border-left: 3px solid var(--cyan); border-radius: var(--radius); background: var(--bg-elev); padding: 1.4rem; margin: 0 0 1.2rem; }
+  .card h2 { font-size: var(--step-2); margin: 0 0 0.3rem; }
+  .card__lever { font-family: var(--font-mono); font-size: var(--step--1); color: var(--cyan); margin: 0 0 0.8rem; }
+  .card__action { margin-top: 1rem; padding: 1rem; border-radius: 10px; background: var(--bg-elev-2); }
+  .card__action p:last-child { margin: 0; }
+  .result__split { color: var(--text-dim); }
+  .tie { display: flex; gap: 0.5rem; margin: 0 0 1.2rem; }
+  .tie__btn { font-family: var(--font-mono); background: var(--bg-elev); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 0.5rem 1rem; cursor: pointer; }
+  .tie__btn.is-on { border-color: var(--cyan); color: var(--cyan); }
+  .optin { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: 1.4rem; margin: 1.5rem 0; }
+  .optin h3 { margin: 0 0 0.4rem; }
+  .optin__copy { color: var(--text-dim); font-size: var(--step--1); }
+  .optin__row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .optin__row input { flex: 1 1 220px; min-width: 0; padding: 0.8rem 0.9rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font: inherit; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .protocol { display: block; margin: 0 0 1rem; padding: 1.1rem 1.3rem; border: 1px solid var(--border); border-left: 3px solid var(--violet); border-radius: var(--radius); color: var(--violet); font-family: var(--font-display); font-weight: 600; text-decoration: none; }
+  .protocol:hover { background: var(--bg-elev); }
+  .retake { font-size: var(--step--1); color: var(--text-dim); }
+  .retake a { color: var(--cyan); }
+  .disclaimer { margin-top: 2.5rem; font-size: var(--step--1); color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 1rem; }
+  @media (max-width: 480px) { .optin__row .btn { flex: 1 1 100%; } }
+</style>

@@ -6,6 +6,7 @@
 const navLinks = [
   { label: "Blog", href: "/blog/" },
   { label: "Protocol", href: "/protocol/" },
+  { label: "Tools", href: "/tools/" },
   { label: "About", href: "/about/" },
 ];
 ---
@@ -22,7 +23,7 @@ const navLinks = [
       {navLinks.map(link => (
         <a class="nav__link" href={link.href}>{link.label}</a>
       ))}
-      <a class="nav__cta" href="/guide/#capture" id="nav-cta">Get the Guide</a>
+      <a class="nav__cta" href="/quiz/" id="nav-cta">Take the Quiz</a>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -36,7 +37,7 @@ const navLinks = [
     {navLinks.map(link => (
       <a class="nav__mobile-link" href={link.href}>{link.label}</a>
     ))}
-    <a class="nav__mobile-cta" href="/guide/#capture">Get the Guide →</a>
+    <a class="nav__mobile-cta" href="/quiz/">Take the Quiz →</a>
   </div>
 </header>
 
