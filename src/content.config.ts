@@ -13,7 +13,7 @@ const blog = defineCollection({
     description: z.string().min(10).default(''), // allow short or missing descriptions
     pubDate: z.coerce.date(),
     author: z.string().default("The NeuroPulse Team"),
-    authorId: z.string().default("ethan-cole"),
+    authorId: z.string().default("neuropulse-team"),
     tags: z.array(z.string()).default([]), // fully optional — empty array if missing
     niche: z.string().default('Neuroscience'), // default niche if missing
     videoUrl: z.string().url().optional().or(z.literal("")).optional(),
