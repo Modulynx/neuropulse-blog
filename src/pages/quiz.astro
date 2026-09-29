@@ -101,6 +101,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
       const p = document.getElementById("protocol-link");
       if (p) p.href = products[key];
       document.querySelectorAll("[data-pick]").forEach((b) => b.classList.toggle("is-on", b.dataset.pick === key));
+      try { localStorage.setItem("np_quiz_type", key.toLowerCase()); } catch(e) {}
     }
 
     form.addEventListener("submit", (e) => {

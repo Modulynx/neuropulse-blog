@@ -15,7 +15,7 @@ export const PRODUCT_URL = "https://neuropulsemind.gumroad.com/l/neuropulse-prot
 export const productLink = (key?: SwitchKey) => PRODUCT_URL + (key ? `?type=${key.toLowerCase()}` : "");
 
 // Amazon Associates tracking id (e.g. "neuropulse-20"). Empty → /tools shows the list without buy links.
-export const AMAZON_TAG = "";
+export const AMAZON_TAG = "neuropulse0e-20";
 export const GUARANTEE_DAYS = 7;   // must match the Gumroad refund policy
 export const AMAZON_DISCLOSURE = "As an Amazon Associate, NeuroPulse earns from qualifying purchases.";
 
