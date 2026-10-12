@@ -16,7 +16,7 @@ Why doesn't your black pepper golden milk seem to help with afternoon brain fog?
 
 ## Does turmeric actually reach your brain?
 
-Here's what most people don't realize about turmeric. The active compound that researchers study, called curcumin, has a problem. Your digestive system treats it like an unwanted visitor, breaking it down and flushing it out before much reaches your bloodstream.
+The part of turmeric that researchers study is called curcumin, and it has a problem. Your digestive system treats it like an unwanted visitor, breaking it down and flushing it out before much reaches your bloodstream.
 
 Think of curcumin like trying to fill a bucket with a giant hole in the bottom. Most of what you pour in just leaks right out.
 
@@ -24,11 +24,11 @@ That's where black pepper comes in. The compound that makes pepper spicy, called
 
 ## What does research say about black pepper and turmeric?
 
-Researchers wanted to test whether black pepper could help more curcumin survive the journey through your digestive system. They gave people curcumin alone, then curcumin with piperine from black pepper.
+In a small study (Shoba et al., 1998, Planta Medica), researchers gave volunteers curcumin alone, then curcumin together with piperine from black pepper, and measured how much reached their blood.
 
-The results were striking. Piperine raised curcumin absorption by about twenty times compared to taking turmeric alone.
+With piperine, curcumin levels in the blood came out about twenty times higher than without it.
 
-Twenty times. That means your body could potentially absorb twenty times more of turmeric's active compounds when you add just a pinch of black pepper.
+It was one small study, and blood levels are not the same as a clearer head. But it does suggest that turmeric without pepper may mostly pass straight through you.
 
 ## How to make brain-friendly golden milk
 
@@ -56,13 +56,12 @@ Brain fog can stem from many sources beyond poor nutrient absorption. Sleep qual
 
 ## What else affects afternoon energy?
 
-Timing matters for more than just your turmeric intake. Your coffee timing can also impact how alert you feel throughout the day. Learn about the [science behind coffee timing and cortisol](/blog/coffee-timing-cortisol-brain) to optimize your entire afternoon energy strategy.
+Timing matters for more than just your turmeric intake. Your coffee timing can also impact how alert you feel throughout the day. Here's [what coffee timing does to your cortisol](/blog/coffee-timing-cortisol-brain), and why your 3 PM cup might be working against you.
 
 Remember, research on curcumin and brain fog is still developing. We don't yet know the ideal amounts or timing for cognitive benefits. But improving absorption with black pepper gives your body a better chance to use what you're already taking.
 
 Do you add pepper to your turmeric?
 
-Educational content, not medical advice.
 ## FAQ
 
 ### How much black pepper should I add to turmeric?
@@ -77,4 +76,4 @@ Many turmeric supplements already include black pepper extract or piperine. If y
 
 Yes, piperine from black pepper can help with turmeric capsule absorption too. However, many turmeric supplements are already formulated with black pepper extract for this reason. Check your supplement label before adding more.
 
-
+*Educational content, not medical advice.*
