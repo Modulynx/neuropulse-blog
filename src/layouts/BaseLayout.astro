@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Analytics from "../components/Analytics.astro";
 
 interface Props {
   title: string;
@@ -34,7 +35,8 @@ const { title, description = "Neuroscience & Cognitive Optimization" } = Astro.p
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- Analytics: add production script here when ready -->
+    <!-- Analytics: Umami Cloud + funnel events (src/components/Analytics.astro) -->
+    <Analytics />
 
   </head>
   <body>
