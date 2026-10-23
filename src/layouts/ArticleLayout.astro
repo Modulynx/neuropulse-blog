@@ -3,6 +3,7 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import Analytics from "../components/Analytics.astro";
 
 interface Props {
   title: string;
@@ -83,8 +84,8 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": grap
 
     <script type="application/ld+json" set:html={jsonLd} />
 
-    <!-- Plausible Analytics (self-hosted, cookie-free) -->
-    <script defer data-domain="neuropulse.blog" src="http://localhost:8000/js/pa-5o2PJZo8HftKwctPlgeFO.js"></script>
+    <!-- Analytics: Umami Cloud + funnel events (src/components/Analytics.astro); this layout does not wrap BaseLayout -->
+    <Analytics />
   </head>
   <body>
     <Navbar />

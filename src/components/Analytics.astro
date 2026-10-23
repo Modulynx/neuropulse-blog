@@ -1,0 +1,81 @@
+---
+// Analytics.astro — Umami Cloud script + the 5 funnel events, in ONE place (2026-10-23).
+// Included once per page: BaseLayout and ArticleLayout each render it, and no page uses both.
+// Empty UMAMI_WEBSITE_ID (src/data/site.ts) → nothing is rendered.
+//
+// Events (names are read by n8n 'Analytics Part (7) V12' — do not rename):
+//   quiz_start     first answer on /quiz            { k, source }          (src/pages/quiz.astro)
+//   quiz_complete  result shown on /quiz            { key, tie }           (src/pages/quiz.astro)
+//   email_submit   any form posting to app.kit.com  { key, form, page }    (here)
+//   gumroad_click  any link to PRODUCT_URL          { key, page }          (here)
+//   amazon_click   any amazon.com / amzn.to link    { tool, page }         (here; tool = data-tool or link text)
+// UTM: Umami stores utm_source etc. from the page URL by itself (e.g. /fog → /quiz/?k=FOG&utm_source=dm).
+// Link clicks and Kit submits wait for the event (max 400 ms) before leaving the page, like Umami's own
+// data-umami-event links; if the script is blocked, nothing waits and the page works as before.
+import { UMAMI_WEBSITE_ID, UMAMI_SCRIPT, UMAMI_DOMAINS, PRODUCT_URL } from "../data/site";
+const productUrl = PRODUCT_URL;
+---
+
+{UMAMI_WEBSITE_ID && (
+  <>
+    <script is:inline defer src={UMAMI_SCRIPT} data-website-id={UMAMI_WEBSITE_ID} data-domains={UMAMI_DOMAINS}></script>
+    <script is:inline define:vars={{ productUrl }}>
+      window.npTrack = function (name, data) {
+        try {
+          if (window.umami && typeof window.umami.track === "function") return Promise.resolve(window.umami.track(name, data));
+        } catch (e) {}
+        return Promise.resolve();
+      };
+      const wait = (p, ms) => Promise.race([p, new Promise((r) => setTimeout(r, ms))]).catch(() => {});
+      const trim = (u) => u.replace(/\/+$/, "");
+      const product = new URL(productUrl);
+
+      function linkEvent(a) {
+        let u;
+        try { u = new URL(a.href, location.href); } catch (e) { return null; }
+        if (u.hostname === product.hostname && trim(u.pathname) === trim(product.pathname)) {
+          return ["gumroad_click", { key: (u.searchParams.get("type") || "none").toUpperCase(), page: location.pathname }];
+        }
+        if (/(^|\.)amazon\.com$/.test(u.hostname) || u.hostname === "amzn.to") {
+          const tool = (a.dataset.tool || a.textContent || "").replace(/\s+/g, " ").replace(/\s*→\s*$/, "").trim();
+          return ["amazon_click", { tool: tool.slice(0, 80) || "unknown", page: location.pathname }];
+        }
+        return null;
+      }
+
+      document.addEventListener("click", (e) => {
+        if (e.defaultPrevented || e.button !== 0) return;
+        const a = e.target.closest && e.target.closest("a[href]");
+        const ev = a && linkEvent(a);
+        if (!ev) return;
+        const newTab = a.target === "_blank" || e.ctrlKey || e.shiftKey || e.metaKey || e.altKey;
+        if (newTab || !window.umami) { window.npTrack(ev[0], ev[1]); return; }
+        e.preventDefault();
+        wait(window.npTrack(ev[0], ev[1]), 400).then(() => { location.href = a.href; });
+      });
+      // Middle-click opens a new tab without a "click" event.
+      document.addEventListener("auxclick", (e) => {
+        if (e.button !== 1) return;
+        const a = e.target.closest && e.target.closest("a[href]");
+        const ev = a && linkEvent(a);
+        if (ev) window.npTrack(ev[0], ev[1]);
+      });
+
+      document.addEventListener("submit", (e) => {
+        const f = e.target;
+        if (e.defaultPrevented || !(f instanceof HTMLFormElement) || !/app\.kit\.com\/forms\//.test(f.action)) return;
+        if (f.dataset.npSent) { e.preventDefault(); return; }
+        const t = f.querySelector('[name="fields[np_type]"]');
+        const data = { key: (t && t.value) || "NONE", form: f.id || f.classList[0] || "form", page: location.pathname };
+        if (!window.umami) return;
+        e.preventDefault();
+        f.dataset.npSent = "1";
+        wait(window.npTrack("email_submit", data), 400).then(() => { HTMLFormElement.prototype.submit.call(f); });
+      });
+      // Back button (page restored from cache): allow the form to be sent again.
+      window.addEventListener("pageshow", () => {
+        document.querySelectorAll("form[data-np-sent]").forEach((f) => { delete f.dataset.npSent; });
+      });
+    </script>
+  </>
+)}

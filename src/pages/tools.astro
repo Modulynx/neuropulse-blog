@@ -27,7 +27,7 @@ if (!AMAZON_TAG) console.warn("[tools] AMAZON_TAG is empty — /tools is built w
                 <strong>{t.name}</strong>
                 <p>{t.why}</p>
               </div>
-              {AMAZON_TAG && <a class="buy" href={amazon(t.query)} rel="sponsored noopener" target="_blank">See on Amazon →</a>}
+              {AMAZON_TAG && <a class="buy" href={amazon(t.query)} rel="sponsored noopener" target="_blank" data-tool={t.name}>See on Amazon →</a>}
             </li>
           ))}
         </ul>

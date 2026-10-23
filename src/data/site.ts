@@ -19,4 +19,12 @@ export const AMAZON_TAG = "neuropulse0e-20";
 export const GUARANTEE_DAYS = 7;   // must match the Gumroad refund policy
 export const AMAZON_DISCLOSURE = "As an Amazon Associate, NeuroPulse earns from qualifying purchases.";
 
+// Umami Cloud (cookie-free analytics, 2026-10-23). Empty → no tracking script and no events on any page.
+// Events (names fixed, the n8n Analytics Part 7 reads them): quiz_start, quiz_complete, email_submit,
+// gumroad_click, amazon_click — see src/components/Analytics.astro.
+export const UMAMI_WEBSITE_ID = "116dae60-b580-4976-8d79-dd9672f50450";
+export const UMAMI_SCRIPT = "https://cloud.umami.is/script.js";
+// Only the live domain is counted (Vercel previews and localhost are ignored).
+export const UMAMI_DOMAINS = "neuropulsemind.com,www.neuropulsemind.com";
+
 export type SwitchKey = "FOG" | "MEMORY" | "ENERGY";

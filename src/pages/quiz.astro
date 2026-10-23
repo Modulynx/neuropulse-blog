@@ -91,7 +91,13 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
         "You came from the " + k + " video. Ten questions show whether " + k + " is really your main switch — answer instinctively.";
     }
     const answered = () => form.querySelectorAll("input:checked").length;
-    form.addEventListener("change", () => { status.textContent = answered() + " / " + total + " answered"; });
+    // Analytics (src/components/Analytics.astro): quiz_start on the first answer, quiz_complete on the result.
+    const track = (name, data) => { if (window.npTrack) window.npTrack(name, data); };
+    let started = false;
+    form.addEventListener("change", () => {
+      status.textContent = answered() + " / " + total + " answered";
+      if (!started) { started = true; track("quiz_start", { k: k.slice(0, 20) || "none", source: (params.get("utm_source") || "none").slice(0, 50) }); }
+    });
 
     function show(key) {
       document.querySelectorAll("[data-result]").forEach((el) => { el.hidden = el.dataset.result !== key; });
@@ -125,6 +131,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
         tie.querySelectorAll("[data-pick]").forEach((b) => { b.hidden = !top.includes(b.dataset.pick); });
       } else { split.hidden = true; tie.hidden = true; }
       show(top[0]);
+      track("quiz_complete", { key: top[0], tie: top.length > 1 ? top.join("+") : "no" });
       form.hidden = true;
       const res = document.getElementById("quiz-result");
       res.hidden = false;
