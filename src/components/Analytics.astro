@@ -1,26 +1,36 @@
 ---
-// Analytics.astro — Umami Cloud script + the 5 funnel events, in ONE place (2026-10-23).
+// Analytics.astro — Umami Cloud + PostHog Cloud US + the 5 funnel events, in ONE place (2026-10-23, PostHog 2026-10-24).
 // Included once per page: BaseLayout and ArticleLayout each render it, and no page uses both.
-// Empty UMAMI_WEBSITE_ID (src/data/site.ts) → nothing is rendered.
+// Empty UMAMI_WEBSITE_ID and empty POSTHOG_KEY (src/data/site.ts) → nothing is rendered; empty one → only the other runs.
 //
-// Events (names are read by n8n 'Analytics Part (7) V12' — do not rename):
+// Events (names are read by n8n 'Analytics Part (7) V12' — do not rename). window.npTrack sends the SAME
+// name + properties to Umami (umami.track) and PostHog (posthog.capture):
 //   quiz_start     first answer on /quiz            { k, source }          (src/pages/quiz.astro)
 //   quiz_complete  result shown on /quiz            { key, tie }           (src/pages/quiz.astro)
 //   email_submit   any form posting to app.kit.com  { key, form, page }    (here)
 //   gumroad_click  any link to PRODUCT_URL          { key, page }          (here)
 //   amazon_click   any amazon.com / amzn.to link    { tool, page }         (here; tool = data-tool or link text)
-// UTM: Umami stores utm_source etc. from the page URL by itself (e.g. /fog → /quiz/?k=FOG&utm_source=dm).
-// Link clicks and Kit submits wait for the event (max 400 ms) before leaving the page, like Umami's own
-// data-umami-event links; if the script is blocked, nothing waits and the page works as before.
-import { UMAMI_WEBSITE_ID, UMAMI_SCRIPT, UMAMI_DOMAINS, PRODUCT_URL } from "../data/site";
+// UTM: Umami and PostHog store utm_source etc. from the page URL by themselves (e.g. /fog → /quiz/?k=FOG&utm_source=dm).
+// PostHog: $pageview once per page load (with $pathname, $session_id, utm_*); no autocapture, no session recording,
+// no person profiles (anonymous), localStorage only (no cookies). Part 7 reads it over the HogQL API.
+// Link clicks and Kit submits wait for the Umami event (max 400 ms) before leaving the page, like Umami's own
+// data-umami-event links; PostHog sends at once (fetch keepalive), which survives the navigation.
+// If a script is blocked, nothing waits and the page works as before.
+import { UMAMI_WEBSITE_ID, UMAMI_SCRIPT, UMAMI_DOMAINS, PRODUCT_URL, POSTHOG_KEY } from "../data/site";
 const productUrl = PRODUCT_URL;
 ---
 
-{UMAMI_WEBSITE_ID && (
+{(UMAMI_WEBSITE_ID || POSTHOG_KEY) && (
   <>
-    <script is:inline defer src={UMAMI_SCRIPT} data-website-id={UMAMI_WEBSITE_ID} data-domains={UMAMI_DOMAINS}></script>
+    {UMAMI_WEBSITE_ID && <script is:inline defer src={UMAMI_SCRIPT} data-website-id={UMAMI_WEBSITE_ID} data-domains={UMAMI_DOMAINS}></script>}
     <script is:inline define:vars={{ productUrl }}>
+      // PostHog loads later (module below); events before that wait in npPHq and are sent once it is ready.
+      window.npPHq = window.npPHq || [];
       window.npTrack = function (name, data) {
+        try {
+          if (window.npPH) window.npPH.capture(name, data, { send_instantly: true });
+          else if (window.npPHq) window.npPHq.push([name, data]);
+        } catch (e) {}
         try {
           if (window.umami && typeof window.umami.track === "function") return Promise.resolve(window.umami.track(name, data));
         } catch (e) {}
@@ -79,3 +89,29 @@ const productUrl = PRODUCT_URL;
     </script>
   </>
 )}
+
+<script>
+  // PostHog (bundled from npm posthog-js). Loaded only with a key AND on the live domain, so Vercel previews
+  // and localhost do not even download it.
+  import { POSTHOG_KEY, POSTHOG_HOST, UMAMI_DOMAINS } from "../data/site";
+
+  if (POSTHOG_KEY && UMAMI_DOMAINS.split(",").includes(location.hostname)) {
+    import("posthog-js")
+      .then(({ default: posthog }) => {
+        posthog.init(POSTHOG_KEY, {
+          api_host: POSTHOG_HOST,
+          capture_pageview: true,
+          autocapture: false,
+          disable_session_recording: true,
+          person_profiles: "identified_only",
+          persistence: "localStorage",
+        });
+        const w = window as any;
+        w.npPH = posthog;
+        const queued = w.npPHq || [];
+        w.npPHq = null;
+        queued.forEach(([name, data]: [string, object]) => posthog.capture(name, data, { send_instantly: true }));
+      })
+      .catch(() => {});
+  }
+</script>

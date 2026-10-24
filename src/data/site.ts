@@ -19,12 +19,18 @@ export const AMAZON_TAG = "neuropulse0e-20";
 export const GUARANTEE_DAYS = 7;   // must match the Gumroad refund policy
 export const AMAZON_DISCLOSURE = "As an Amazon Associate, NeuroPulse earns from qualifying purchases.";
 
-// Umami Cloud (cookie-free analytics, 2026-10-23). Empty → no tracking script and no events on any page.
+// Umami Cloud (cookie-free analytics, 2026-10-23). Empty → no Umami script (PostHog below still runs).
 // Events (names fixed, the n8n Analytics Part 7 reads them): quiz_start, quiz_complete, email_submit,
 // gumroad_click, amazon_click — see src/components/Analytics.astro.
 export const UMAMI_WEBSITE_ID = "116dae60-b580-4976-8d79-dd9672f50450";
 export const UMAMI_SCRIPT = "https://cloud.umami.is/script.js";
 // Only the live domain is counted (Vercel previews and localhost are ignored).
 export const UMAMI_DOMAINS = "neuropulsemind.com,www.neuropulsemind.com";
+
+// PostHog Cloud US (2026-10-24): the same 5 events + pageviews, read by n8n Part 7 over the HogQL API
+// (Umami Cloud's API needs Pro; Umami stays for viewing). Public project key (phc_…). Empty → no PostHog.
+// Sends only on UMAMI_DOMAINS (the live domain); previews and localhost send nothing.
+export const POSTHOG_KEY = "phc_Bfx2kDahvrkqNMh7VApawckxFR5Fhvdpjrg8f9EA8wLG";
+export const POSTHOG_HOST = "https://us.i.posthog.com";
 
 export type SwitchKey = "FOG" | "MEMORY" | "ENERGY";
