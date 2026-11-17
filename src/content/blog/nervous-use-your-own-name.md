@@ -1,90 +1,88 @@
 ---
-title: "Nervous? Use your own name before you speak"
-description: "Nervous before a speech or big meeting? Research suggests silently using your own name may add mental distance and ease anxiety. Try this 3-step habit."
+title: "Does using your own name calm your nerves before you speak?"
+description: "In a 2014 University of Michigan study, people who thought about a coming speech using their own name instead of \"I\" felt less distress and gave better talks."
 slug: "nervous-use-your-own-name"
 pubDate: "2026-11-09T15:01:05.227Z"
 author: "The NeuroPulse Team"
 authorId: "neuropulse-team"
-tags: ["anxiety", "self-talk", "amygdala", "public speaking", "stress"]
+tags: ["anxiety", "self-talk", "public speaking", "stress"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "Self-talk as a regulatory mechanism: how you do it matters"
+  authors: "Kross E, Bruehlman-Senecal E, Park J, et al."
+  journal: "Journal of Personality and Social Psychology"
+  year: 2014
+  sample: "Seven lab studies, 585 people in total; the speech test was Study 3"
+  url: "https://doi.org/10.1037/a0035173"
 ---
-Your coffee is going cold next to the laptop. The 3 pm meeting starts in five minutes, you're up first, and your heart is already thumping.
+Your coffee is going cold next to the laptop. The 3 pm meeting starts in five minutes, you're up first, and your heart is already going.
 
-Nervous? Use your own name. It sounds almost too simple, but there's a reason people study it.
+You start the usual inner talk. *I'm going to blank. I always do this.* One study suggests a tiny change to that talk: swap "I" for your own name.
 
-## Why do I get so nervous right before I have to speak?
+## Why do you get so nervous right before you speak?
 
-Because your brain read the moment as a threat. Nobody is chasing you, but a room full of eyes can feel risky to an older part of your brain.
+Because part of your brain reads the moment as a threat. Nobody is chasing you, but a room full of eyes still counts.
 
-The amygdala, a small almond-shaped region deep in the brain, is part of that alarm system. When it fires, your heart speeds up, your palms get damp, and your thoughts start to race.
+The amygdala, a small almond-shaped area deep in the brain, is part of that alarm. When it fires, your heart speeds up, your palms get damp, and your thoughts start to race. The alarm isn't broken. It's just loud, and it doesn't wait for you to decide whether the meeting is actually dangerous.
 
-The alarm isn't broken. It's just loud, and it doesn't wait for you to decide whether the situation is actually dangerous.
+## What changes when you talk to yourself by name?
 
-## What happens in the brain when you talk to yourself in the third person?
+Listen to how you talk to yourself under pressure. Most of us say "I" a lot, and "I" puts you right inside the feeling.
 
-Think about how you talk to yourself under pressure. Most of us say "I" a lot. *I'm going to mess this up. I can't do this.*
+Now try your name. *Okay, Sam, you know this part.* It sounds a little like a friend talking. Psychologists call that small step back "self-distancing." It's the same reason calm advice comes easier for a friend's problem than for your own.
 
-That first-person voice puts you right inside the feeling. There's no space between you and the worry.
+<!-- img:brain -->
 
-Now try your own name instead. *Okay, Sam, you've got this. Sam, take a breath.* It sounds like someone else is talking, even though it's still you.
+One honest note: the study below measured feelings and performance, not brain activity. The alarm picture above is how we explain the result, not something this study scanned.
 
-That small shift may add a bit of mental distance. It's the same reason it's often easier to give calm advice to a friend than to take it yourself. With some distance, the alarm may soften, and the thinking part of your brain gets a little more room.
+## What did the study find?
 
-## What does the research say about using your own name?
+A team led by Ethan Kross at the University of Michigan ran seven studies on this, with 585 people in total ([Kross et al., Journal of Personality and Social Psychology, 2014](https://doi.org/10.1037/a0035173)). In the public-speaking study, people got ready to give a speech. While they prepared, some were asked to think about their feelings using "I." Others used their own name or "you."
 
-In a 2014 study, volunteers prepared for a speech. The ones who silently talked to themselves using their own name beforehand were linked to less anxiety and better performance.
+The name group came out ahead. Outside raters judged their speeches as better. They reported less distress. And afterwards they spent less time going over what went wrong.
 
-That's encouraging. It's also one study, and we don't know yet how well it holds up for every person or every kind of stress.
+In a later part of the work, people who used their name saw a coming stressful event more as a challenge and less as a threat. A final analysis found the effect didn't depend on how socially anxious people were to begin with.
 
-It doesn't mean your nerves will vanish. Research suggests it can help turn the volume down, not switch the alarm off.
+## What this study can't tell us
 
-## How do I use your own name to calm nerves?
+These were short lab tasks with volunteers, not real job interviews or wedding toasts. The study can't tell us how long the effect lasts, or whether it helps people with an anxiety disorder in daily life. It also didn't look inside the brain.
 
-Here's the habit in one line: before the stressful moment, silently talk to yourself in the third person, using your own name.
+## How to try it before your next talk
 
-Keep it short and kind. You're not writing a pep talk, just a few words in your head.
+Keep it short and kind. You're not writing a pep talk.
 
-**A 3-step mini plan for today:**
+1. **Pick one moment.** A call, a presentation, a toast or a hard conversation that's coming up today.
+2. **Talk it through with your name.** While you get ready, think something like, "Alex, you've done this before. Alex, start with the first slide." Your name, not "I."
+3. **Then go.** Don't check whether it "worked." Just start.
 
-1. **Pick your moment.** Choose one thing coming up that makes you tense. A call, a presentation, a toast, a hard conversation.
-2. **Say it silently.** A minute or so before, think something like, "Alex, you know this. Alex, you're ready to start." Use your name, not "I."
-3. **Notice, then go.** Check whether the nerves feel even a little quieter. Whatever you notice, move on and begin.
+It will feel a bit odd the first time. A sticky note with your name on the edge of the screen helps you remember.
 
-If it feels awkward at first, that's normal. A sticky note on your monitor with your name on it can help you remember.
+<!-- img:fix -->
 
-Want to see how stress fits into your bigger picture? Our post on [coffee timing and cortisol](/blog/coffee-timing-cortisol-brain) covers another everyday habit that touches your stress system.
+## Who should be careful?
 
-## Who should be careful with this?
+Talking to yourself in your head is low risk. It is not a treatment for anxiety. If you have panic attacks or nerves that get in the way of work or school, talk with a doctor or therapist. And if you ever have chest pain or a racing heart that won't settle, get medical help rather than a mental trick.
 
-Talking to yourself in your head is low risk for most people. Still, it's not a treatment for anxiety.
+## Where to go from here
 
-If you have an anxiety disorder, panic attacks, or nerves that get in the way of daily life, talk with a doctor or therapist. This can be a small add-on, not a replacement for care.
+Nerves often come with a short night and too much coffee. Here's [what coffee timing does to your cortisol](/blog/coffee-timing-cortisol-brain). If your head feels crowded at night too, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos).
 
-If you're pregnant, take medication for anxiety or mood, or have heart issues, check in with your healthcare provider about how you manage stress. And if you ever feel chest pain, trouble breathing, or a racing heart that won't settle, get medical help rather than trying a mental trick.
-
-## What should I try next?
-
-Nerves are one switch among many. Sleep, focus, and mood all play a part in how your brain handles pressure.
-
-If you'd like to find which brain switch is off for you, take our short [brain quiz](/quiz). It's built to point you toward the area that may need the most attention.
-
-So here's our question for you: what do you call yourself under stress? Your full name, a nickname, or something else?
+Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 
 ## FAQ
 
-### Does talking to yourself in the third person really reduce anxiety?
+### Does talking to yourself in the third person reduce anxiety?
 
-Research suggests it may. In a 2014 study, volunteers who silently used their own name before a speech were linked to less anxiety and better performance. It's one study, so we can't say it works the same for everyone.
+In the study above, people who used their own name before a speech reported less distress and gave better speeches than people who used "I." It was measured in a lab, so it's a good bet to try, not a promise.
 
-### Should I say my name out loud or just in my head?
+### Does it have to be my name?
 
-The idea described here is silent self-talk. Saying it quietly to yourself in a private spot is probably fine, but the research we're drawing on focused on talking silently.
+In this study, both your own name and "you" counted as the distanced kind of self-talk. The point is to avoid "I."
 
-### Can self-talk calm nerves before public speaking?
+### Can self-talk replace preparation?
 
-It can help some people feel a bit less tense by adding mental distance from the worry. It's not a cure for anxiety, and it works best as one small tool alongside things like preparation and slow breathing.
-
+No. The people in the study still prepared their speech. Self-talk changed how they felt about it, not what they knew.
 
 *Educational content, not medical advice.*
