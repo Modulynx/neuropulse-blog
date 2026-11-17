@@ -1,85 +1,82 @@
 ---
-title: "One black coffee before focused work may sharpen reactions"
-description: "Feeling a beat behind when focused work starts? See what a 2018 study found about caffeine and reaction speed, plus a simple 3-step plan to try today."
+title: "Does a cup of black coffee make you react faster?"
+description: "In a 2018 study of 59 adults in Newcastle, UK, a cup of regular black coffee led to quicker reactions 30 minutes later than a dummy drink. What it means for focus."
 slug: "one-black-coffee-before-focused-work-may-sharpen-reactions"
 pubDate: "2026-11-15T15:01:01.660Z"
 author: "The NeuroPulse Team"
 authorId: "neuropulse-team"
-tags: ["caffeine", "focus", "black coffee", "adenosine", "reaction time"]
+tags: ["caffeine", "focus", "black coffee", "adenosine"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "The acute effects of caffeinated black coffee on cognition and mood in healthy young and older adults"
+  authors: "Haskell-Ramsay CF, Jackson PA, Forster JS, et al."
+  journal: "Nutrients"
+  year: 2018
+  sample: "59 healthy adults (29 aged 20-34, 30 aged 61-80), Northumbria University, Newcastle, UK"
+  url: "https://doi.org/10.3390/nu10101386"
 ---
 It's 9:05. Your laptop is open, the first big task is waiting, and your brain feels like it's still in the shower. You read the same line twice. Someone pings you and your answer comes a beat late.
 
-This is where a mug of **black coffee before focused work** often shows up. Plain, no sugar, no fuss. But is there anything to it beyond habit?
+This is usually where the first mug of coffee shows up. Is there anything to it beyond habit?
 
-## Why do you feel slow when focused work starts?
+## Why do you feel slow when work starts?
 
-Most of us blame ourselves. Not enough willpower, not enough sleep, too many tabs.
+Sometimes it's not willpower. Your brain builds up a chemical called adenosine for as long as you're awake, and the more it builds, the sleepier you feel.
 
-Sometimes it's simpler. Your brain has been building up a chemical signal called adenosine for as long as you've been awake. The more it builds, the sleepier you feel.
+That can make the first stretch of work feel like wading through wet sand. You're awake, but your reactions lag.
 
-That can make the first stretch of work feel like wading through wet sand. You're awake, but your reactions are a little behind.
+## What does caffeine do in your brain?
 
-## What does caffeine actually do in your brain?
+Caffeine doesn't create energy. It gets in the way.
 
-Caffeine doesn't give you energy out of thin air. It works by getting in the way.
+Adenosine fits into receptors on brain cells, and that nudges you toward sleep. Caffeine is shaped enough like adenosine to sit in those same spots. Think of someone parking in adenosine's space: the sleepy signal is still around, it just can't land.
 
-Adenosine fits into receptors on brain cells, and that's what nudges you toward sleepy. Caffeine looks similar enough to take those same spots. Think of it as someone parking in adenosine's space. The sleepy signal is still around, it just can't land.
+<!-- img:brain -->
 
-The result is that your brain, including the prefrontal cortex, the front area involved in planning and attention, may feel more alert. Notice the word *may*. How strongly you feel it depends on your body, your sleep and how much caffeine you're used to.
+## What did the study find?
 
-## Can black coffee before focused work really sharpen reactions?
+At Northumbria University in Newcastle, UK, researchers tested 59 healthy adults: 29 aged 20 to 34 and 30 aged 61 to 80 ([Haskell-Ramsay et al., Nutrients, 2018](https://doi.org/10.3390/nu10101386)). On different days, each person drank regular black coffee, decaf, or a dummy drink, without knowing which. Thirty minutes later they did memory and attention tests on a computer.
 
-Research suggests it can help. A 2018 study by Haskell-Ramsay and colleagues, published in the journal Nutrients, found that caffeine made reactions quicker.
+Compared with the dummy drink, regular coffee made reactions quicker and people felt more alert. Compared with decaf, it made them more accurate on an attention task and less tired. Decaf also made people feel a bit more alert than the dummy drink, which suggests coffee may do more than caffeine alone. Some people felt more jittery after regular coffee too.
 
-That's the part we can say with some confidence. We'd be stretching it to say more. One study can't tell you how coffee will feel on your own Tuesday morning, and we don't know yet how well the result holds for every kind of task or every kind of person.
+## What this study can't tell us
 
-Why black? Mostly to keep it simple. Plain coffee means the caffeine is the main thing you're testing, not a pile of extras.
+The study measured one cup and short computer tests 30 minutes later. It can't tell you how coffee will feel on your own Tuesday, how it works across a long workday, or what happens if you drink coffee every day and are already used to it.
 
-## How can you try it today?
+## How to try it before your first block of work
 
-The habit is small: one cup of plain black coffee before your first block of focused work. Then pay attention to what happens.
-
-Here's a mini plan:
-
-1. **Pick one task.** Choose the thing you'd normally stall on, like the report or the inbox you've been avoiding.
+1. **Pick one task.** The thing you'd normally stall on.
 2. **Make one cup of plain black coffee.** Sip it while you close extra tabs and put your phone out of reach.
-3. **Start, then notice.** After 20 minutes or so, ask yourself if you're catching things faster or if your thoughts feel less foggy. Jot down a quick yes or no.
+3. **Check in after about 30 minutes.** That's when the study tested people. Are you catching things faster? Jot a quick yes or no.
 
-If you do this for a few days, you'll have your own small data set. That's more useful than any general claim.
+<!-- img:fix -->
 
-Timing matters too, since caffeine late in the day can get in the way of sleep. If you're curious about when to drink it, our post on [coffee timing and cortisol](/blog/coffee-timing-cortisol-brain) goes deeper.
+A few days of notes will tell you more than any general claim. Caffeine late in the day can cut into sleep, so keep this to the morning. If you're curious about timing, read [what coffee timing does to your cortisol](/blog/coffee-timing-cortisol-brain).
 
 ## Who should be careful with caffeine?
 
-Caffeine isn't right for everyone. Talk with your doctor first if any of these fit you:
+Talk with your doctor first if you're pregnant or breastfeeding, take medication that can interact with caffeine, have a heart rhythm problem, or find that caffeine makes anxiety worse. If coffee leaves you shaky or awake at night, skip it.
 
-- You're pregnant or breastfeeding.
-- You take medication, since caffeine can interact with some drugs.
-- You deal with anxiety, because caffeine can make jittery or racing feelings worse.
-- You have a heart condition or heart rhythm problems.
+## Where to go from here
 
-Also, if coffee leaves you shaky, or keeps you awake at night, skip it. A cup that costs you your sleep isn't helping your focus.
+For the work block itself, try the [90-minute focus block](/blog/90-minute-focus-block).
 
-Not sure which small habit to start with? Take the [free 60-second brain quiz](/quiz) for one simple habit to try first.
-
-So, coffee or tea, which one are you? Tell us how your first cup treats you.
+Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 
 ## FAQ
 
 ### Does black coffee help you focus?
 
-It may. Caffeine blocks adenosine, the brain's sleepy signal, and a 2018 study by Haskell-Ramsay and colleagues in Nutrients found it made reactions quicker. Focus feels different for everyone, so try it for a few days and see how you respond.
+In the study above, regular black coffee made reactions quicker and people more alert 30 minutes later than a dummy drink. Focus at work is more than reaction time, so test it on yourself for a few days.
 
 ### How does caffeine block adenosine?
 
-Adenosine builds up while you're awake and attaches to receptors on brain cells, which makes you feel sleepy. Caffeine is shaped similarly and can take those spots, so the sleepy signal has a harder time getting through.
+Adenosine builds up while you're awake and attaches to receptors on brain cells, which makes you sleepy. Caffeine takes those spots, so the sleepy signal has a harder time getting through.
 
-### Is black coffee better than coffee with sugar and cream?
+### Is decaf useless?
 
-We don't have research to say one is better for focus. Black coffee is simply the plainest way to test how caffeine affects you, with nothing else mixed in. Choose what you'll actually enjoy and what fits your health needs.
-
+Not entirely. In this study, decaf made people feel a little more alert than a dummy drink. The quicker reactions were reported for regular coffee, not for decaf.
 
 *Educational content, not medical advice.*
