@@ -11,12 +11,12 @@ const posts = (await getCollection("blog", ({ data }) => data.draft !== true))
 
 <BaseLayout title="Start here · NeuroPulse" description="Foggy, forgetful or wired-but-tired? Take the 60-second quiz, then read the page for the video you just watched.">
   <section class="start">
-    <p class="eyebrow">// start here</p>
+    <p class="eyebrow">Start here</p>
     <h1>NeuroPulse</h1>
     <p class="lead">What happens in your brain — and one thing to do about it today.</p>
 
     <a class="hero-link" href="/quiz/?utm_source=bio">
-      <span class="eyebrow">// free · 60 seconds</span>
+      <span class="eyebrow">Free · 60 seconds</span>
       <strong>Which brain switch is off?</strong>
       <span class="sub">Take the quiz: FOG, MEMORY or ENERGY →</span>
     </a>
@@ -32,7 +32,7 @@ const posts = (await getCollection("blog", ({ data }) => data.draft !== true))
       <span class="sub">Simple things that make the habits easier</span>
     </a>
 
-    {posts.length > 0 && <p class="eyebrow list-title">// latest</p>}
+    {posts.length > 0 && <p class="eyebrow list-title">Latest</p>}
     {posts.map((p) => (
       <a class="link" href={`/blog/${p.id}/`}>
         <strong>{p.data.title}</strong>

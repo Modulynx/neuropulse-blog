@@ -19,6 +19,17 @@ const blog = defineCollection({
     videoUrl: z.string().url().optional().or(z.literal("")).optional(),
     draft: z.boolean().default(false),
     heroImage: z.string().optional(),
+    // Design refresh 2026-11-17 (all optional; an article without them builds as before)
+    heroAlt: z.string().optional(),       // what the hero shows, for screen readers
+    heroCaption: z.string().optional(),   // the caption under the hero; no caption = the hero is not shown (see SHOW_UNCAPTIONED_HERO)
+    study: z.object({                     // "The study" card + the Sources list
+      title: z.string(),
+      authors: z.string().optional(),
+      journal: z.string(),
+      year: z.coerce.number(),
+      sample: z.string().optional(),      // e.g. "12 adults in a sleep lab"
+      url: z.string().url(),              // DOI or PubMed link
+    }).optional(),
   }),
 });
 

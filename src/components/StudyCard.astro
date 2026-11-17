@@ -1,0 +1,25 @@
+---
+// StudyCard.astro — "The study" box at the top of an article: journal, year, sample, link to the paper.
+interface Props { study: { title: string; authors?: string; journal: string; year: number; sample?: string; url: string } }
+const { study } = Astro.props;
+const host = (() => { try { return new URL(study.url).hostname.replace(/^www\./, ""); } catch { return "the paper"; } })();
+---
+<aside class="study" aria-labelledby="study-h">
+  <h2 class="study__h" id="study-h">The study</h2>
+  <dl class="study__dl">
+    <div><dt>Published in</dt><dd>{study.journal}, {study.year}</dd></div>
+    {study.sample && <div><dt>Who took part</dt><dd>{study.sample}</dd></div>}
+  </dl>
+  <p class="study__link"><a href={study.url} rel="noopener">Read the paper: “{study.title}”</a> <span class="study__host">({host})</span></p>
+</aside>
+<style>
+  .study { margin: 0 0 2rem; padding: 1rem 1.2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); font-size: 0.9375rem; line-height: 1.5; }
+  .study__h { font-family: var(--font-body); font-size: 0.8125rem; font-weight: 650; letter-spacing: 0.02em; margin: 0 0 0.6rem; color: var(--amber); }
+  .study__dl { margin: 0 0 0.6rem; display: grid; gap: 0.35rem; }
+  .study__dl div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.75rem; }
+  .study__dl dt { color: var(--text-dim); }
+  .study__dl dd { margin: 0; }
+  .study__link { margin: 0; }
+  .study__host { color: var(--text-dim); }
+  @media (max-width: 480px) { .study__dl div { grid-template-columns: 1fr; gap: 0; } }
+</style>

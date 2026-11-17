@@ -9,6 +9,13 @@ tags: ["sleep", "nutrition", "brain health"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "Effect of kiwifruit consumption on sleep quality in adults with sleep problems"
+  authors: "Lin HH, Tsai PS, Fang SC, Liu JF"
+  journal: "Asia Pacific Journal of Clinical Nutrition"
+  year: 2011
+  sample: "24 adults aged 20-55 with sleep problems (22 women), at home in Taipei, no comparison group"
+  url: "https://pubmed.ncbi.nlm.nih.gov/21669584/"
 ---
 ## Can't Fall Asleep? One Study Tried Kiwi
 
@@ -36,6 +43,8 @@ Kiwi contains serotonin, and serotonin is a building block of melatonin, the hor
 
 The researchers also pointed to kiwi's antioxidants. That idea is still being tested.
 
+<!-- img:brain -->
+
 ## How to Try the Two-Kiwi Method
 
 1. Buy enough kiwis for at least a week.
@@ -43,6 +52,8 @@ The researchers also pointed to kiwi's antioxidants. That idea is still being te
 3. When it goes off, eat two kiwis and put your screen away.
 
 The study ran for four weeks, so give it a few weeks before you judge it. Keep everything else the same, so you can tell whether the kiwi made the difference.
+
+<!-- img:fix -->
 
 ## Who Should Be Careful?
 

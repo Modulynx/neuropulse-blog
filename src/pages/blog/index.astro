@@ -1,133 +1,31 @@
 ---
-// blog/index.astro — the /blog landing grid
-import "../../styles/global.css";
+// blog/index.astro — every article, newest first, as a plain list (design refresh 2026-11-17).
 import { getCollection } from "astro:content";
-import ArticleCard from "../../components/ArticleCard.astro";
-import Navbar from "../../components/Navbar.astro";
-import Footer from "../../components/Footer.astro";
-import Analytics from "../../components/Analytics.astro";
-import { estimateReadingMinutes } from "../../utils/readingTime";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostList from "../../components/PostList.astro";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-
-const total = posts.length;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The NeuroPulse Field Notes · Neuroscience, in plain English</title>
-    <meta
-      name="description"
-      content="Short, science-backed reads on how everyday moments shape your brain — focus, sleep, stress, and attention, explained simply."
-    />
-    <link rel="canonical" href="https://neuropulsemind.com/blog/" />
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-    <link rel="apple-touch-icon" href="/favicon.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
-    />
-    <!-- Analytics: own <head> here (no layout) -->
-    <Analytics />
-  </head>
-  <body>
-    <Navbar />
-    <main class="wrap">
-    <header class="masthead">
-        <span class="masthead__kicker">Brain Science · For the American Mind 🇺🇸</span>
-        <h1 class="masthead__title">What Modern Life Is Doing to Your Brain</h1>
-        <p class="masthead__sub">
-          From doom-scrolling at 2am to the 3pm crash — science-backed reads on why American brains feel burned out, and what to actually do about it.
-        </p>
-        <p class="masthead__count">{total} article{total === 1 ? "" : "s"}</p>
-      </header>
-
-      {total === 0 ? (
-        <p class="empty">First articles are on their way. Check back shortly.</p>
-      ) : (
-        <section class="grid" aria-label="Articles">
-          {posts.map((post) => (
-            <ArticleCard
-              title={post.data.title}
-              slug={post.id}
-              description={post.data.description}
-              niche={post.data.niche}
-              pubDate={post.data.pubDate}
-              tags={post.data.tags}
-              heroImage={post.data.heroImage}
-              readingTime={estimateReadingMinutes(post.body ?? "")}
-            />
-          ))}
-        </section>
-      )}
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout
+  title="All articles · NeuroPulse"
+  description="Every NeuroPulse article: one brain study at a time, explained plainly, with a link to the paper."
+  canonical="https://neuropulsemind.com/blog/"
+>
+  <div class="wrap">
+    <header class="head">
+      <h1>All articles</h1>
+      <p>{posts.length} article{posts.length === 1 ? "" : "s"}, newest first. Each one explains a single study and links to it.</p>
+    </header>
+    {posts.length === 0 ? <p>First articles are on their way.</p> : <PostList posts={posts} />}
+  </div>
+</BaseLayout>
 
 <style>
-  .wrap {
-    max-width: 1120px;
-    margin-inline: auto;
-    padding: clamp(2rem, 5vw, 3.5rem) 1.25rem clamp(3rem, 8vw, 5rem);
-    overflow-x: hidden;
-  }
-
-  .masthead {
-    max-width: 44ch;
-    margin-bottom: 2.5rem;
-  }
-
-  /* Warm amber label — no code-style prefix */
-  .masthead__kicker {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin: 0 0 0.85rem;
-  }
-
-  /* Playfair Display — editorial, not AI */
-  .masthead__title {
-    font-family: var(--font-display);
-    font-size: var(--step-3);
-    line-height: 1.15;
-    margin: 0 0 1rem;
-    color: var(--text);
-  }
-
-  .masthead__sub {
-    color: var(--text-dim);
-    font-size: var(--step-0);
-    line-height: 1.7;
-    margin: 0 0 1rem;
-  }
-
-  .masthead__count {
-    font-family: var(--font-body);
-    font-size: var(--step--1);
-    color: var(--text-dim);
-    margin: 0;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-    gap: 1.4rem;
-  }
-
-  .empty {
-    color: var(--text-dim);
-    font-family: var(--font-body);
-  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: clamp(1.75rem, 5vw, 3.5rem) 16px clamp(3rem, 8vw, 5rem); }
+  .head { margin-bottom: 1.5rem; }
+  .head h1 { font-size: var(--step-3); margin: 0 0 0.5rem; font-weight: 700; }
+  .head p { margin: 0; color: var(--text-dim); }
 </style>

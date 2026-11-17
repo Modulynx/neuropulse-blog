@@ -25,13 +25,14 @@ Social -> /guide/ -> Kit Form 9647814 -> /thank-you/ -> PDF + upsell -> Gumroad 
 / = Homepage | /blog/ = 7 articles | /guide/ = PRIMARY entry
 /thank-you/ | /protocol/ | /about/
 
-## Design Rules (STRICT)
-Style: Editorial Magazine — NO AI-looking elements
-Fonts: Playfair Display (display), Inter (body) — NO monospace in UI
-Colors: --bg #0E0E0E, --amber #D4A853, --cyan #4CE0D2
-NO emoji as icons → inline SVG only
-NO // prefix eyebrows → plain uppercase text labels
-Author: "The NeuroPulse Team" | Character: Dr. Neuro (AI character, not real doctor)
+## Design Rules (STRICT) — design refresh 2026-11-17 (replaces the dark editorial rules)
+Style: a small, careful science publication on paper. NO AI-looking elements (no gradient blobs, glows, emoji headings, generic icons, card grids, sparkles, "// " code labels).
+Fonts: ONE serif = Source Serif 4 (headings + article text), Inter for small UI text. Both self-hosted via @fontsource-variable (no Google Fonts request).
+Colors (src/styles/global.css, names kept): --bg #FAF8F3 paper, --text #1E1C19 ink, --cyan #0B5D57 links, --magenta #9E3A22 the one action button, --amber #6E4A00 small labels. Contrast >= 4.5:1 everywhere (axe: 0 violations).
+Article page: date + reading time, title, standfirst, "By NeuroPulse", hero (only OUR captioned still; heroCaption required to show it), "The study" card (frontmatter `study`), "What this study can't tell us" note (an H2 with that text), Sources, Amazon disclosure when the text has an Amazon link, about box, free guide, 2 related.
+Home: one line on who we are, the latest article big, then a plain list (date + one line). /blog = the same list.
+Images: only our video stills / post images (scripts/blog_images.js in Reelflow writes them as WebP with alt, width, height, lazy). Never stock photos of people or logos of real apps.
+Author: "NeuroPulse" (no invented people).
 
 ## Schema Rules (content.config.ts) — CRITICAL
 title: max 80 chars — BREAKS BUILD if exceeded

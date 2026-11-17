@@ -9,6 +9,13 @@ tags: ["brain fog", "turmeric", "golden milk"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "Influence of piperine on the pharmacokinetics of curcumin in animals and human volunteers"
+  authors: "Shoba G, Joy D, Joseph T, et al."
+  journal: "Planta Medica"
+  year: 1998
+  sample: "Rats, then healthy human volunteers given 2 g of curcumin with or without 20 mg of piperine"
+  url: "https://doi.org/10.1055/s-2006-957450"
 ---
 You reach for your usual turmeric latte at 2 PM, hoping it'll clear the mental haze that's been building since lunch. The golden powder swirls into the warm milk, looking promising. But that brain fog? It's still there an hour later.
 
@@ -21,6 +28,8 @@ The part of turmeric that researchers study is called curcumin, and it has a pro
 Think of curcumin like trying to fill a bucket with a giant hole in the bottom. Most of what you pour in just leaks right out.
 
 That's where black pepper comes in. The compound that makes pepper spicy, called piperine, acts like a patch for that leaky bucket.
+
+<!-- img:brain -->
 
 ## What does research say about black pepper and turmeric?
 
@@ -41,6 +50,8 @@ Here's your three-step plan for today:
 3. **Stir in honey or your preferred sweetener**
 
 The pepper doesn't need to make your drink spicy. A pinch the size of what you'd put on scrambled eggs is plenty.
+
+<!-- img:fix -->
 
 ## Who should be careful with this combination?
 
