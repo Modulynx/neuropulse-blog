@@ -1,88 +1,84 @@
 ---
-title: "The Doorway Effect: Why Doors Make You Forget"
-description: "The doorway effect may explain why you blank after walking into a room. See what a 2011 study found and a simple 3-step habit to try today. Plain English."
+title: "Why do you forget things when you walk through a door?"
+description: "A 2011 University of Notre Dame study found memory drops after people move from one room to another. What it found, what it didn't, and one habit to try."
 slug: "why-walking-through-a-door-makes-you-forget"
 pubDate: "2026-11-14T15:01:14.580Z"
 author: "The NeuroPulse Team"
 authorId: "neuropulse-team"
-tags: ["doorway effect", "memory", "hippocampus", "forgetting", "everyday brain habits"]
+tags: ["doorway effect", "memory", "forgetting", "everyday brain habits"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "Walking through doorways causes forgetting: further explorations"
+  authors: "Radvansky GA, Krawietz SA, Tamplin AK"
+  journal: "Quarterly Journal of Experimental Psychology"
+  year: 2011
+  sample: "Three lab experiments with volunteers at the University of Notre Dame, in virtual rooms and in real rooms"
+  url: "https://doi.org/10.1080/17470218.2011.571267"
 ---
-You're in the living room, sure you need something from the kitchen. You walk in, stop next to the mug on the counter, and the thought is gone.
+You're on the couch, sure you need something from the kitchen. You walk in, stop next to the mug on the counter, and the thought is gone.
 
-You stand there, a little annoyed, and wonder what you came for. Then you walk back to the couch and it returns. Annoying, but very common. It's often called the doorway effect.
+You stand there, a little annoyed. Then you sit back down and it comes back. Batteries. It has a name: the doorway effect.
 
-## Why do I forget what I came for?
+## Why do you forget what you came for?
 
-Most people assume this means a tired brain or a bad memory. It usually doesn't. Your brain was doing something fairly normal, and you just happened to notice it.
+Most people blame a tired brain or a bad memory. Usually it's neither. Your memory was doing something fairly normal, and you happened to notice.
 
-The short version: your brain may treat the doorway as a signal that one chapter of your day ended and another began.
+The short version: a doorway may tell your memory that one scene of your day ended and another one began.
 
-## What is the doorway effect in the brain?
+## What happens in your memory at a doorway?
 
-Your hippocampus, a seahorse-shaped area deep in the brain, helps save your day. It doesn't record one long, smooth video. It breaks your day into scenes.
+Your memory doesn't record your day as one long video. It splits it into scenes, or "events." The living room is one scene and the kitchen is another.
 
-Think of each scene as getting its own memory file. The living room is one file, and the kitchen is another.
+When you step through a doorway, the old scene gets filed away and a new one opens. The plan you made in the first room, "grab the batteries," is still in there. It's just harder to reach from the new scene. The researchers call this idea the "event horizon model."
 
-When you cross a doorway, your brain may close the old file and open a new one. The plan you made in the first scene, like "grab the batteries," is still in there. It's just harder to reach from the new room.
+<!-- img:brain -->
 
-That's the whole idea. It isn't a glitch or a sign that something is wrong. Your brain started a new scene.
+## What did the study find?
 
-## What did the research find?
+Gabriel Radvansky and his team at the University of Notre Dame had volunteers move through a series of rooms while handling objects, then tested what they remembered about them ([Radvansky et al., Quarterly Journal of Experimental Psychology, 2011](https://doi.org/10.1080/17470218.2011.571267)). Earlier work had used rooms on a computer screen. This time, one experiment used smaller screens and another used real rooms.
 
-A 2011 study by Radvansky and colleagues, published in the Quarterly Journal of Experimental Psychology, tested this idea. People who walked through a doorway forgot more than people who walked the same distance within one room.
+Memory dropped after people moved to a new room, both on screen and in real life. Then came the surprise. In a third experiment, people walked back to the room where they had first seen the objects. Their memory did not get better.
 
-That detail matters. It wasn't about how far anyone walked or how long it took. The doorway itself seemed to make the difference.
+## What this study can't tell us
 
-Research like this suggests that the boundary between spaces can mark a new event in memory. We don't know exactly how much this affects daily life for any one person. And one study can't tell us whether a particular habit fixes it, so treat the tips below as simple things to try, not proven methods.
+These were lab tasks with objects, not your real errands. The study tested memory, not the brain, so it can't say which brain areas are involved. And it can't tell us whether any habit prevents the effect.
 
-## What can I try today?
+## What can you try today?
 
-The aim isn't to avoid doors. It's to give your plan a better chance of coming along with you.
+Going back to the first room is the classic tip, and this study found it didn't help. So try making the plan easier to carry instead.
 
-The habit: say your goal out loud before you cross the doorway. A short phrase works, like "batteries, kitchen drawer."
+1. **Pause at the door.** One breath before you step through, especially when you're tired or carrying something.
+2. **Say the goal in a few words.** "Batteries, kitchen drawer." Out loud or under your breath.
+3. **Keep a cue in your hand.** If you're fetching batteries for the remote, carry the remote.
 
-Here's a 3-step mini plan:
+<!-- img:fix -->
 
-1. **Pause at the door.** Take one breath before you step through, especially when you're tired or carrying something.
-2. **Say the goal in a few words.** Out loud or under your breath is fine.
-3. **If it slips, go back.** Return to the first room and stand where you made the plan. It's a common trick, and it may work because your brain gets the old scene back.
-
-Try it for one day. If you forget anyway, that's okay. It's a normal brain doing a normal thing.
-
-If you want more ideas for a crowded head, our post on [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos) pairs well with this one.
+The last two steps are our suggestions, not something this study tested. If you forget anyway, that's normal.
 
 ## Who should be careful?
 
-This habit is simple and low risk. Still, a few notes.
+Blanking at a doorway is common. It isn't the same as new or worsening memory trouble. If you're losing your way in familiar places, repeating questions or getting confused, talk with a doctor.
 
-Forgetting at doorways is common, but it isn't the same as new, fast-changing, or worrying memory trouble. If you're losing track of familiar places, repeating questions, or getting confused, talk with a doctor.
+## Where to go from here
 
-If you're pregnant, take medication that affects thinking or alertness, or have a heart condition, bring up any new forgetfulness with your clinician instead of guessing the cause.
+If your head feels crowded all day, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos). For work that needs a clear head, try the [90-minute focus block](/blog/90-minute-focus-block).
 
-If you deal with anxiety, try to keep this light. Checking and re-checking your memory all day can add stress. One short phrase at the door is plenty.
-
-## Want one simple habit picked for you?
-
-If you'd like a place to start, take the [free 60-second brain quiz](/quiz) for one simple habit to try first. It's a small nudge toward something easy you can do today.
-
-So, what did you walk in for last? Tell us in the comments. We'll bet it was something small.
+Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 
 ## FAQ
 
 ### Why do I forget what I was doing when I walk into another room?
 
-Research suggests your brain stores your day in scenes, and a doorway can mark the start of a new one. The plan from the old room may be harder to reach in the new one. It's a normal feature of memory, not a sign that something is wrong.
+Your memory stores your day in scenes, and a doorway can mark the start of a new one. In the study above, memory dropped after people moved from one room to another.
 
 ### Is the doorway effect a sign of a memory problem?
 
-Usually not. Blanking after walking into a room is common. If forgetting is new, getting worse, or comes with confusion or getting lost in familiar places, it's worth talking with a doctor.
+Usually not. If forgetting is new, getting worse, or comes with confusion, talk with a doctor.
 
-### How can I remember why I walked into a room?
+### Does going back to the first room help?
 
-You can try pausing at the door and saying your goal in a few words before you step through. If it still slips, going back to the first room may bring the thought back. These are simple things to try, not guaranteed fixes.
-
+In this study, returning to the original room did not improve memory. Saying your goal before you leave may be a better bet, though it wasn't tested here.
 
 *Educational content, not medical advice.*
