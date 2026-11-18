@@ -14,11 +14,11 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
 ---
 
 <aside class="lm" aria-label="Free guide sign-up">
-  <p class="lm__eyebrow">// free guide</p>
-  <h3 class="lm__title">Get the 7 Brain Hacks cheat sheet</h3>
+  <p class="lm__eyebrow">Free guide</p>
+  <h2 class="lm__title">The Brain Owner’s Manual</h2>
   <p class="lm__copy">
-    One short email, the science-backed habits behind sharper focus and
-    calmer evenings. No spam, unsubscribe anytime.
+    A short PDF on focus, sleep and stress, with the study behind each habit.
+    We send it by email. No spam, unsubscribe anytime.
   </p>
   <form class="lm__form" action={ACTION} method="POST">
     <label class="lm__label" for="lm-email">Email address</label>
@@ -48,52 +48,15 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
 </aside>
 
 <style>
-  .lm {
-    margin: 2.4rem 0;
-    padding: 1.6rem 1.5rem;
-    background: var(--bg-elev);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--cyan);
-    border-radius: var(--radius);
-  }
-  .lm__eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--cyan);
-    letter-spacing: 0.06em;
-    margin: 0 0 0.5rem;
-  }
-  .lm__title { font-size: var(--step-1); margin: 0 0 0.4rem; }
-  .lm__copy { color: var(--text-dim); font-size: var(--step--1); margin: 0 0 1.1rem; }
-  .lm__label {
-    position: absolute; width: 1px; height: 1px;
-    overflow: hidden; clip: rect(0 0 0 0);  /* visually hidden, screen-reader OK */
-  }
+  .lm { margin: 0; padding: 1.4rem 1.25rem; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); }
+  .lm__eyebrow { font-size: 0.875rem; font-weight: 650; color: var(--amber); margin: 0 0 0.35rem; }
+  .lm__title { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 0.4rem; }
+  .lm__copy { color: var(--text-dim); font-size: 0.9375rem; line-height: 1.55; margin: 0 0 1rem; max-width: 60ch; }
+  .lm__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .lm__row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-  .lm__input {
-    flex: 1 1 220px;
-    min-width: 0;
-    padding: 0.8rem 0.9rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    font: inherit;
-  }
-  .lm__input::placeholder { color: var(--text-dim); }
-  .lm__btn {
-    flex: 0 0 auto;
-    padding: 0.8rem 1.4rem;
-    background: var(--magenta);
-    color: #fff;
-    font: 600 var(--step-0)/1 var(--font-display);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: filter 0.15s ease;
-  }
-  .lm__btn:hover { filter: brightness(1.08); }
-  @media (max-width: 480px) {
-    .lm__btn { flex: 1 1 100%; }
-  }
+  .lm__input { flex: 1 1 220px; min-width: 0; padding: 0.75rem 0.85rem; background: #fff; border: 1px solid #8C857A; border-radius: var(--radius); color: var(--text); font: inherit; }
+  .lm__input::placeholder { color: #6B655C; }
+  .lm__btn { flex: 0 0 auto; padding: 0.75rem 1.25rem; background: var(--magenta); color: #fff; font: 600 1rem/1 var(--font-body); border: none; border-radius: var(--radius); cursor: pointer; }
+  .lm__btn:hover { filter: brightness(0.92); }
+  @media (max-width: 480px) { .lm__btn { flex: 1 1 100%; } }
 </style>

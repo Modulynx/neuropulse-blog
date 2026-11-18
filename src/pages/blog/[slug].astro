@@ -1,325 +1,133 @@
 ---
+// blog/[slug].astro — one article (design refresh 2026-11-17).
+// Order: date + reading time, title, standfirst, byline, hero (full width, caption), "The study" card, the text
+// (its "What this study can't tell us" section becomes a note, see src/utils/rehypeLimits.mjs), Sources,
+// affiliate disclosure (only when the text has an Amazon link), the about box, the free guide, 2 related articles.
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import LeadMagnet from '../../components/LeadMagnet.astro';
-import ProtocolCallout from '../../components/ProtocolCallout.astro';
-import ArticleCard from '../../components/ArticleCard.astro';
+import StudyCard from '../../components/StudyCard.astro';
+import AboutBox from '../../components/AboutBox.astro';
+import PostList from '../../components/PostList.astro';
 import { estimateReadingMinutes } from '../../utils/readingTime';
+import { imageSize } from '../../utils/imageSize';
+import { collectSources, hasAmazonLink } from '../../utils/sources';
+import { AMAZON_DISCLOSURE } from '../../data/site';
+
+// The old posts carry a generic glowing-brain hero with no caption. Only OUR stills with a caption are shown
+// (scripts/blog_images.js in Reelflow writes heroCaption). ROLLBACK (one line): true = every heroImage is shown again.
+const SHOW_UNCAPTIONED_HERO = false;
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  return blogEntries.map(entry => ({ params: { slug: entry.id }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const d = entry.data;
 
-// Format date
-const formattedDate = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-}).format(entry.data.pubDate);
-
-// Reading time (Task 7) — estimated from the raw markdown body, ~200wpm
+const formattedDate = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(d.pubDate);
 const readingMinutes = estimateReadingMinutes(entry.body ?? '');
 
-// Related Field Notes (Task 6) — other published posts sharing at least
-// one tag, newest first, capped at 3. Section is omitted entirely if none.
-const currentTags = new Set(entry.data.tags);
-const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft))
-  .filter((p) => p.id !== entry.id)
-  .filter((p) => p.data.tags.some((tag) => currentTags.has(tag)))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+const showHero = !!d.heroImage && (!!d.heroCaption || SHOW_UNCAPTIONED_HERO);
+const heroDims = showHero ? (imageSize(d.heroImage) ?? { width: 1200, height: 675 }) : null;
+const heroAlt = d.heroAlt || d.heroCaption || '';
+// our video stills are portrait (9:16): the hero shows a 3:2 crop around the upper part (the face), the file stays whole
+const heroPortrait = !!heroDims && heroDims.height > heroDims.width;
+
+const sources = collectSources(entry.body ?? '', d.study);
+const amazon = hasAmazonLink(entry.body ?? '');
+
+// 2 related articles: shared tags first, then the newest others
+const others = (await getCollection('blog', ({ data }) => !data.draft)).filter((p) => p.id !== entry.id)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const tagSet = new Set(d.tags);
+const score = (p: any) => p.data.tags.filter((t: string) => tagSet.has(t)).length;
+const related = [...others].sort((a, b) => score(b) - score(a)).slice(0, 2);
 ---
 
 <ArticleLayout
-  title={entry.data.title}
-  description={entry.data.description}
+  title={d.title}
+  description={d.description}
   slug={entry.id}
-  author={entry.data.author}
-  pubDate={entry.data.pubDate}
-  tags={entry.data.tags}
+  author={d.author}
+  pubDate={d.pubDate}
+  tags={d.tags}
+  image={showHero ? d.heroImage : undefined}
+  citation={d.study ? { title: d.study.title, url: d.study.url } : undefined}
 >
-  <div class="article-grid">
-    <article class="post-container">
-      <header class="post-header">
-        <div class="meta">
-          <span class="niche">{entry.data.niche || 'Neuroscience'}</span>
-          <span class="dot">•</span>
-          <time datetime={entry.data.pubDate.toISOString()}>{formattedDate}</time>
-          <span class="dot">•</span>
-          <span class="reading-time">// {readingMinutes} min read</span>
-        </div>
-
-        <h1>{entry.data.title}</h1>
-
-        <p class="description">{entry.data.description}</p>
-
-        <div class="author-info">
-          <div class="avatar">NP</div>
-          <div class="author-details">
-            <span class="name">{entry.data.author}</span>
-            <div class="tags">
-              {entry.data.tags.map(tag => (
-                <span class="tag">#{tag}</span>
-              ))}
-            </div>
-          </div>
-        </div>
+  <main class="art">
+    <article>
+      <header class="art__head">
+        <p class="art__meta"><time datetime={d.pubDate.toISOString()}>{formattedDate}</time> · {readingMinutes} min read</p>
+        <h1 class="art__title">{d.title}</h1>
+        {d.description && <p class="art__dek">{d.description}</p>}
+        <p class="art__by">By <a href="#about-neuropulse">NeuroPulse</a></p>
       </header>
 
-      <div class="post-content prose">
-        <Content />
+      {showHero && heroDims && (
+        <figure class:list={["art__hero", "np-figure", { "art__hero--portrait": heroPortrait }]}>
+          <img src={d.heroImage} alt={heroAlt} width={heroDims.width} height={heroDims.height} loading="eager" fetchpriority="high" decoding="async" />
+          {d.heroCaption && <figcaption>{d.heroCaption}</figcaption>}
+        </figure>
+      )}
+
+      <div class="art__body">
+        {d.study && <StudyCard study={d.study} />}
+        <div class="prose">
+          <Content />
+        </div>
+
+        {sources.length > 0 && (
+          <section class="art__sources" aria-labelledby="sources-h">
+            <h2 id="sources-h">Sources</h2>
+            <ol>
+              {sources.map((s) => <li><a href={s.url} rel="noopener">{s.label}</a></li>)}
+            </ol>
+          </section>
+        )}
+
+        {amazon && <p class="art__disclosure">{AMAZON_DISCLOSURE} Links to Amazon in this article are affiliate links.</p>}
+
+        <AboutBox />
       </div>
     </article>
 
-    <aside class="article-sidebar" aria-label="Recommended resources">
-      <div class="sidebar-sticky">
-        <LeadMagnet />
-        <ProtocolCallout
-          title="Quick Implementation"
-          content="Reading about neuroscience is not enough. Implementation is what changes your baseline. Start with the easiest step above and commit to it for 48 hours."
-        />
-      </div>
-    </aside>
-  </div>
+    <div class="art__guide">
+      <LeadMagnet />
+    </div>
 
-  {relatedPosts.length > 0 && (
-    <section class="related" aria-label="Related field notes">
-      <p class="related__eyebrow">// related field notes</p>
-      <h2 class="related__title">Keep exploring</h2>
-      <div class="related__grid">
-        {relatedPosts.map((post) => (
-          <ArticleCard
-            title={post.data.title}
-            slug={post.id}
-            description={post.data.description}
-            niche={post.data.niche}
-            pubDate={post.data.pubDate}
-            tags={post.data.tags}
-            readingTime={estimateReadingMinutes(post.body ?? '')}
-          />
-        ))}
-      </div>
-    </section>
-  )}
+    {related.length > 0 && (
+      <section class="art__related" aria-labelledby="related-h">
+        <h2 id="related-h" class="art__related-h">Read next</h2>
+        <PostList posts={related} headingLevel={3} />
+      </section>
+    )}
+  </main>
 </ArticleLayout>
 
 <style>
-  /* Desktop: article + sticky sidebar side by side.
-     Mobile (<768px): single column, sidebar content stacks below the
-     article since it's the second element in source order. */
-  .article-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-    align-items: start;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem 3rem;
-  }
+  .art { padding: clamp(1.75rem, 5vw, 3.5rem) 16px clamp(3rem, 8vw, 5rem); }
+  .art__head, .art__body, .art__guide, .art__related { max-width: var(--measure); margin-inline: auto; }
+  .art__meta { margin: 0 0 0.75rem; font-size: 0.875rem; color: var(--text-dim); }
+  .art__title { font-size: var(--step-3); line-height: 1.12; margin: 0 0 0.9rem; font-weight: 700; }
+  .art__dek { margin: 0 0 1rem; font-family: var(--font-serif); font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem); line-height: 1.5; color: var(--text-dim); }
+  .art__by { margin: 0 0 1.75rem; font-size: 0.9375rem; color: var(--text-dim); }
+  .art__by a { color: var(--text); font-weight: 600; }
 
-  .article-sidebar {
-    min-width: 0;
-  }
+  .art__hero { max-width: 1040px; margin: 0 auto 2rem; }
+  .art__hero img { display: block; width: 100%; height: auto; border-radius: var(--radius); background: var(--bg-elev); }
+  .art__hero--portrait img { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 28%; }
+  .art__hero figcaption { max-width: var(--measure); margin-inline: auto; }
 
-  .sidebar-sticky {
-    position: sticky;
-    top: 88px; /* clears the 64px sticky navbar + breathing room */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+  .art__sources { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.9375rem; line-height: 1.5; }
+  .art__sources h2 { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 650; margin: 0 0 0.5rem; }
+  .art__sources ol { margin: 0; padding-left: 1.25rem; }
+  .art__sources li { margin-bottom: 0.4rem; overflow-wrap: anywhere; }
+  .art__disclosure { margin: 1.25rem 0 0; font-size: 0.875rem; color: var(--text-dim); }
 
-  .post-container {
-    max-width: 800px;
-    width: 100%;
-    min-width: 0;
-  }
-
-  .post-header {
-    margin-bottom: 3rem;
-  }
-
-  .meta {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    font-size: 0.875rem;
-    color: var(--text-dim);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .niche {
-    color: var(--cyan);
-    font-weight: 600;
-  }
-
-  .dot {
-    color: rgba(255, 255, 255, 0.2);
-  }
-
-  .reading-time {
-    font-family: var(--font-mono);
-    color: var(--text-dim);
-  }
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--text);
-    margin: 0 0 1.5rem 0;
-  }
-
-  .description {
-    font-size: 1.25rem;
-    color: var(--text-dim);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    border-left: 3px solid var(--cyan);
-    padding-left: 1rem;
-  }
-
-  .author-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(76, 224, 210, 0.1);
-    color: var(--cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.125rem;
-    border: 1px solid rgba(76, 224, 210, 0.2);
-  }
-
-  .author-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .name {
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-  }
-
-  /* Prose Styling */
-  .prose {
-    color: var(--text);
-    line-height: 1.8;
-    font-size: 1.125rem;
-  }
-
-  .prose :global(h2) {
-    font-size: 2rem;
-    color: var(--text);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .prose :global(h3) {
-    font-size: 1.5rem;
-    color: var(--text);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .prose :global(p) {
-    margin-bottom: 1.5rem;
-  }
-
-  .prose :global(ul) {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .prose :global(li) {
-    margin-bottom: 0.5rem;
-  }
-
-  .prose :global(strong) {
-    color: var(--cyan);
-  }
-
-  /* Related Field Notes */
-  .related {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem 5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .related__eyebrow {
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--cyan);
-    letter-spacing: 0.06em;
-    margin: 0 0 0.6rem;
-  }
-
-  .related__title {
-    font-size: var(--step-2);
-    margin: 0 0 1.5rem;
-  }
-
-  .related__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.4rem;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.25rem;
-    }
-
-    .article-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      padding: 2.5rem 1.25rem 2.5rem;
-    }
-
-    .sidebar-sticky {
-      position: static;
-      top: auto;
-    }
-
-    .related {
-      padding: 2.5rem 1.25rem 3.5rem;
-    }
-
-    .related__grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  .art__guide { margin-top: 3rem; }
+  .art__related { margin-top: 3rem; }
+  .art__related-h { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 650; margin: 0 0 0.25rem; }
 </style>

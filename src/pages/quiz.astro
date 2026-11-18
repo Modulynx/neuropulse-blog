@@ -14,7 +14,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
 <BaseLayout title="Which brain switch is off? — 60-second quiz · NeuroPulse"
   description="Foggy, forgetful or wired-but-tired? Ten quick questions show which of your three brain switches to start with — and one thing to do today.">
   <section class="quiz container">
-    <p class="eyebrow">// 60-second diagnostic</p>
+    <p class="eyebrow">60-second diagnostic</p>
     <h1>Which brain switch is off?</h1>
     <p class="lead" id="quiz-intro">Ten questions. Answer instinctively — your first reaction, not the most flattering answer.</p>
 
@@ -35,7 +35,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
     </form>
 
     <div id="quiz-result" class="result" hidden>
-      <p class="eyebrow">// your result</p>
+      <p class="eyebrow">Your result</p>
       <p class="result__split" id="result-split" hidden></p>
       {KEYS.map((k) => (
         <article class="card" data-result={k} hidden>
@@ -43,7 +43,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
           <p class="card__lever">{RESULTS[k].lever}</p>
           <p>{RESULTS[k].why}</p>
           <div class="card__action">
-            <p class="eyebrow">// do this today</p>
+            <p class="eyebrow">Do this today</p>
             <p>{RESULTS[k].action}</p>
           </div>
         </article>
@@ -53,7 +53,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
       </div>
 
       <aside class="optin">
-        <p class="eyebrow">// free guide</p>
+        <p class="eyebrow">Free guide</p>
         <h3>Get the free Brain Owner's Manual</h3>
         <p class="optin__copy">The plain-English PDF guide, plus follow-up emails for your <span id="optin-key">FOG</span> switch. Free, no spam, unsubscribe anytime.</p>
         <form id="optin-form" method="POST" action={actions.FOG}>

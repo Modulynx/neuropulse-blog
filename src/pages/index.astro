@@ -1,114 +1,71 @@
 ---
+// index.astro — the home page (design refresh 2026-11-17): who we are in one line, the latest article big,
+// then a plain list (date + one line each), then the free guide.
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ArticleCard from '../components/ArticleCard.astro';
+import PostList from '../components/PostList.astro';
 import LeadMagnet from '../components/LeadMagnet.astro';
+import { estimateReadingMinutes } from '../utils/readingTime';
+import { imageSize } from '../utils/imageSize';
 
-const allPosts = await getCollection('blog', ({ data }) => {
-  return data.draft !== true;
-});
-
-// Sort by pubDate descending
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection('blog', ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const [latest, ...rest] = posts;
+const fmt = (d: Date) => new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
+// Only our captioned stills are shown (same rule as the article page)
+const latestImg = latest && latest.data.heroImage && latest.data.heroCaption ? latest.data.heroImage : '';
+const latestDims = latestImg ? (imageSize(latestImg) ?? { width: 1200, height: 675 }) : null;
 ---
 
-<BaseLayout title="NeuroPulse - Neuroscience & Cognitive Optimization">
-  
-  <section class="hero">
-    <div class="hero-content">
-      <span class="label">NeuroPulse · Brain Science for Real American Life 🇺🇸</span>
-      <h1>Your Brain Wasn't Built for This</h1>
-      <p class="tagline">
-        The dopamine hits, the 3am scrolling, the Monday exhaustion — there's neuroscience behind all of it. We break it down, no jargon, no fluff.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="NeuroPulse · One brain study at a time" canonical="https://neuropulsemind.com/">
+  <div class="home">
+    <header class="home__intro">
+      <h1 class="home__name">NeuroPulse</h1>
+      <p class="home__line">One brain study at a time, explained plainly. Every claim links to its paper, and every article says what the study can’t tell us.</p>
+    </header>
 
-  <main class="container">
-    <div class="grid">
-      {sortedPosts.map(post => (
-        <ArticleCard 
-          slug={post.id}
-          title={post.data.title}
-          description={post.data.description}
-          niche={post.data.niche}
-          pubDate={post.data.pubDate}
-          tags={post.data.tags}
-          heroImage={post.data.heroImage}
-        />
-      ))}
-    </div>
+    {latest && (
+      <article class="lead" aria-labelledby="lead-h">
+        <p class="lead__label">Latest</p>
+        {latestImg && latestDims && (
+          <a href={`/blog/${latest.id}/`} tabindex="-1" aria-hidden="true">
+            <img class="lead__img" src={latestImg} alt="" width={latestDims.width} height={latestDims.height} loading="eager" decoding="async" />
+          </a>
+        )}
+        <h2 class="lead__title" id="lead-h"><a href={`/blog/${latest.id}/`}>{latest.data.title}</a></h2>
+        <p class="lead__dek">{latest.data.description}</p>
+        <p class="lead__meta"><time datetime={latest.data.pubDate.toISOString()}>{fmt(latest.data.pubDate)}</time> · {estimateReadingMinutes(latest.body ?? '')} min read</p>
+      </article>
+    )}
 
-    <div class="lead-magnet-wrapper">
+    {rest.length > 0 && (
+      <section class="home__list" aria-labelledby="more-h">
+        <h2 class="home__list-h" id="more-h">Earlier articles</h2>
+        <PostList posts={rest} headingLevel={3} />
+      </section>
+    )}
+
+    <div class="home__guide">
       <LeadMagnet />
     </div>
-  </main>
+  </div>
 </BaseLayout>
 
 <style>
-  .hero {
-    padding: clamp(3rem, 8vw, 6rem) 1.5rem clamp(2.5rem, 6vw, 4rem);
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    background: var(--bg);
-  }
+  .home { max-width: 760px; margin: 0 auto; padding: clamp(1.75rem, 5vw, 3.5rem) 16px clamp(3rem, 8vw, 5rem); }
+  .home__intro { margin-bottom: 2.25rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--text); }
+  .home__name { font-size: clamp(2.2rem, 1.8rem + 2vw, 3.2rem); font-weight: 700; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+  .home__line { margin: 0; font-family: var(--font-serif); font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem); line-height: 1.5; color: var(--text-dim); max-width: 56ch; }
 
-  .hero-content {
-    max-width: 720px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.25rem;
-  }
+  .lead { margin-bottom: 2.75rem; }
+  .lead__label { margin: 0 0 0.6rem; font-size: 0.875rem; font-weight: 650; color: var(--amber); }
+  .lead__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 28%; border-radius: var(--radius); margin-bottom: 1rem; background: var(--bg-elev); }
+  .lead__title { font-size: clamp(1.7rem, 1.4rem + 1.4vw, 2.3rem); line-height: 1.15; margin: 0 0 0.6rem; font-weight: 700; }
+  .lead__title a { color: var(--text); text-decoration: none; }
+  .lead__title a:hover { text-decoration: underline; text-decoration-color: var(--cyan); }
+  .lead__dek { margin: 0 0 0.6rem; font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.55; color: var(--text-dim); }
+  .lead__meta { margin: 0; font-size: 0.875rem; color: var(--text-dim); }
 
-  /* Simple editorial label — no glowing pill */
-  .label {
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--amber);
-  }
-
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    line-height: 1.15;
-    color: var(--text);
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
-
-  .tagline {
-    font-size: clamp(1rem, 2.5vw, 1.15rem);
-    color: var(--text-dim);
-    max-width: 560px;
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: clamp(2rem, 5vw, 4rem) 1.5rem;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .lead-magnet-wrapper {
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border);
-  }
+  .home__list-h { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 650; margin: 0 0 0.25rem; }
+  .home__guide { margin-top: 3rem; }
 </style>
-
