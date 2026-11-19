@@ -9,6 +9,7 @@ tags: ["sleep", "screen-time", "focus", "stress", "habits"]
 niche: "neuroscience"
 videoUrl: ""
 draft: false
+unlisted: true
 heroImage: '/images/blog/hero-night-scrolling.jpg'
 ---
 
@@ -36,13 +37,6 @@ You might notice this as lying in bed feeling physically tired but mentally raci
 [INSERT_PROTOCOL_CALLOUT]
 
 ---
-
-**ðŸ“š Further Reading**
-
-If this sparked your curiosity, these books go deeper into the neuroscience:
-
-- [**Why We Sleep** by Matthew Walker](https://amazon.com/dp/0684832178?tag=neuropulse0e-20) â€” The definitive guide to sleep science (affiliate link)
-- [**Atomic Habits** by James Clear](https://amazon.com/dp/0735211299?tag=neuropulse0e-20) â€” How tiny changes rewire your brain (affiliate link)
 
 ---
 
