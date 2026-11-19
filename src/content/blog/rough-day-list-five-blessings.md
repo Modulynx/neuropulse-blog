@@ -12,6 +12,13 @@ draft: false
 heroImage: "/images/blog/hero-rough-day-list-five-blessings.jpg"
 heroAlt: "Our animated character in the opening scene of the video for this article."
 heroCaption: "Our animated character in the opening scene of the video for this article."
+study:
+  title: "Counting blessings versus burdens: An experimental investigation of gratitude and subjective well-being in daily life"
+  authors: "Emmons RA, McCullough ME"
+  journal: "Journal of Personality and Social Psychology"
+  year: 2003
+  sample: "Study 1: US college students who wrote weekly for 10 weeks"
+  url: "https://doi.org/10.1037/0022-3514.84.2.377"
 ---
 It's 9:40 pm. The dishes are done, a mug of tea is going cold on the counter, and you're back in the 3 pm meeting. You're replaying one comment, your answer, and the better answer you didn't give.
 
