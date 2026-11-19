@@ -16,6 +16,9 @@ study:
   year: 2014
   sample: "Seven lab studies, 585 people in total; the speech test was Study 3"
   url: "https://doi.org/10.1037/a0035173"
+heroImage: "/images/blog/nervous-use-your-own-name/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 Your coffee is going cold next to the laptop. The 3 pm meeting starts in five minutes, you're up first, and your heart is already going.
 
@@ -33,7 +36,10 @@ Listen to how you talk to yourself under pressure. Most of us say "I" a lot, and
 
 Now try your name. *Okay, Sam, you know this part.* It sounds a little like a friend talking. Psychologists call that small step back "self-distancing." It's the same reason calm advice comes easier for a friend's problem than for your own.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/nervous-use-your-own-name/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 One honest note: the study below measured feelings and performance, not brain activity. The alarm picture above is how we explain the result, not something this study scanned.
 
@@ -59,7 +65,10 @@ Keep it short and kind. You're not writing a pep talk.
 
 It will feel a bit odd the first time. A sticky note with your name on the edge of the screen helps you remember.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/nervous-use-your-own-name/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who should be careful?
 

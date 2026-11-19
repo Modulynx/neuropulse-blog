@@ -16,6 +16,9 @@ study:
   year: 2011
   sample: "24 adults aged 20-55 with sleep problems (22 women), at home in Taipei, no comparison group"
   url: "https://pubmed.ncbi.nlm.nih.gov/21669584/"
+heroImage: "/images/blog/two-kiwis-one-hour-before-bed-a-study-on-falling-asleep/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 ## Can't Fall Asleep? One Study Tried Kiwi
 
@@ -45,7 +48,10 @@ Kiwi contains serotonin, and serotonin is a building block of melatonin, the hor
 
 The researchers also pointed to kiwi's antioxidants. That idea is still being tested.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/two-kiwis-one-hour-before-bed-a-study-on-falling-asleep/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## How to Try the Two-Kiwi Method
 
@@ -55,7 +61,10 @@ The researchers also pointed to kiwi's antioxidants. That idea is still being te
 
 The study ran for four weeks, so give it a few weeks before you judge it. Keep everything else the same, so you can tell whether the kiwi made the difference.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/two-kiwis-one-hour-before-bed-a-study-on-falling-asleep/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who Should Be Careful?
 

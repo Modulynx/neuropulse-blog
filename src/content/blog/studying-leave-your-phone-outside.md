@@ -16,6 +16,9 @@ study:
   year: 2023
   sample: "42 college students aged 20-34, Paderborn University, Germany, tested over video calls"
   url: "https://doi.org/10.1038/s41598-023-36256-4"
+heroImage: "/images/blog/studying-leave-your-phone-outside/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's 8:40 on a Tuesday night. The textbook is open, the highlighter is uncapped, and your phone is face down next to your mug. It hasn't buzzed once. You still read the same paragraph three times.
 
@@ -27,7 +30,10 @@ Behind your forehead sits the part of your brain that holds your goal and keeps 
 
 With the phone in reach, that planning center may have an extra job: not picking it up. It's like a browser tab you never opened but can still feel in the background.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/studying-leave-your-phone-outside/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -45,7 +51,10 @@ It was one short test with 42 young, mostly highly educated students, run from h
 2. **Put it in another room.** The kitchen counter or a bag in the hallway.
 3. **Pick a stopping point.** The end of a chapter. Check your phone then, not before.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/studying-leave-your-phone-outside/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 If you use your phone as a timer, use a cheap kitchen timer instead. The first ten minutes may feel itchy. That passes.
 

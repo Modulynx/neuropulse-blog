@@ -9,7 +9,7 @@ tags: ["gratitude", "mood", "rumination", "brain habits", "optimism"]
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
-heroImage: "/images/blog/hero-rough-day-list-five-blessings.jpg"
+heroImage: "/images/blog/rough-day-list-five-blessings/hero.webp"
 heroAlt: "Our animated character in the opening scene of the video for this article."
 heroCaption: "Our animated character in the opening scene of the video for this article."
 study:
@@ -37,6 +37,11 @@ Think of your brain's alarm center as a smoke detector that keeps beeping after 
 Looking for what went right may help. When you deliberately notice good things, you give your attention somewhere else to land.
 
 We should be honest here. We don't know exactly what changes in the brain when someone writes a gratitude list. The research we're looking at measured how people felt, not what showed up on a scan.
+
+<figure>
+  <img src="/images/blog/rough-day-list-five-blessings/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What does research say when you list five blessings?
 

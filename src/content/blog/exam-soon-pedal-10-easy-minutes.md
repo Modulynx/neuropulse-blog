@@ -16,6 +16,9 @@ study:
   year: 2018
   sample: "36 healthy young adults in two lab experiments (16 of them in an fMRI scanner), University of Tsukuba, Japan"
   url: "https://doi.org/10.1073/pnas.1805668115"
+heroImage: "/images/blog/exam-soon-pedal-10-easy-minutes/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's the night before the test. A cold mug of tea sits by your flashcards, and two terms that sound almost the same have melted into one. You read both definitions three times. Still can't say which is which.
 
@@ -33,7 +36,10 @@ The hippocampus is a seahorse-shaped area deep in your brain that helps you form
 
 Picture two folders that look almost the same. The hippocampus helps put a clear label on each one, so you pull out the right folder later. Scientists call this "pattern separation."
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/exam-soon-pedal-10-easy-minutes/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -53,7 +59,10 @@ Keep it boring on purpose. Harder isn't the goal.
 2. **Set a timer for 10 minutes.** Stay easy the whole time. If you're out of breath, slow down.
 3. **Sit down to study right after.** Start with the pairs that keep blurring together.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/exam-soon-pedal-10-easy-minutes/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 Read next: [whether a phone on your desk costs you focus](/blog/studying-leave-your-phone-outside).
 

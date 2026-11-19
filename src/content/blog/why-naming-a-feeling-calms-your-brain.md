@@ -16,6 +16,9 @@ study:
   year: 2007
   sample: "Adult volunteers in an fMRI brain scanner at UCLA, looking at emotional pictures"
   url: "https://doi.org/10.1111/j.1467-9280.2007.01916.x"
+heroImage: "/images/blog/why-naming-a-feeling-calms-your-brain/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's almost 10 on a Tuesday night. The dishes are done, a mug is still on the counter, and something feels off. Not sad, exactly. Not angry. Just a low hum.
 
@@ -33,7 +36,10 @@ Deep in your brain sits the amygdala. Think of it as a smoke alarm: quick, loud,
 
 Behind your forehead is the prefrontal cortex, which helps with language and with stepping back from a situation. The idea is that finding a word pulls in this front part of the brain, and that goes with a calmer alarm.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/why-naming-a-feeling-calms-your-brain/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -55,7 +61,10 @@ Keep it to one word. Not a paragraph, not a diagnosis.
 
 You don't have to fix the feeling. You're only giving it a name.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/why-naming-a-feeling-calms-your-brain/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who should be careful?
 

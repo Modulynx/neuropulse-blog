@@ -16,6 +16,9 @@ study:
   year: 2005
   sample: "Volunteers in an fMRI brain scanner at Dartmouth College, listening to songs with short silent gaps"
   url: "https://doi.org/10.1038/434158a"
+heroImage: "/images/blog/why-does-a-song-get-stuck-in-your-head/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 You're rinsing a mug at the kitchen sink. The radio went off an hour ago. The chorus of a song you don't even like is still playing, on a loop, in your head.
 
@@ -31,7 +34,10 @@ The auditory cortex, the hearing part of your brain, handles every sound you hea
 
 Think of your phone's autocomplete. You type two words and it offers the third. Your brain does something similar with songs you know: it has the tune stored, so when part of it goes missing, it fills in the rest.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/why-does-a-song-get-stuck-in-your-head/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -51,7 +57,10 @@ The tip below comes from a different study, so treat it as a small experiment. I
 2. **Chew some gum.** Sugar-free is kinder to your teeth.
 3. **Give your mind one task that needs words.** Answer an email or read a page. Something that takes real attention.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/why-does-a-song-get-stuck-in-your-head/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who should be careful?
 
