@@ -29,11 +29,13 @@ In 2011, researchers in Taiwan asked 24 adults (aged 20 to 55) who had trouble s
 
 Compared with their own sleep before the four weeks:
 
-- they fell asleep **35% faster**
-- they spent **29% less** time awake during the night
-- their total sleep time rose by **13%**
+- the time it took them to fall asleep dropped by **35.4%**
+- the time they spent awake during the night dropped by **28.9%**
+- their total sleep time rose by **13.4%**
 
-That is a promising result, but read it with care. It was a small group, almost all women, and there was **no comparison group** that ate something else. So we can't yet say how much of the change came from the kiwi itself.
+## What this study can't tell us
+
+It was a small group of 24, 22 of them women, and there was **no comparison group** that ate something else. People knew they were eating kiwi to sleep better. So we can't say how much of the change came from the kiwi itself.
 
 ## What Happens in Your Brain?
 
@@ -68,7 +70,7 @@ Kiwi is a normal food, but:
 
 Bad nights often come with brain fog, a short memory or low energy the next day. Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 
-If late-night scrolling is part of the problem, read [late night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain).
+If you read on a screen in bed, read [why your e-book may delay sleep](/blog/why-does-your-e-book-delay-sleep).
 
 ## FAQ
 
