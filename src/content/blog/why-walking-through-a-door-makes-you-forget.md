@@ -16,6 +16,9 @@ study:
   year: 2011
   sample: "Three lab experiments with volunteers at the University of Notre Dame, in virtual rooms and in real rooms"
   url: "https://doi.org/10.1080/17470218.2011.571267"
+heroImage: "/images/blog/why-walking-through-a-door-makes-you-forget/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 You're on the couch, sure you need something from the kitchen. You walk in, stop next to the mug on the counter, and the thought is gone.
 
@@ -33,7 +36,10 @@ Your memory doesn't record your day as one long video. It splits it into scenes,
 
 When you step through a doorway, the old scene gets filed away and a new one opens. The plan you made in the first room, "grab the batteries," is still in there. It's just harder to reach from the new scene. The researchers call this idea the "event horizon model."
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/why-walking-through-a-door-makes-you-forget/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="768" height="1376" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -53,7 +59,10 @@ Going back to the first room is the classic tip, and this study found it didn't 
 2. **Say the goal in a few words.** "Batteries, kitchen drawer." Out loud or under your breath.
 3. **Keep a cue in your hand.** If you're fetching batteries for the remote, carry the remote.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/why-walking-through-a-door-makes-you-forget/fix.webp" alt="The habit to try, from our video for this article." width="768" height="1376" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 The last two steps are our suggestions, not something this study tested. If you forget anyway, that's normal.
 

@@ -16,6 +16,9 @@ study:
   year: 1998
   sample: "Rats, then healthy human volunteers given 2 g of curcumin with or without 20 mg of piperine"
   url: "https://doi.org/10.1055/s-2006-957450"
+heroImage: "/images/blog/brain-fog-add-black-pepper-to-your-golden-milk/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's 2 PM and you're stirring a spoon of turmeric into warm milk. The color is bright, the mug is warm, and you've read that turmeric is good for you.
 
@@ -29,7 +32,10 @@ Think of a bucket with a hole in the bottom. Most of what you pour in leaks stra
 
 The compound that makes black pepper hot, piperine, slows one of the ways your body breaks curcumin down. In the bucket picture, it makes the hole smaller.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/brain-fog-add-black-pepper-to-your-golden-milk/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -51,7 +57,10 @@ If you already drink golden milk, adding pepper is a small change.
 2. **Stir in turmeric and a small pinch of black pepper.** You won't taste much of it.
 3. **Add honey or another sweetener if you like.**
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/brain-fog-add-black-pepper-to-your-golden-milk/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who should be careful?
 

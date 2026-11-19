@@ -16,6 +16,9 @@ study:
   year: 2006
   sample: "19 healthy adults in an fMRI brain scanner at the National Institutes of Health, Bethesda"
   url: "https://doi.org/10.1073/pnas.0604475103"
+heroImage: "/images/blog/craving-more-try-giving-a-little/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's 9:40 pm. The tea on the counter went cold an hour ago, and you're on the couch with a cart full of things you didn't plan to buy. One more scroll. One more tab.
 
@@ -33,7 +36,10 @@ Think of the reward system as a hallway with motion-sensor lights. Walk toward s
 
 Two spots in that hallway are the ventral tegmental area, deep in the midbrain, and the striatum. Both respond when you get something good, like money.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/craving-more-try-giving-a-little/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -51,7 +57,10 @@ This was a small brain-scan study. It didn't look at cravings, shopping or scrol
 2. **Pick a cause you care about.** A local food bank, an animal shelter, a school fund. The people in the study chose their own causes.
 3. **Give an amount that feels easy.** Something you won't think about again at the end of the month. Then close the tab and notice how you feel for a minute.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/craving-more-try-giving-a-little/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 You're not trying to be a saint. You're testing whether a small, chosen gift feels different from another purchase.
 

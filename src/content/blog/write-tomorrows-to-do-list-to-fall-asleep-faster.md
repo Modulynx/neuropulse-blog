@@ -16,6 +16,9 @@ study:
   year: 2018
   sample: "57 healthy adults aged 18 to 30, one night in the sleep lab at Baylor University, Texas"
   url: "https://doi.org/10.1037/xge0000374"
+heroImage: "/images/blog/write-tomorrows-to-do-list-to-fall-asleep-faster/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's 12:10 a.m. The phone is face down and the lights are off. Then your mind starts reading out tomorrow. Email the landlord. Pick up the dry cleaning. Did you ever answer that message from work?
 
@@ -27,7 +30,10 @@ Tasks you haven't done yet tend to stay on your mind. In the dark, with nothing 
 
 One likely reason writing helps: once the tasks are on paper, you no longer have to hold them in your head. This is the researchers' explanation. The study measured sleep, not brain activity, so nobody watched it happen.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/write-tomorrows-to-do-list-to-fall-asleep-faster/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the to-do list study find?
 
@@ -53,7 +59,10 @@ Keep it small. A pen and a notepad by the bed are enough.
 4. **Use paper.** A phone pulls you back into messages.
 5. **Close the notebook.** The list is done for tonight.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/write-tomorrows-to-do-list-to-fall-asleep-faster/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 If a new task pops up after the light is off, add one line to the pad and put it back.
 

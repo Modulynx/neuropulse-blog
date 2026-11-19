@@ -16,6 +16,9 @@ study:
   year: 2019
   sample: "A systematic review of 17 studies, 13 of them combined in the meta-analysis"
   url: "https://doi.org/10.1016/j.smrv.2019.04.008"
+heroImage: "/images/blog/cant-sleep-move-your-shower-to-1-2-hours-before-bed/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's midnight. The lights are off, the phone is face down, and your body still feels warm and buzzing. You've rolled over four times and the ceiling hasn't gotten any more interesting.
 
@@ -38,6 +41,11 @@ When you step out of a warm shower, your skin is warm and your blood vessels nea
 That drop is one of the signals linked with sleep onset. When the core cools down, falling asleep tends to come easier.
 
 This is why timing matters. A hot shower right before you climb into bed may leave you warm and flushed just when you want to be cooling off. Giving it an hour or two lets the cooldown happen before the lights go out.
+
+<figure>
+  <img src="/images/blog/cant-sleep-move-your-shower-to-1-2-hours-before-bed/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What does the research say?
 
@@ -62,6 +70,11 @@ Here's a mini plan for today:
 Try it for a few nights before you decide whether it helps. One night is a poor test.
 
 If you already shower in the morning, you don't have to give that up. This is just an extra, shorter evening one, or a swap if mornings aren't doing much for you.
+
+<figure>
+  <img src="/images/blog/cant-sleep-move-your-shower-to-1-2-hours-before-bed/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 ## Who should be careful with a warm shower before bed?
 

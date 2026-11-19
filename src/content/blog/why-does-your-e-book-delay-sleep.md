@@ -16,6 +16,9 @@ study:
   year: 2015
   sample: "12 healthy young adults living 14 days in a sleep lab at Brigham and Women's Hospital, Boston"
   url: "https://doi.org/10.1073/pnas.1418490112"
+heroImage: "/images/blog/why-does-your-e-book-delay-sleep/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's late. You've read three chapters on your e-reader, the screen glowing against the sheets, and your eyes finally feel heavy. You switch it off. Then you lie there, wide awake, staring at the ceiling.
 
@@ -27,7 +30,10 @@ Your brain keeps time with a body clock, and it uses light, especially the brigh
 
 As evening light fades, your brain releases melatonin, the hormone that tells your body it's time to wind down. Bright light close to your eyes pushes the other way. Picture a hand nudging the clock's dial back, so night seems to start later.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/why-does-your-e-book-delay-sleep/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -47,7 +53,10 @@ Read a printed book in the hours before bed.
 2. **Switch at reading time.** Open the printed book instead of the e-reader. Keep the lamp soft.
 3. **Notice what happens.** In the morning, jot down roughly how long it took you to drift off.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/why-does-your-e-book-delay-sleep/fix.webp" alt="The habit to try, from our video for this article." width="1088" height="1920" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 If the story you're in only exists on the e-reader, try a different book for a few nights and compare.
 

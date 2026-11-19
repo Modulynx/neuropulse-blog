@@ -16,6 +16,9 @@ study:
   year: 2018
   sample: "59 healthy adults (29 aged 20-34, 30 aged 61-80), Northumbria University, Newcastle, UK"
   url: "https://doi.org/10.3390/nu10101386"
+heroImage: "/images/blog/one-black-coffee-before-focused-work-may-sharpen-reactions/hero.webp"
+heroAlt: "Our animated character in the opening scene of the video for this article."
+heroCaption: "Our animated character in the opening scene of the video for this article."
 ---
 It's 9:05. Your laptop is open, the first big task is waiting, and your brain feels like it's still in the shower. You read the same line twice. Someone pings you and your answer comes a beat late.
 
@@ -33,7 +36,10 @@ Caffeine doesn't create energy. It gets in the way.
 
 Adenosine fits into receptors on brain cells, and that nudges you toward sleep. Caffeine is shaped enough like adenosine to sit in those same spots. Think of someone parking in adenosine's space: the sleepy signal is still around, it just can't land.
 
-<!-- img:brain -->
+<figure>
+  <img src="/images/blog/one-black-coffee-before-focused-work-may-sharpen-reactions/brain.webp" alt="Inside the brain: a still from our video showing the area this article is about." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
+</figure>
 
 ## What did the study find?
 
@@ -51,7 +57,10 @@ The study measured one cup and short computer tests 30 minutes later. It can't t
 2. **Make one cup of plain black coffee.** Sip it while you close extra tabs and put your phone out of reach.
 3. **Check in after about 30 minutes.** That's when the study tested people. Are you catching things faster? Jot a quick yes or no.
 
-<!-- img:fix -->
+<figure>
+  <img src="/images/blog/one-black-coffee-before-focused-work-may-sharpen-reactions/fix.webp" alt="The habit to try, from our video for this article." width="1200" height="2150" loading="lazy" decoding="async" />
+  <figcaption>The habit to try, from our video for this article.</figcaption>
+</figure>
 
 A few days of notes will tell you more than any general claim. Caffeine late in the day can cut into sleep, so keep this to the morning.
 
