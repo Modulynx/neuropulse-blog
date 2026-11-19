@@ -27,14 +27,9 @@ That's useful when there's a real problem to solve. It's less useful at 9:40 pm 
 
 Think of your brain's alarm center as a smoke detector that keeps beeping after the toast is already in the trash. It's doing its job, but the threat is gone. It still sounds busy.
 
-Good things can calm it. When you deliberately look for what went right, you give your attention somewhere else to land. The alarm gets less airtime.
+Looking for what went right may help. When you deliberately notice good things, you give your attention somewhere else to land.
 
 We should be honest here. We don't know exactly what changes in the brain when someone writes a gratitude list. The research we're looking at measured how people felt, not what showed up on a scan.
-
-<figure>
-  <img src="/images/blog/rough-day-list-five-blessings/brain.jpg" alt="Inside the brain: a still from our video showing the area this article is about." width="1088" height="1920" loading="lazy" decoding="async" />
-  <figcaption>Inside the brain: a still from our video showing the area this article is about.</figcaption>
-</figure>
 
 ## What does research say when you list five blessings?
 
@@ -66,8 +61,6 @@ If you want another quick way to quiet a noisy head, our post on [why naming a f
 ## Who should be careful with this habit?
 
 Writing a short list is low risk for most people. Still, a few notes.
-
-If you're pregnant, on medication, or managing a heart condition, this habit doesn't interact with any of that. But your care team knows your situation best, so ask them if you have questions about stress and sleep.
 
 If replaying the day feels constant, or comes with ongoing anxiety, a low mood that won't lift, or trouble functioning, a list isn't a substitute for real support. Please talk with a doctor or a licensed therapist.
 
