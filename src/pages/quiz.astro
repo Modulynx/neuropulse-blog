@@ -55,7 +55,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
       <aside class="optin">
         <p class="eyebrow">Free guide</p>
         <h3>Get the free Brain Owner's Manual</h3>
-        <p class="optin__copy">The plain-English PDF guide, plus follow-up emails for your <span id="optin-key">FOG</span> switch. Free, no spam, unsubscribe anytime.</p>
+        <p class="optin__copy">The plain-English PDF guide, plus follow-up emails for your <span id="optin-key">FOG</span> switch. Free.</p>
         <form id="optin-form" method="POST" action={actions.FOG}>
           <input type="hidden" name="fields[np_type]" id="optin-type" value="FOG" />
           <input type="hidden" name="fields[np_source]" id="optin-source" value="quiz" />
@@ -65,6 +65,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
             <button class="btn" type="submit">Send me the guide</button>
           </div>
         </form>
+        <p class="optin__copy optin__note">We only use your email to send the guide and our emails; unsubscribe any time. <a href="/privacy/">Privacy</a></p>
       </aside>
 
       {PRODUCT_LIVE && (
@@ -168,6 +169,7 @@ const products = Object.fromEntries(KEYS.map((k) => [k, productLink(k)]));
   .optin { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); padding: 1.4rem; margin: 1.5rem 0; }
   .optin h3 { margin: 0 0 0.4rem; }
   .optin__copy { color: var(--text-dim); font-size: var(--step--1); }
+  .optin__note { margin: 0.7rem 0 0; }
   .optin__row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .optin__row input { flex: 1 1 220px; min-width: 0; padding: 0.8rem 0.9rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font: inherit; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

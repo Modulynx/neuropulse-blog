@@ -18,7 +18,7 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
   <h2 class="lm__title">The Brain Owner’s Manual</h2>
   <p class="lm__copy">
     A short PDF on focus, sleep and stress, with the study behind each habit.
-    We send it by email. No spam, unsubscribe anytime.
+    We send it by email.
   </p>
   <form class="lm__form" action={ACTION} method="POST">
     <label class="lm__label" for="lm-email">Email address</label>
@@ -35,6 +35,7 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
       <button class="lm__btn" type="submit">Send it to me</button>
     </div>
   </form>
+  <p class="lm__note">We only use your email to send the guide and our emails; unsubscribe any time. <a href="/privacy/">Privacy</a></p>
   <!--
     Post-submit redirect to /thank-you/: this form posts directly to Kit
     (app.kit.com), so there's no client-side hook to redirect from after
@@ -58,5 +59,6 @@ const ACTION = "https://app.kit.com/forms/9647814/subscriptions";
   .lm__input::placeholder { color: #6B655C; }
   .lm__btn { flex: 0 0 auto; padding: 0.75rem 1.25rem; background: var(--magenta); color: #fff; font: 600 1rem/1 var(--font-body); border: none; border-radius: var(--radius); cursor: pointer; }
   .lm__btn:hover { filter: brightness(0.92); }
+  .lm__note { margin: 0.7rem 0 0; font-size: 0.875rem; line-height: 1.5; color: var(--text-dim); }
   @media (max-width: 480px) { .lm__btn { flex: 1 1 100%; } }
 </style>
