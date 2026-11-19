@@ -1,6 +1,6 @@
 ---
-title: "Can't Sleep? Fix Your Shower Timing Before Bed"
-description: "Still wired at midnight? Research suggests shower timing before bed matters. A warm shower 1-2 hours before sleep may help your core temperature drop."
+title: "Can't sleep? Move your shower to 1-2 hours before bed"
+description: "A 2019 review of 17 studies linked a warm shower or bath 1-2 hours before bed, for as little as 10 minutes, with falling asleep sooner."
 slug: "cant-sleep-move-your-shower-to-1-2-hours-before-bed"
 pubDate: "2026-11-08T15:01:04.136Z"
 author: "The NeuroPulse Team"
@@ -9,10 +9,17 @@ tags: ["sleep", "shower timing", "core temperature", "hypothalamus", "sleep habi
 niche: "Brain-Health"
 videoUrl: ""
 draft: false
+study:
+  title: "Before-bedtime passive body heating by warm shower or bath to improve sleep: A systematic review and meta-analysis"
+  authors: "Haghayegh S, Khoshnevis S, Smolensky MH, Diller KR, Castriotta RJ"
+  journal: "Sleep Medicine Reviews"
+  year: 2019
+  sample: "A systematic review of 17 studies, 13 of them combined in the meta-analysis"
+  url: "https://doi.org/10.1016/j.smrv.2019.04.008"
 ---
 It's midnight. The lights are off, the phone is face down, and your body still feels warm and buzzing. You've rolled over four times and the ceiling hasn't gotten any more interesting.
 
-Maybe the fix isn't another app or another supplement. Maybe it's **shower timing before bed**. Moving your warm shower earlier, to one or two hours before you want to sleep, may help your body get ready in a way a late rinse-off doesn't.
+Maybe the answer isn't another app or another supplement. Maybe it's **shower timing before bed**. Moving your warm shower earlier, to one or two hours before you want to sleep, may help your body get ready in a way a late rinse-off doesn't.
 
 ## Why am I still wide awake when I'm so tired?
 
@@ -28,17 +35,17 @@ Your hypothalamus is a small area deep in the brain that helps manage body tempe
 
 When you step out of a warm shower, your skin is warm and your blood vessels near the surface open up. That lets heat leave your body. Over the next hour or so, your core temperature can drop.
 
-That drop is the signal your brain looks for. Research suggests that when the core cools down, falling asleep tends to come easier.
+That drop is one of the signals linked with sleep onset. When the core cools down, falling asleep tends to come easier.
 
 This is why timing matters. A hot shower right before you climb into bed may leave you warm and flushed just when you want to be cooling off. Giving it an hour or two lets the cooldown happen before the lights go out.
 
 ## What does the research say?
 
-Studies on warm showers and baths before bed suggest they can help people fall asleep faster, especially when taken about one to two hours before bedtime. In those studies, even ten minutes seemed to help.
+A 2019 review by Haghayegh and colleagues at the University of Texas at Austin, published in Sleep Medicine Reviews, pulled together 17 studies on warm showers and baths before bed. Thirteen of them had data that could be combined.
 
-We're keeping this general on purpose. Study designs differ, the people tested differ, and we don't want to overstate what any single result shows. Research suggests a pattern. It doesn't promise that your sleep will change.
+Water at about 40 to 42.5 °C (104 to 108.5 °F) was linked with better self-rated sleep quality. When the shower or bath was scheduled one to two hours before bedtime, for as little as ten minutes, people fell asleep sooner.
 
-We also don't know yet how much your own bedroom temperature, caffeine, or stress level changes the effect. Those things probably matter.
+It's a review of small studies with different designs and different people. It doesn't tell you how many minutes sooner you'll fall asleep, and it doesn't promise your sleep will change. We also don't know yet how much your bedroom temperature, caffeine, or stress level changes the effect. Those things probably matter.
 
 ## What's a simple shower routine to try tonight?
 
@@ -69,11 +76,11 @@ If you feel dizzy, faint, or unwell, stop and cool off. Stand up slowly, and kee
 
 If you've had trouble sleeping for weeks, it's worth bringing up with a healthcare provider. A shower tweak is a small tool, not a treatment.
 
-## Want to find which brain switch is off for you?
+## Want one simple habit to try first?
 
 Temperature is only one part of sleep. Light, stress, caffeine, and timing all play a role too, and the weak spot is different for everyone.
 
-Our short [brain quiz](/quiz) can help you find which brain switch is off for you, so you know where to start instead of guessing.
+If you're not sure where to start, take the [free 60-second brain quiz](/quiz) for one simple habit to try first.
 
 If you like temperature experiments, you might also read our take on [cold showers and the brain](/blog/cold-showers-neuroscience). It covers a different side of water and alertness.
 
@@ -83,11 +90,11 @@ So, when do you usually shower? Morning, right after work, or just before bed? T
 
 ### Is it better to shower in the morning or at night for sleep?
 
-Either can fit your life, but research suggests a warm shower about one to two hours before bed may help you fall asleep faster. The skin releases heat afterward, and your core temperature can drop. Morning showers are fine for waking up, but they won't give you that evening cooldown.
+Either can fit your life, but a 2019 review linked a warm shower or bath one to two hours before bed with falling asleep sooner. The skin releases heat afterward, and your core temperature can drop. Morning showers are fine for waking up, but they won't give you that evening cooldown.
 
 ### How long should a warm shower before bed be?
 
-In the studies behind this idea, even ten minutes seemed to help. You don't need a long soak. Keep the water comfortably warm, not painfully hot.
+In the 2019 review, showers or baths as short as ten minutes, one to two hours before bed, were linked with falling asleep sooner. You don't need a long soak. Keep the water comfortably warm, not painfully hot.
 
 ### Can a hot shower right before bed keep you awake?
 
