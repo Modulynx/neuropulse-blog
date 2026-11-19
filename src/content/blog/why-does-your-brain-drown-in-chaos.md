@@ -8,6 +8,7 @@ tags: ["neuroscience", "sleep", "anxiety", "focus"]
 niche: "Neuroscience"
 videoUrl: ""
 draft: false
+unlisted: true
 heroImage: '/images/blog/hero-brain-chaos.jpg'
 ---
 # Why does your brain drown in chaos?
@@ -90,13 +91,6 @@ For those looking to support this process with something tangible, this is where
 ---
 
 ---
-
-**ðŸ“š Further Reading**
-
-If this sparked your curiosity, these books go deeper into the neuroscience:
-
-- [**Why We Sleep** by Matthew Walker](https://amazon.com/dp/0684832178?tag=neuropulse0e-20) â€” The definitive guide to sleep science (affiliate link)
-- [**Atomic Habits** by James Clear](https://amazon.com/dp/0735211299?tag=neuropulse0e-20) â€” How tiny changes rewire your brain (affiliate link)
 
 ---
 
