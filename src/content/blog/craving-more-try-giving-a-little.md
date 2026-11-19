@@ -61,7 +61,7 @@ If money is tight, give time or a kind word instead. Your budget comes first. If
 
 ## Where to go from here
 
-If the same craving keeps coming back, read our [48-hour dopamine reset](/blog/dopamine-reset). If the pull peaks at night, read [late-night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain).
+Read next: [why naming a feeling can calm your brain](/blog/why-naming-a-feeling-calms-your-brain), or [why your e-book may delay sleep](/blog/why-does-your-e-book-delay-sleep).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

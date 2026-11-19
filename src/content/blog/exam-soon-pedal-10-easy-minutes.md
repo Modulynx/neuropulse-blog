@@ -55,7 +55,7 @@ Keep it boring on purpose. Harder isn't the goal.
 
 <!-- img:fix -->
 
-For the study session itself, the [90-minute focus block](/blog/90-minute-focus-block) gives you a simple structure.
+Read next: [whether a phone on your desk costs you focus](/blog/studying-leave-your-phone-outside).
 
 ## Who should be careful?
 
@@ -63,7 +63,7 @@ Easy cycling is gentle for most people. If you have a heart condition, are pregn
 
 ## Where to go from here
 
-Take our quick brain assessment to [find which brain switch is off for you](/quiz). If the night before an exam also means a short night, read [late-night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain).
+Take our quick brain assessment to [find which brain switch is off for you](/quiz). Read next: [why your e-book may delay sleep](/blog/why-does-your-e-book-delay-sleep).
 
 ## FAQ
 

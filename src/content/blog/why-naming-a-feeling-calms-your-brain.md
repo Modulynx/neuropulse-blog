@@ -63,7 +63,7 @@ For most people this is a low-risk habit. If you live with depression, trauma or
 
 ## Where to go from here
 
-If your mind feels crowded by everything at once, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos). If the hum shows up at bedtime, [late-night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain) is the next read.
+Read next: [why a song gets stuck in your head](/blog/why-does-a-song-get-stuck-in-your-head), or [why your e-book may delay sleep](/blog/why-does-your-e-book-delay-sleep).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

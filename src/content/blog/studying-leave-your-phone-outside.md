@@ -55,7 +55,7 @@ If you're on call, caring for someone, or need your phone for health alerts, kee
 
 ## Where to go from here
 
-For long study sessions, try the [90-minute focus block](/blog/90-minute-focus-block). If the phone follows you to bed, read [late-night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain).
+Read next: [what a cup of black coffee did to reaction times](/blog/one-black-coffee-before-focused-work-may-sharpen-reactions), or [why your e-book may delay sleep](/blog/why-does-your-e-book-delay-sleep).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 
