@@ -5,6 +5,7 @@ pubDate: 2026-07-18
 tags: ["dopamine", "neuroscience", "focus", "productivity", "mental health"]
 niche: "Neuroscience"
 draft: false
+unlisted: true
 heroImage: '/images/blog/hero-dopamine-reset.jpg'
 ---
 
@@ -37,13 +38,6 @@ Replace the void with low-dopamine, high-effort activities.
 * **Exercise:** Zone 2 cardio (like jogging or brisk walking) naturally elevates dopamine and serotonin without subsequent crashes.
 
 ---
-
-**ðŸ“š Further Reading**
-
-If this sparked your curiosity, these books go deeper into the neuroscience:
-
-- [**Why We Sleep** by Matthew Walker](https://amazon.com/dp/0684832178?tag=neuropulse0e-20) â€” The definitive guide to sleep science (affiliate link)
-- [**Atomic Habits** by James Clear](https://amazon.com/dp/0735211299?tag=neuropulse0e-20) â€” How tiny changes rewire your brain (affiliate link)
 
 ---
 
