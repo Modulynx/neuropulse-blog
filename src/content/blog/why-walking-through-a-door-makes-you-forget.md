@@ -63,7 +63,7 @@ Blanking at a doorway is common. It isn't the same as new or worsening memory tr
 
 ## Where to go from here
 
-If your head feels crowded all day, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos). For work that needs a clear head, try the [90-minute focus block](/blog/90-minute-focus-block).
+Read next: [why naming a feeling can calm your brain](/blog/why-naming-a-feeling-calms-your-brain), or [whether a phone on your desk costs you focus](/blog/studying-leave-your-phone-outside).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

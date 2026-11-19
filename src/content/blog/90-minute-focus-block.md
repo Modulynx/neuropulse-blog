@@ -6,13 +6,7 @@ niche: brain-health
 tags: ["neuroscience", "focus", "brain health", "productivity"]
 heroImage: '/images/blog/hero-focus-block.jpg'
 readTime: 8
-affiliate:
-  book:
-    title: "Deep Work"
-    url: "https://www.amazon.com/dp/B013ZNZ52O/?tag=neuropulse0e-20"
-  supplement:
-    title: "L-Theanine"
-    url: "https://www.amazon.com/dp/B0013OUQ3S/?tag=neuropulse0e-20"
+unlisted: true
 ---
 
 The modern workplace operates on an eight-hour clock, but your brain does not. If you find your attention slipping after an hour of intense work, you aren't lacking discipline. You are simply fighting against your neurobiology.
@@ -45,7 +39,7 @@ Deep focus requires a frictionless environment. Before starting the timer, elimi
 
 Context switching carries a heavy cognitive penalty. When you shift attention from a primary task to a secondary one, your brain must load the rules and context of the new task into working memory. Returning to the original task requires reloading the initial context, a process that can take up to 20 minutes to achieve the previous depth of focus. 
 
-For a comprehensive guide on cultivating this level of distraction-free environment, Cal Newport’s excellent book, [Deep Work](https://www.amazon.com/dp/B013ZNZ52O/?tag=neuropulse0e-20), provides actionable frameworks for training your brain to sustain focus in a noisy world.
+For a comprehensive guide on cultivating this level of distraction-free environment, Cal Newport’s excellent book, Deep Work, provides actionable frameworks for training your brain to sustain focus in a noisy world.
 
 ### Step 2: The Warm-Up Phase (0-15 Minutes)
 
@@ -55,7 +49,7 @@ The transition into deep focus is rarely instantaneous. The first 10 to 15 minut
 
 This is the core of the ultradian peak. You are in a state of flow. Your prefrontal cortex is highly active, suppressing external distractions and facilitating complex thought. During this phase, you are capable of doing your most impactful work.
 
-To support this phase naturally, many professionals turn to specific amino acids that cross the blood-brain barrier. A popular and effective option is [L-Theanine](https://www.amazon.com/dp/B0013OUQ3S/?tag=neuropulse0e-20), an amino acid found in green tea. L-Theanine promotes alpha brain wave activity, inducing a state of calm alertness. When paired with the caffeine in a morning coffee, it smooths out the jittery edge and extends the duration of sustained attention.
+To support this phase naturally, many professionals turn to specific amino acids that cross the blood-brain barrier. A popular and effective option is L-Theanine, an amino acid found in green tea. L-Theanine promotes alpha brain wave activity, inducing a state of calm alertness. When paired with the caffeine in a morning coffee, it smooths out the jittery edge and extends the duration of sustained attention.
 
 ### Step 4: The Decline (75-90 Minutes)
 

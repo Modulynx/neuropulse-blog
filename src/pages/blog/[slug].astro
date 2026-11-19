@@ -13,6 +13,7 @@ import { estimateReadingMinutes } from '../../utils/readingTime';
 import { imageSize } from '../../utils/imageSize';
 import { collectSources, hasAmazonLink } from '../../utils/sources';
 import { AMAZON_DISCLOSURE } from '../../data/site';
+import { isListed, UNLISTED_NOTE } from '../../utils/listed';
 
 // The old posts carry a generic glowing-brain hero with no caption. Only OUR stills with a caption are shown
 // (scripts/blog_images.js in Reelflow writes heroCaption). ROLLBACK (one line): true = every heroImage is shown again.
@@ -40,7 +41,7 @@ const sources = collectSources(entry.body ?? '', d.study);
 const amazon = hasAmazonLink(entry.body ?? '');
 
 // 2 related articles: shared tags first, then the newest others
-const others = (await getCollection('blog', ({ data }) => !data.draft)).filter((p) => p.id !== entry.id)
+const others = (await getCollection('blog', isListed)).filter((p) => p.id !== entry.id)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const tagSet = new Set(d.tags);
 const score = (p: any) => p.data.tags.filter((t: string) => tagSet.has(t)).length;
@@ -56,10 +57,12 @@ const related = [...others].sort((a, b) => score(b) - score(a)).slice(0, 2);
   tags={d.tags}
   image={showHero ? d.heroImage : undefined}
   citation={d.study ? { title: d.study.title, url: d.study.url } : undefined}
+  noindex={d.unlisted}
 >
   <main class="art">
     <article>
       <header class="art__head">
+        {d.unlisted && <p class="art__review" role="note">{UNLISTED_NOTE} <a href="/blog/">Read our reviewed articles</a>.</p>}
         <p class="art__meta"><time datetime={d.pubDate.toISOString()}>{formattedDate}</time> · {readingMinutes} min read</p>
         <h1 class="art__title">{d.title}</h1>
         {d.description && <p class="art__dek">{d.description}</p>}
@@ -110,6 +113,7 @@ const related = [...others].sort((a, b) => score(b) - score(a)).slice(0, 2);
 <style>
   .art { padding: clamp(1.75rem, 5vw, 3.5rem) 16px clamp(3rem, 8vw, 5rem); }
   .art__head, .art__body, .art__guide, .art__related { max-width: var(--measure); margin-inline: auto; }
+  .art__review { margin: 0 0 1.25rem; padding: 0.8rem 1rem; background: var(--bg-elev); border-left: 3px solid var(--amber); font-size: 0.9375rem; line-height: 1.5; }
   .art__meta { margin: 0 0 0.75rem; font-size: 0.875rem; color: var(--text-dim); }
   .art__title { font-size: var(--step-3); line-height: 1.12; margin: 0 0 0.9rem; font-weight: 700; }
   .art__dek { margin: 0 0 1rem; font-family: var(--font-serif); font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.3rem); line-height: 1.5; color: var(--text-dim); }

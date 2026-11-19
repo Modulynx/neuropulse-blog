@@ -6,13 +6,7 @@ niche: brain-health
 tags: ["neuroscience", "dopamine", "brain health", "focus"]
 heroImage: '/images/blog/hero-dopamine-broken.jpg'
 readTime: 8
-affiliate:
-  book:
-    title: "Dopamine Nation"
-    url: "https://www.amazon.com/dp/B08LQZ536B/?tag=neuropulse0e-20"
-  supplement:
-    title: "L-Tyrosine"
-    url: "https://www.amazon.com/dp/B0013OUQEI/?tag=neuropulse0e-20"
+unlisted: true
 ---
 
 Dopamine is arguably the most misunderstood molecule in the human brain. Pop culture often labels it the "pleasure chemical," but neuroscientists know it as the molecule of motivation, drive, and anticipation. 
@@ -39,7 +33,7 @@ When you spike your dopamine to extreme levels using artificial stimuli, the bra
 
 Suddenly, normal, everyday pleasures—a walk in the park, a good conversation, a healthy meal—fail to register. They don't release enough dopamine to activate the remaining, desensitized receptors. Life feels flat, gray, and uninteresting. 
 
-Dr. Anna Lembke beautifully explores this concept of the pleasure-pain balance in the brain in her groundbreaking book, [Dopamine Nation](https://www.amazon.com/dp/B08LQZ536B/?tag=neuropulse0e-20). She explains how our relentless pursuit of pleasure inevitably leads to an increased capacity for emotional pain and a decreased capacity for joy.
+Dr. Anna Lembke beautifully explores this concept of the pleasure-pain balance in the brain in her groundbreaking book, Dopamine Nation. She explains how our relentless pursuit of pleasure inevitably leads to an increased capacity for emotional pain and a decreased capacity for joy.
 
 ## 3. Constant Craving for Stimulation
 
@@ -81,7 +75,7 @@ When you only feel good upon completing a task, you rely on the outcome for your
 
 While behavioral changes are the foundation, certain compounds can provide the necessary building blocks for dopamine synthesis, especially during a reset phase. 
 
-Dopamine is synthesized from the amino acid tyrosine. Supplementing with [L-Tyrosine](https://www.amazon.com/dp/B0013OUQEI/?tag=neuropulse0e-20) can provide your brain with the raw materials needed to produce dopamine naturally. This is particularly useful before cognitively demanding tasks or during periods of acute stress, as it helps replenish depleted catecholamine reserves without causing the crash associated with stimulants like caffeine.
+Dopamine is synthesized from the amino acid tyrosine. Supplementing with L-Tyrosine can provide your brain with the raw materials needed to produce dopamine naturally. This is particularly useful before cognitively demanding tasks or during periods of acute stress, as it helps replenish depleted catecholamine reserves without causing the crash associated with stimulants like caffeine.
 
 ### Cold Exposure
 

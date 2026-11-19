@@ -20,8 +20,9 @@ interface Props {
   faq?: { q: string; a: string }[];
   image?: string;
   citation?: { title: string; url: string };
+  noindex?: boolean;   // an unlisted article (src/utils/listed.ts): search engines leave it out, the page stays
 }
-const { title, description, slug, author, pubDate, tags, videoUrl, faq = [], image, citation } = Astro.props;
+const { title, description, slug, author, pubDate, tags, videoUrl, faq = [], image, citation, noindex = false } = Astro.props;
 
 const SITE = "https://neuropulsemind.com";
 const canonical = `${SITE}/blog/${slug}/`;
@@ -74,6 +75,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": grap
     <title>{title} · NeuroPulse</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="article" />

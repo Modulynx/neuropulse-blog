@@ -57,7 +57,7 @@ A paper book is a gentle change. If you've had trouble sleeping most nights for 
 
 ## Where to go from here
 
-If your late-night screen time goes beyond e-books, read [late-night scrolling and your wired brain](/blog/late-night-scrolling-wired-brain). For another small bedtime experiment, see [two kiwis before bed](/blog/two-kiwis-one-hour-before-bed-a-study-on-falling-asleep).
+For another small bedtime experiment, see [two kiwis before bed](/blog/two-kiwis-one-hour-before-bed-a-study-on-falling-asleep).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

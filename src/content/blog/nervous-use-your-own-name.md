@@ -67,7 +67,7 @@ Talking to yourself in your head is low risk. It is not a treatment for anxiety.
 
 ## Where to go from here
 
-Nerves often come with a short night and too much coffee. Here's [what coffee timing does to your cortisol](/blog/coffee-timing-cortisol-brain). If your head feels crowded at night too, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos).
+Nerves often come with a short night and too much coffee. Read next: [what a cup of black coffee did to reaction times](/blog/one-black-coffee-before-focused-work-may-sharpen-reactions), or [why naming a feeling can calm your brain](/blog/why-naming-a-feeling-calms-your-brain).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

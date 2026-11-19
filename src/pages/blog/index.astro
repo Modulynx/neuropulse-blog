@@ -1,10 +1,11 @@
 ---
 // blog/index.astro — every article, newest first, as a plain list (design refresh 2026-11-17).
 import { getCollection } from "astro:content";
+import { isListed } from "../../utils/listed";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PostList from "../../components/PostList.astro";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+const posts = (await getCollection("blog", isListed)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---

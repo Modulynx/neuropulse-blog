@@ -53,7 +53,7 @@ The study measured one cup and short computer tests 30 minutes later. It can't t
 
 <!-- img:fix -->
 
-A few days of notes will tell you more than any general claim. Caffeine late in the day can cut into sleep, so keep this to the morning. If you're curious about timing, read [what coffee timing does to your cortisol](/blog/coffee-timing-cortisol-brain).
+A few days of notes will tell you more than any general claim. Caffeine late in the day can cut into sleep, so keep this to the morning.
 
 ## Who should be careful with caffeine?
 
@@ -61,7 +61,7 @@ Talk with your doctor first if you're pregnant or breastfeeding, take medication
 
 ## Where to go from here
 
-For the work block itself, try the [90-minute focus block](/blog/90-minute-focus-block).
+Read next: [whether a phone on your desk costs you focus](/blog/studying-leave-your-phone-outside).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

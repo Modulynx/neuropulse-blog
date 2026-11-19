@@ -59,7 +59,7 @@ Skip gum if you have jaw pain or dental work that gum could damage, and don't gi
 
 ## Where to go from here
 
-If the song is one of many things competing for your attention, the [90-minute focus block](/blog/90-minute-focus-block) is a simple way to protect one stretch of work. And if it gets louder at night, read [why your brain drowns in chaos](/blog/why-does-your-brain-drown-in-chaos).
+Read next: [whether a phone on your desk costs you focus](/blog/studying-leave-your-phone-outside), or [why naming a feeling can calm your brain](/blog/why-naming-a-feeling-calms-your-brain).
 
 Take our quick brain assessment to [find which brain switch is off for you](/quiz).
 

@@ -2,13 +2,14 @@
 // index.astro — the home page (design refresh 2026-11-17): who we are in one line, the latest article big,
 // then a plain list (date + one line each), then the free guide.
 import { getCollection } from 'astro:content';
+import { isListed } from '../utils/listed';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from '../components/PostList.astro';
 import LeadMagnet from '../components/LeadMagnet.astro';
 import { estimateReadingMinutes } from '../utils/readingTime';
 import { imageSize } from '../utils/imageSize';
 
-const posts = (await getCollection('blog', ({ data }) => data.draft !== true))
+const posts = (await getCollection('blog', isListed))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const [latest, ...rest] = posts;
 const fmt = (d: Date) => new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(d);
