@@ -18,6 +18,7 @@ const blog = defineCollection({
     niche: z.string().default('Neuroscience'), // default niche if missing
     videoUrl: z.string().url().optional().or(z.literal("")).optional(),
     draft: z.boolean().default(false),
+    unlisted: z.boolean().default(false),  // 2026-11-19: out of the lists, RSS and sitemap, noindex, a note on top; the URL stays (src/utils/listed.ts)
     heroImage: z.string().optional(),
     // Design refresh 2026-11-17 (all optional; an article without them builds as before)
     heroAlt: z.string().optional(),       // what the hero shows, for screen readers

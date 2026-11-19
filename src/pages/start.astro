@@ -2,9 +2,10 @@
 // /start — the link-in-bio hub: quiz first (the lead magnet), then the latest pages, tools, product.
 // Built from the blog collection, so every new article appears here with no extra step.
 import { getCollection } from "astro:content";
+import { isListed } from "../utils/listed";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { PRODUCT_LIVE, productLink } from "../data/site";
-const posts = (await getCollection("blog", ({ data }) => data.draft !== true))
+const posts = (await getCollection("blog", isListed))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 10);
 ---
